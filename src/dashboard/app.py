@@ -302,6 +302,14 @@ st.write(
     "Submit a sensor message to the existing authentication, "
     "sensor-health, and deadline-aware scheduling pipeline."
 )
+if st.button("Reset simulation state"):
+    sensor_system.message_monitor = MessageMonitor(
+        sensor_system.SENSOR_KEYS
+    )
+    sensor_system.health_monitor.reset()
+    sensor_system.feature_tracker.reset()
+    st.success("Simulation state reset.")
+    st.rerun()
 
 with st.form("sensor_simulator"):
     selected_sensor = st.selectbox(
@@ -321,6 +329,13 @@ with st.form("sensor_simulator"):
         min_value=-1000.0,
         max_value=1000.0,
         value=12.0,
+        step=1.0,
+    )
+    message_age_ms = st.number_input(
+        "Message age (ms)",
+        min_value=0.0,
+        max_value=60000.0,
+        value=5.0,
         step=1.0,
     )
 
@@ -372,15 +387,6 @@ with st.form("sensor_simulator"):
 # ============================================================
 
 if submitted:
-    # Reset monitor state for an independent simulation.
-    sensor_system.message_monitor = MessageMonitor(
-        sensor_system.SENSOR_KEYS
-    )
-
-    sensor_system.health_monitor = SensorHealthMonitor(
-        max_distance_change=20.0
-    )
-
     message = {
         "sensor_id": selected_sensor,
         "sequence": int(sequence),
@@ -409,6 +415,7 @@ if submitted:
                 "execution_time": int(execution),
                 "security_overhead": int(overhead),
                 "deadline": int(deadline),
+                "message_age_ms": float(message_age_ms),
             },
             {
                 "message": replay_message,
@@ -417,6 +424,7 @@ if submitted:
                 "execution_time": int(execution),
                 "security_overhead": int(overhead),
                 "deadline": int(deadline) + 1,
+                "message_age_ms": float(message_age_ms),
             },
         ]
 
@@ -429,8 +437,10 @@ if submitted:
                 "execution_time": int(execution),
                 "security_overhead": int(overhead),
                 "deadline": int(deadline),
+                "message_age_ms": float(message_age_ms),
             }
         ]
+
 
     # Send messages through the existing pipeline.
     try:

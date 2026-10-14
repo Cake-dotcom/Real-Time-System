@@ -1,8 +1,12 @@
 
+import math
+
 from src.security.message_monitor import MessageMonitor
 from src.security.message_auth import create_mac
+from src.security.sensor_features import SensorFeatureTracker
 from src.security.sensor_health import SensorHealthMonitor
 from src.scheduler.scheduler import schedule_message_tasks
+
 
 SENSOR_KEYS = {
     "LIDAR_01": "demo_lidar_key",
@@ -12,42 +16,119 @@ SENSOR_KEYS = {
 
 CRITICAL_SENSORS = {"LIDAR_01", "RADAR_01"}
 
+SENSOR_METADATA = {
+    "LIDAR_01": {
+        "sensor_type": "lidar",
+        "sensor_criticality": 3,
+        "reading_unit": "m",
+    },
+    "RADAR_01": {
+        "sensor_type": "radar",
+        "sensor_criticality": 3,
+        "reading_unit": "m",
+    },
+    "CAMERA_01": {
+        "sensor_type": "camera",
+        "sensor_criticality": 1,
+        "reading_unit": "m",
+    },
+}
+
 message_monitor = MessageMonitor(SENSOR_KEYS)
 health_monitor = SensorHealthMonitor(max_distance_change=20.0)
+feature_tracker = SensorFeatureTracker()
 
 
 def process_messages(messages):
     verified_tasks = []
     message_results = []
 
-    # Authenticate and check the health of every message first.
     for item in messages:
         message = item["message"]
         received_mac = item["mac"]
+        sensor_id = message.get("sensor_id")
 
+        # 1. Authenticate and check sequence/replay protection first.
         authentication = message_monitor.verify(message, received_mac)
 
         if not authentication["valid"]:
             message_results.append({
-                "sensor": message.get("sensor_id"),
+                "sensor": sensor_id,
                 "status": "SECURITY_ALERT",
                 "accepted": False,
                 "reason": authentication["reason"],
             })
             continue
 
-        health = health_monitor.check(message)
+        # 2. Validate the reading before updating feature history.
+        distance = message.get("distance_m")
 
-        if not health["healthy"]:
+        if (
+            not isinstance(distance, (int, float))
+            or isinstance(distance, bool)
+            or not math.isfinite(distance)
+            or not 0.0 <= distance <= 200.0
+        ):
             message_results.append({
-                "sensor": message.get("sensor_id"),
+                "sensor": sensor_id,
                 "status": "SENSOR_FAULT",
                 "accepted": False,
-                "reason": health["issues"],
+                "reason": ["Distance outside valid range"],
             })
             continue
 
-        sensor_id = message["sensor_id"]
+        metadata = SENSOR_METADATA.get(sensor_id)
+
+        if metadata is None:
+            message_results.append({
+                "sensor": sensor_id,
+                "status": "SENSOR_FAULT",
+                "accepted": False,
+                "reason": ["Missing sensor metadata"],
+            })
+            continue
+
+        # Supply an explicit age when available. The zero default is only
+        # a simulator placeholder; it is not a measured message age.
+        message_age_ms = item.get("message_age_ms", 0.0)
+
+        if (
+            not isinstance(message_age_ms, (int, float))
+            or isinstance(message_age_ms, bool)
+            or not math.isfinite(message_age_ms)
+            or message_age_ms < 0
+        ):
+            message_results.append({
+                "sensor": sensor_id,
+                "status": "SENSOR_FAULT",
+                "accepted": False,
+                "reason": ["Invalid message age"],
+            })
+            continue
+
+        # 3. Derive the feature columns used during model training.
+        features = feature_tracker.build_features(
+            message=message,
+            sensor_type=metadata["sensor_type"],
+            sensor_criticality=metadata["sensor_criticality"],
+            reading_unit=metadata["reading_unit"],
+            message_age_ms=message_age_ms,
+            mac_verified=True,
+        )
+
+        # 4. Apply rule-based checks and ML sensor-health prediction.
+        health = health_monitor.check(message, features=features)
+
+        if not health["healthy"]:
+            message_results.append({
+                "sensor": sensor_id,
+                "status": "SENSOR_FAULT",
+                "accepted": False,
+                "reason": health["issues"],
+                "ml_prediction": health.get("prediction", "not_evaluated"),
+                "risk_level": health.get("risk_level", "unknown"),
+            })
+            continue
 
         task_id = f"{sensor_id}-{message['sequence']}"
 
@@ -67,6 +148,8 @@ def process_messages(messages):
             "status": "VERIFIED",
             "accepted": False,
             "reason": "Authenticated and healthy; awaiting scheduling",
+            "ml_prediction": health.get("prediction", "not_evaluated"),
+            "risk_level": health.get("risk_level", "unknown"),
         })
 
     if verified_tasks:
@@ -83,25 +166,48 @@ def process_messages(messages):
         for result in schedule["results"]
     }
 
-    # Accept data only if its task was scheduled and met its deadline.
+    # 5. Accept data only when its task was scheduled on time.
     for result in message_results:
-        sensor_id = result["sensor"]
-        task_id = result.get("task_id")
-        scheduled = scheduled_by_id.get(task_id)
-
         if result["status"] != "VERIFIED":
             continue
+
+        task_id = result["task_id"]
+        scheduled = scheduled_by_id.get(task_id)
 
         if scheduled and scheduled["deadline_met"]:
             result["accepted"] = True
             result["status"] = "NORMAL"
-            result["reason"] = "Authenticated, healthy, and processed before deadline"
+            result["reason"] = (
+                "Authenticated, healthy, and processed before deadline"
+            )
+
+            # Update sensor history only after final acceptance.
+            accepted_message = next(
+                (
+                    item["message"]
+                    for item in messages
+                    if (
+                        item["message"].get("sensor_id") == result["sensor"]
+                        and (
+                            f"{item['message'].get('sensor_id')}-"
+                            f"{item['message'].get('sequence')}"
+                        ) == task_id
+                    )
+                ),
+                None,
+            )
+
+            if accepted_message is not None:
+                feature_tracker.commit_reading(accepted_message)
+                health_monitor.commit_reading(accepted_message)
         elif scheduled:
             result["status"] = "DEADLINE_MISSED"
             result["reason"] = "Message missed its deadline"
         elif task_id in schedule["deferred_sensors"]:
             result["status"] = "DEFERRED"
-            result["reason"] = "Non-critical work deferred during fallback"
+            result["reason"] = (
+                "Non-critical work deferred during fallback"
+            )
         else:
             result["status"] = "NOT_SCHEDULED"
             result["reason"] = "No valid scheduling result"
@@ -201,5 +307,5 @@ if __name__ == "__main__":
             SENSOR_KEYS[item["message"]["sensor_id"]],
         )
 
-    print("Normal reading followed by sudden change:")
+    print("Sensor authentication, ML health, and scheduling test:")
     pprint.pp(process_messages(test_messages))

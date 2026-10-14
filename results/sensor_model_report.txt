@@ -1,0 +1,24 @@
+Dataset records: 20629
+Training records: 15428
+Test records: 5201
+Training runs: 3
+Test runs: 1
+Accuracy: 0.9904
+Balanced accuracy: 0.8991
+
+Classification report:
+                   precision    recall  f1-score   support
+
+           normal       1.00      1.00      1.00      4827
+anomalous_reading       0.97      0.99      0.98       294
+           faulty       0.73      0.71      0.72        80
+
+         accuracy                           0.99      5201
+        macro avg       0.90      0.90      0.90      5201
+     weighted avg       0.99      0.99      0.99      5201
+
+Confusion matrix
+Class order: normal, anomalous_reading, faulty
+[[4803    4   20]
+ [   2  291    1]
+ [  17    6   57]]
