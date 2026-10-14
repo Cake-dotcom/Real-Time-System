@@ -1,0 +1,20 @@
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Generated datasets
+data/raw/
+data/processed/
+
+# Trained models
+models/*.joblib
+models/*.pkl
+
+# Environment variables and secrets
+.env
+
+# Streamlit configuration
+.streamlit/secrets.toml
