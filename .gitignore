@@ -6,11 +6,9 @@ __pycache__/
 *.py[cod]
 
 # Generated datasets
-data/raw/
 data/processed/
 
 # Trained models
-models/*.joblib
 models/*.pkl
 
 # Environment variables and secrets
