@@ -1,0 +1,126 @@
+{
+  "description": "30 synthetic messages, five independent batches; actual saved health model.",
+  "limitations": "Illustrative workloads, not performance/generalization evidence. Rejection CPU cost is unmodeled. Base and fixed modes retain the same fail-closed health gates. Health groups are predictions, not ground-truth classes.",
+  "modes": {
+    "base_edf": {
+      "workload_sha256": "d3fa9c475f481d6471f248113a546795ee4fe669f497ac748ea89bdd635cdae6",
+      "submitted": 30,
+      "accepted": 8,
+      "scheduled": 11,
+      "deadline_misses": 3,
+      "deferred": 4,
+      "scheduled_extra_cost": 0.0,
+      "policy_escalations": 0,
+      "accepted_security_violations": 0,
+      "by_scenario": {
+        "normal": {
+          "accepted": 8,
+          "rejected": 7
+        },
+        "tampering": {
+          "accepted": 0,
+          "rejected": 5
+        },
+        "replay": {
+          "accepted": 0,
+          "rejected": 5
+        },
+        "sensor_fault": {
+          "accepted": 0,
+          "rejected": 5
+        }
+      },
+      "by_health_prediction": {
+        "normal": {
+          "accepted": 8,
+          "rejected": 7
+        },
+        "not_evaluated": {
+          "accepted": 0,
+          "rejected": 15
+        }
+      },
+      "deadline_miss_rate_of_scheduled": 0.2727272727272727
+    },
+    "fixed_validation": {
+      "workload_sha256": "d3fa9c475f481d6471f248113a546795ee4fe669f497ac748ea89bdd635cdae6",
+      "submitted": 30,
+      "accepted": 5,
+      "scheduled": 11,
+      "deadline_misses": 6,
+      "deferred": 4,
+      "scheduled_extra_cost": 22.0,
+      "policy_escalations": 15,
+      "accepted_security_violations": 0,
+      "by_scenario": {
+        "normal": {
+          "accepted": 5,
+          "rejected": 10
+        },
+        "tampering": {
+          "accepted": 0,
+          "rejected": 5
+        },
+        "replay": {
+          "accepted": 0,
+          "rejected": 5
+        },
+        "sensor_fault": {
+          "accepted": 0,
+          "rejected": 5
+        }
+      },
+      "by_health_prediction": {
+        "normal": {
+          "accepted": 5,
+          "rejected": 10
+        },
+        "not_evaluated": {
+          "accepted": 0,
+          "rejected": 15
+        }
+      },
+      "deadline_miss_rate_of_scheduled": 0.5454545454545454
+    },
+    "risk_adaptive": {
+      "workload_sha256": "d3fa9c475f481d6471f248113a546795ee4fe669f497ac748ea89bdd635cdae6",
+      "submitted": 30,
+      "accepted": 7,
+      "scheduled": 11,
+      "deadline_misses": 4,
+      "deferred": 4,
+      "scheduled_extra_cost": 10.0,
+      "policy_escalations": 10,
+      "accepted_security_violations": 0,
+      "by_scenario": {
+        "normal": {
+          "accepted": 7,
+          "rejected": 8
+        },
+        "tampering": {
+          "accepted": 0,
+          "rejected": 5
+        },
+        "replay": {
+          "accepted": 0,
+          "rejected": 5
+        },
+        "sensor_fault": {
+          "accepted": 0,
+          "rejected": 5
+        }
+      },
+      "by_health_prediction": {
+        "normal": {
+          "accepted": 7,
+          "rejected": 8
+        },
+        "not_evaluated": {
+          "accepted": 0,
+          "rejected": 15
+        }
+      },
+      "deadline_miss_rate_of_scheduled": 0.36363636363636365
+    }
+  }
+}

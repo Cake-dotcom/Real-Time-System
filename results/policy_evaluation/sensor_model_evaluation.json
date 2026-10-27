@@ -1,0 +1,88 @@
+{
+  "method": "In-memory refit of saved pipeline configuration; GroupShuffleSplit seed 42",
+  "dataset_sha256": "c7d25ffe83d4a74d28a1f1e8d21cc2b5b8938d8c8dece663130781f1a903a0b5",
+  "model_sha256": "cd30ba07f4e04ae50585e5fc7e7662ad4ce78de1df5c70fa1400ef4ee60768d1",
+  "records": 20629,
+  "columns": 31,
+  "features": [
+    "sensor_criticality",
+    "seq_delta",
+    "message_age_ms",
+    "reading",
+    "reading_delta",
+    "reading_zscore",
+    "reading_std_last20",
+    "identical_reading_streak",
+    "mac_verified",
+    "sensor_type",
+    "reading_unit"
+  ],
+  "training_runs": [
+    0,
+    2,
+    3
+  ],
+  "test_runs": [
+    1
+  ],
+  "training_records": 15428,
+  "test_records": 5201,
+  "accuracy": 0.9903864641415112,
+  "balanced_accuracy": 0.899107962016379,
+  "classification_report": {
+    "normal": {
+      "precision": 0.9960597262546661,
+      "recall": 0.9950279676817899,
+      "f1-score": 0.9955435796455592,
+      "support": 4827.0
+    },
+    "anomalous_reading": {
+      "precision": 0.9667774086378738,
+      "recall": 0.9897959183673469,
+      "f1-score": 0.9781512605042016,
+      "support": 294.0
+    },
+    "faulty": {
+      "precision": 0.7307692307692307,
+      "recall": 0.7125,
+      "f1-score": 0.7215189873417721,
+      "support": 80.0
+    },
+    "accuracy": 0.9903864641415112,
+    "macro avg": {
+      "precision": 0.8978687885539235,
+      "recall": 0.8991079620163789,
+      "f1-score": 0.8984046091638443,
+      "support": 5201.0
+    },
+    "weighted avg": {
+      "precision": 0.9903238598793207,
+      "recall": 0.9903864641415112,
+      "f1-score": 0.9903454813544877,
+      "support": 5201.0
+    }
+  },
+  "confusion_matrix_class_order": [
+    "normal",
+    "anomalous_reading",
+    "faulty"
+  ],
+  "confusion_matrix": [
+    [
+      4803,
+      4,
+      20
+    ],
+    [
+      2,
+      291,
+      1
+    ],
+    [
+      17,
+      6,
+      57
+    ]
+  ],
+  "limitations": "Four runs, one holdout; feature-generation provenance is not established."
+}

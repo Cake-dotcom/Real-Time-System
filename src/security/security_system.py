@@ -1,7 +1,7 @@
 
 from src.security.risk_engine import RiskEngine
 from src.security.auth_policy import choose_auth_action
-from src.scheduler.scheduler import schedule_tasks
+from src.scheduler.scheduler import schedule_message_tasks
 
 engine = RiskEngine()
 
@@ -14,13 +14,19 @@ def evaluate_login(event):
     )
 
     task = {
-        "name": "Login security processing",
+        "task_id": "login-security",
+        "sensor": "legacy_login",
+        "critical": True,
+        "arrival_time": 0,
+        "security_overhead": 0,
         "execution_time": 2,
         "risk_level": risk["risk_level"],
         "deadline": 6,
     }
 
-    schedule_result = schedule_tasks([task])
+    # Adapt the legacy single-task demo to the scheduler's existing public API.
+    # Login risk/MFA decisions remain separate from sensor session authentication.
+    schedule_result = schedule_message_tasks([task])
 
     return {
         "risk": risk,

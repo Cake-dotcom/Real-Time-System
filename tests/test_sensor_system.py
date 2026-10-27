@@ -4,10 +4,10 @@ import copy
 import pytest
 
 from src.security import sensor_system
-from src.security.message_auth import create_mac
 from src.security.message_monitor import MessageMonitor
 from src.security.sensor_features import SensorFeatureTracker
 from src.security.sensor_health import SensorHealthMonitor
+from session_helpers import sign_for_monitor
 
 
 @pytest.fixture(autouse=True)
@@ -38,12 +38,10 @@ def make_message(
         "distance_m": distance,
     }
 
+    message, mac = sign_for_monitor(sensor_system.message_monitor, message)
     return {
         "message": message,
-        "mac": create_mac(
-            message,
-            sensor_system.SENSOR_KEYS[sensor_id],
-        ),
+        "mac": mac,
         "arrival_time": arrival,
         "execution_time": execution,
         "security_overhead": overhead,

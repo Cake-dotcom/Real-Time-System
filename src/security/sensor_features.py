@@ -34,7 +34,7 @@ class SensorFeatureTracker:
         if not math.isfinite(float(message_age_ms)):
             raise ValueError("Message age must be finite")
 
-        previous_readings = list(self.history[sensor_id])
+        previous_readings = list(self.history.get(sensor_id, ()))
         previous_sequence = self.last_sequence.get(sensor_id)
 
         if previous_readings:

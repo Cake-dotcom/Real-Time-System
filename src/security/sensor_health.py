@@ -3,13 +3,14 @@ from pathlib import Path
 
 import joblib
 import pandas as pd
+from src.security.validation_config import MIN_READING, MAX_READING, MAX_READING_DELTA
 
 
 MODEL_PATH = Path("models/sensor_health_model.joblib")
 
 
 class SensorHealthMonitor:
-    def __init__(self, max_distance_change=20.0, model_path=MODEL_PATH):
+    def __init__(self, max_distance_change=MAX_READING_DELTA, model_path=MODEL_PATH):
         self.max_distance_change = max_distance_change
         self.last_distance = {}
         self.model_bundle = None
@@ -34,7 +35,7 @@ class SensorHealthMonitor:
         if (
             not isinstance(distance, (int, float))
             or isinstance(distance, bool)
-            or not 0.0 <= distance <= 200.0
+            or not MIN_READING <= distance <= MAX_READING
         ):
             return {
                 "healthy": False,
@@ -53,6 +54,10 @@ class SensorHealthMonitor:
 
         prediction = "not_evaluated"
         risk_level = "low"
+
+        if self.model_bundle is None or features is None:
+            return {"healthy": False, "issues": [*issues, "ML evidence unavailable"],
+                    "prediction": prediction, "risk_level": "unknown"}
 
         if self.model_bundle is not None and features is not None:
             required = self.model_bundle["features"]

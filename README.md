@@ -8,7 +8,52 @@ Real-time systems process data from sensors under timing constraints. Unauthenti
 
 This project combines message authentication, replay protection, rule-based sensor checks, a trained machine-learning model, and deadline-aware task scheduling. A Streamlit dashboard supports dataset analysis and interactive testing of sensor-message scenarios.
 
+The live pipeline now applies **NIST SP 800-30 Rev. 1, §3.2 Task 2-6 and Appendix I Table I-2** to combine project-defined likelihood and impact evidence. OT response context comes from **NIST SP 800-82 Rev. 3 §§4.1.2–4.1.3**. See [the integrated policy](docs/risk_validation_policy.md) and [research/design note](docs/policy_research_note.md) for official URLs, exact sections, assumptions, response choices and limitations. NIST does not prescribe our sensor thresholds, validation costs or EDF algorithm.
+
 > **Scope:** This is an academic simulation prototype. It is not a hard real-time operating-system implementation and is not certified for safety-critical deployment.
+
+## Source authentication and session reuse
+
+The receiver now requires a short-lived authenticated source session before accepting any sensor message. A sensor proves possession of its provisioned secret using HMAC-SHA256 over a random challenge bound to its identity and the receiver's boot context. Successful authentication establishes a random session ID and a separately derived message key. Challenges expire after 5 seconds and sessions after 60 seconds, using a monotonic clock.
+
+**Session reuse never skips per-message verification.** Every message MAC covers its source, session ID, sequence and full contents using canonical serialization. The receiver checks session validity, MAC and a strictly increasing source-wide sequence. Replay counters survive reauthentication. Session revocation, source compromise revocation, administrative key rotation, reset/restart rejection and bounded cleanup are implemented. Expired/revoked sessions fail closed; the dashboard supports explicit reauthentication and displays actual receiver state/counters.
+
+Threat model: an attacker may inject, tamper with, replay or reorder messages; the receiver, clock, provisioned key map and administrative operations are trusted. A stolen sensor secret permits impersonation until source revocation/key rotation. Keys are simulated, state is in memory, and production restart must reload revoked identities. No encryption, forward secrecy, mutual receiver authentication, wire transport or production automotive key management is claimed. The shared-state dashboard is a local demonstration, not an authenticated administration service.
+
+The scheduler's per-message `security_overhead` already includes MAC verification. A new session adds **2 simulated units once**, on its first successfully verified message, plus the selected validation cost (0/1/2). Reuse adds zero handshake units, while the MAC check still runs. Measured nanoseconds are reported separately and never inserted into EDF costs. The 2-unit handshake cost is an uncalibrated project parameter. CPU work spent rejecting traffic or checking deferred tasks is not modeled as scheduler demand.
+
+See [protocol, lifecycle and methodology](docs/source_authentication.md) and [actual verification results](docs/source_auth_verification.md). These supersede the earlier policy-only timing examples.
+
+### Current verification and benchmark
+
+**99 tests passed in 16.88 seconds** on 2026-10-27, including session security, accepted-history invariants, all original scenarios, real Streamlit form/lifecycle tests and the repaired legacy login coordinator. No dependencies or model artifacts were changed.
+
+Benchmark: 10 alternating paired repetitions, each with 1,000 valid messages, 50 replays and 50 tampered messages across three sensors. Both approaches use the same payloads, MAC verification and source-wide replay policy. The baseline repeats the new source handshake for every message; it is not the previous bare-HMAC implementation. Warmup is excluded.
+
+| Measured quantity | Full authentication each message | Session reuse |
+|---|---:|---:|
+| Full handshakes | 11,000 | 30 |
+| MAC verifications | 11,000 | 11,000 |
+| Exchange mean / median / p95 (µs) | 72.85 / 70.10 / 89.20 | 23.91 / 22.80 / 27.50 |
+| Receiver mean / median / p95 (µs) | 41.27 / 39.60 / 49.20 | 13.42 / 12.80 / 13.90 |
+| Total measured receiver authentication (ms) | 453.94 | 147.58 |
+| Total measured loop elapsed time (ms) | 811.84 | 271.47 |
+| Accepted injected attacks | 0 | 0 |
+
+Receiver authentication time was **67.49% lower in this run**. This is a local in-process Python measurement, not network/ECU latency or a hard-real-time bound. `perf_counter_ns` measures elapsed time; separate process CPU totals and per-repetition means are saved in `results/source_auth/benchmark.json`.
+
+The 40-message policy comparison uses the same mandatory source/MAC/replay/health gates in all modes. Base EDF / fixed / adaptive accepted 5 / 3 / 4 messages, missed 6 / 7 / 7 scheduled deadlines, deferred 4 / 5 / 4 messages, and accepted **zero mandatory-security violations**. Scheduled total security overhead was 33 / 50 / 43 simulated units. Full counts and denominators are in `results/source_auth/policy_comparison.json`; this toy workload does not establish broad superiority.
+
+Reproduce from the project directory with the existing environment:
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest -v
+.\.venv\Scripts\python.exe -m streamlit run src/dashboard/app.py
+.\.venv\Scripts\python.exe -m src.ml.benchmark_source_auth --messages 1000 --repetitions 10
+.\.venv\Scripts\python.exe -m src.ml.compare_validation_policies
+.\.venv\Scripts\python.exe -m src.ml.evaluate_sensor_model --all-runs --output-dir results/source_auth
+.\.venv\Scripts\python.exe -m src.security.security_system
+```
 
 ## Objectives
 
@@ -25,7 +70,7 @@ This project combines message authentication, replay protection, rule-based sens
 
 ### Message authentication and replay protection
 
-- HMAC-SHA256 message authentication using configured shared demo keys.
+- Challenge-response source authentication using provisioned demo keys, then HMAC-SHA256 per-message authentication with session-derived keys.
 - Constant-time MAC comparison.
 - Per-sensor sequence tracking to reject duplicate and out-of-order messages.
 
@@ -63,6 +108,9 @@ The dashboard in `src/dashboard/app.py` provides dataset summaries, scenario dea
 Sensor message
       |
       v
+Authenticated source session (challenge-response, expiry/revocation)
+      |
+      v
 HMAC authentication and sequence/replay checks
       |
       v
@@ -70,6 +118,12 @@ Input validation and feature extraction
       |
       v
 Rule-based sensor checks + ML classification
+      |
+      v
+Likelihood/impact assessment (NIST Table I-2)
+      |
+      v
+Required additional checks + fail-closed policy response
       |
       v
 Eligible sensor tasks
@@ -86,6 +140,8 @@ Final acceptance decision and dashboard results
 ```
 
 Sensor feature history and health history are committed only after final acceptance. Rejected messages and tasks that miss deadlines should not update accepted-reading history.
+
+Authentication/replay failures exit before policy evaluation. Missing model/evidence prevents acceptance. Healthy messages must pass selected checks and meet their deadline. The dashboard displays the backend decision and per-check audit. Normal critical sensors receive additional validation (1 simulated unit); normal camera readings use standard plausibility checks (0 extra units). All thresholds and 0/1/2 costs are centralized in `src/security/validation_config.py` and are project assumptions. Scheduler deadlines are absolute, and scheduler times are abstract simulation units.
 
 ## Technology Stack
 
@@ -269,7 +325,7 @@ python -m compileall -q src tests
 
 ## Tests
 
-The current sensor-pipeline test suite contains 10 tests. The latest run reported **10 passed, 0 failed**. Coverage includes valid messages, tampering, replay protection, out-of-range readings, unknown sensors, ML anomaly rejection, deadline misses, and ensuring rejected or late readings do not update accepted-reading history.
+The suite includes the original sensor/policy tests, `tests/test_source_sessions.py`, backend integration tests in `tests/test_policy_integration.py`, and Streamlit form tests in `tests/test_dashboard_policy.py`. These exercise source lifecycle, permissive-policy bypass attempts, evidence selection, executed checks, missing evidence, authentication/validation cost-caused misses, history preservation, and dashboard/backend correspondence. See `docs/source_auth_verification.md` for the current run; `docs/policy_verification.md` preserves the earlier policy-only run.
 
 Re-run the tests after changing code; the result reported here describes the latest run available when this README was prepared and may not reflect future changes.
 
@@ -286,6 +342,26 @@ The reported held-out-run model evaluation produced the following results:
 | Faulty-class F1-score | 0.72 |
 
 These are preliminary results from a dataset with only four distinct runs. The `faulty` class is more difficult to detect, so overall accuracy alone is not sufficient to establish model reliability.
+
+The new four-fold leave-one-run-out evaluation shows considerably weaker fault detection on other runs:
+
+| Held-out run | Accuracy | Balanced accuracy | Faulty F1 |
+|---|---:|---:|---:|
+| 0 | 0.9775 | 0.7197 | 0.2302 |
+| 1 | 0.9904 | 0.8991 | 0.7215 |
+| 2 | 0.9807 | 0.7242 | 0.2636 |
+| 3 | 0.9765 | 0.7113 | 0.3125 |
+
+Run 1 was the original single holdout. Full per-class metrics/confusion matrices are in `results/source_auth/sensor_model_evaluation.json`. The saved artifact agrees with the fresh refit on that reconstructed holdout, but lacks stored split provenance. Accuracy is not evidence of system security or generalization. All evaluation refits stay in memory and preserve the saved model.
+
+The grouped evaluation was reproduced with an in-memory refit, preserving the existing model artifacts. Full per-class metrics, confusion matrix, split IDs and hashes are in `results/policy_evaluation/sensor_model_evaluation.json`. Reproduce it and the small synthetic baseline/fixed/adaptive comparison with:
+
+```powershell
+.\.venv\Scripts\python.exe -m src.ml.evaluate_sensor_model
+.\.venv\Scripts\python.exe -m src.ml.compare_validation_policies
+```
+
+The comparison uses identical signed inputs and the real backend/model. Its results illustrate assumed validation costs; they do not establish real-world security or performance improvements. Rejection CPU work is not modeled. Outcomes grouped by health are model predictions, not independently labeled classes.
 
 The dataset evaluation reported 586 deadline misses among 20,629 records (approximately 2.84%). These are dataset-derived statistics, not measured performance guarantees for a production real-time system.
 
@@ -305,7 +381,7 @@ The dataset evaluation reported 586 deadline misses among 20,629 records (approx
 - Improve detection of the `faulty` class.
 - Implement and validate sensor-specific feature extraction for GPS, IMU, and ultrasonic data.
 - Compare EDF with alternative real-time scheduling strategies.
-- Measure authentication and inference overhead under controlled workloads.
+- Measure authentication and inference overhead on representative sensor/ECU hardware; the current benchmark measures local authentication only.
 - Add overload and burst-arrival stress tests.
 - Integrate a validated safe-state interface where appropriate.
 - Add experiment logging and exportable reports.

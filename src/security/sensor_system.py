@@ -1,11 +1,15 @@
 
 import math
+from dataclasses import asdict
 
 from src.security.message_monitor import MessageMonitor
-from src.security.message_auth import create_mac
+from src.security.source_sessions import authenticate_sender
 from src.security.sensor_features import SensorFeatureTracker
 from src.security.sensor_health import SensorHealthMonitor
 from src.scheduler.scheduler import schedule_message_tasks
+from src.security.risk_policy import assess_sensor_risk
+from src.security.additional_validation import validate_additional_checks
+from src.security.validation_config import MIN_READING, MAX_READING, MAX_READING_DELTA
 
 
 SENSOR_KEYS = {
@@ -35,24 +39,35 @@ SENSOR_METADATA = {
 }
 
 message_monitor = MessageMonitor(SENSOR_KEYS)
-health_monitor = SensorHealthMonitor(max_distance_change=20.0)
+health_monitor = SensorHealthMonitor(max_distance_change=MAX_READING_DELTA)
 feature_tracker = SensorFeatureTracker()
 
 
 def process_messages(messages):
     verified_tasks = []
     message_results = []
+    accepted_candidates = {}
 
     for item in messages:
-        message = item["message"]
-        received_mac = item["mac"]
-        sensor_id = message.get("sensor_id")
+        item = item if isinstance(item, dict) else {}
+        message = item.get("message")
+        received_mac = item.get("mac")
+        sensor_id = message.get("sensor_id") if isinstance(message, dict) else None
 
         # 1. Authenticate and check sequence/replay protection first.
         authentication = message_monitor.verify(message, received_mac)
+        audit = {"authentication": authentication["authentication"],
+                 "source_authentication": authentication["source_authentication"],
+                 "session_reused": authentication["session_reused"],
+                 "measured_verification_ns": authentication["measured_verification_ns"],
+                 "simulated_handshake_cost": authentication["simulated_handshake_cost"],
+                 "replay": authentication["replay"], "policy": None,
+                 "additional_checks": None, "simulated_extra_cost": 0.0,
+                 "deadline_met": None}
 
         if not authentication["valid"]:
             message_results.append({
+                **audit,
                 "sensor": sensor_id,
                 "status": "SECURITY_ALERT",
                 "accepted": False,
@@ -67,9 +82,10 @@ def process_messages(messages):
             not isinstance(distance, (int, float))
             or isinstance(distance, bool)
             or not math.isfinite(distance)
-            or not 0.0 <= distance <= 200.0
+            or not MIN_READING <= distance <= MAX_READING
         ):
             message_results.append({
+                **audit,
                 "sensor": sensor_id,
                 "status": "SENSOR_FAULT",
                 "accepted": False,
@@ -81,6 +97,7 @@ def process_messages(messages):
 
         if metadata is None:
             message_results.append({
+                **audit,
                 "sensor": sensor_id,
                 "status": "SENSOR_FAULT",
                 "accepted": False,
@@ -99,6 +116,7 @@ def process_messages(messages):
             or message_age_ms < 0
         ):
             message_results.append({
+                **audit,
                 "sensor": sensor_id,
                 "status": "SENSOR_FAULT",
                 "accepted": False,
@@ -106,7 +124,19 @@ def process_messages(messages):
             })
             continue
 
-        # 3. Derive the feature columns used during model training.
+        # Scheduling fields are trusted simulator inputs, but must be finite
+        # and non-negative to avoid nonsensical deadline acceptance.
+        timing_fields = ("arrival_time", "execution_time", "security_overhead", "deadline")
+        if any(not isinstance(item.get(name), (int, float))
+               or isinstance(item.get(name), bool)
+               or not math.isfinite(item[name]) or item[name] < 0
+               for name in timing_fields):
+            message_results.append({**audit, "sensor": sensor_id,
+                                    "status": "INVALID_INPUT", "accepted": False,
+                                    "reason": "Invalid scheduling parameters"})
+            continue
+
+        # 3. Derive features from previously accepted history.
         features = feature_tracker.build_features(
             message=message,
             sensor_type=metadata["sensor_type"],
@@ -117,10 +147,29 @@ def process_messages(messages):
         )
 
         # 4. Apply rule-based checks and ML sensor-health prediction.
-        health = health_monitor.check(message, features=features)
+        try:
+            health = health_monitor.check(message, features=features)
+        except (KeyError, TypeError, ValueError, RuntimeError):
+            health = {"healthy": False, "prediction": "not_evaluated",
+                      "risk_level": "unknown", "issues": ["Health evaluation unavailable"]}
+
+        # 5. Assess evidence, then execute every selected check. Mandatory
+        # failures have already continued above and can never reach this code.
+        decision = assess_sensor_risk(health, features)
+        checks = (validate_additional_checks(features, decision.required_checks)
+                  if decision.required_checks else None)
+        audit.update({"health": health, "policy": asdict(decision),
+                      "additional_checks": checks,
+                      "simulated_extra_cost": decision.simulated_extra_cost})
+        if decision.validation_level == "unavailable":
+            message_results.append({**audit, "sensor": sensor_id,
+                                    "status": "POLICY_UNAVAILABLE", "accepted": False,
+                                    "reason": decision.reason})
+            continue
 
         if not health["healthy"]:
             message_results.append({
+                **audit,
                 "sensor": sensor_id,
                 "status": "SENSOR_FAULT",
                 "accepted": False,
@@ -130,7 +179,14 @@ def process_messages(messages):
             })
             continue
 
+        if (decision.response != "validate" or checks is None or not checks["passed"]):
+            message_results.append({**audit, "sensor": sensor_id,
+                                    "status": "POLICY_REJECTED", "accepted": False,
+                                    "reason": "Policy rejected or required validation failed"})
+            continue
+
         task_id = f"{sensor_id}-{message['sequence']}"
+        accepted_candidates[task_id] = message
 
         verified_tasks.append({
             "task_id": task_id,
@@ -138,11 +194,16 @@ def process_messages(messages):
             "critical": sensor_id in CRITICAL_SENSORS,
             "arrival_time": item["arrival_time"],
             "execution_time": item["execution_time"],
-            "security_overhead": item["security_overhead"],
+            "security_overhead": (item["security_overhead"] + decision.simulated_extra_cost
+                                  + authentication["simulated_handshake_cost"]),
             "deadline": item["deadline"],
         })
 
         message_results.append({
+            **audit,
+            "baseline_security_overhead": item["security_overhead"],
+            "total_security_overhead": (item["security_overhead"] + decision.simulated_extra_cost
+                                        + authentication["simulated_handshake_cost"]),
             "sensor": sensor_id,
             "task_id": task_id,
             "status": "VERIFIED",
@@ -166,13 +227,14 @@ def process_messages(messages):
         for result in schedule["results"]
     }
 
-    # 5. Accept data only when its task was scheduled on time.
+    # Accept data only when its task was scheduled on time.
     for result in message_results:
         if result["status"] != "VERIFIED":
             continue
 
         task_id = result["task_id"]
         scheduled = scheduled_by_id.get(task_id)
+        result["deadline_met"] = scheduled["deadline_met"] if scheduled else None
 
         if scheduled and scheduled["deadline_met"]:
             result["accepted"] = True
@@ -182,20 +244,7 @@ def process_messages(messages):
             )
 
             # Update sensor history only after final acceptance.
-            accepted_message = next(
-                (
-                    item["message"]
-                    for item in messages
-                    if (
-                        item["message"].get("sensor_id") == result["sensor"]
-                        and (
-                            f"{item['message'].get('sensor_id')}-"
-                            f"{item['message'].get('sequence')}"
-                        ) == task_id
-                    )
-                ),
-                None,
-            )
+            accepted_message = accepted_candidates[task_id]
 
             if accepted_message is not None:
                 feature_tracker.commit_reading(accepted_message)
@@ -244,6 +293,7 @@ def process_messages(messages):
         "messages": message_results,
         "schedule": schedule,
         "safety_response": safety_response,
+        "authentication_metrics": dict(message_monitor.sessions.metrics),
     }
 
 
@@ -301,11 +351,12 @@ if __name__ == "__main__":
         },
     ]
 
+    senders = {}
     for item in test_messages:
-        item["mac"] = create_mac(
-            item["message"],
-            SENSOR_KEYS[item["message"]["sensor_id"]],
-        )
+        source = item["message"]["sensor_id"]
+        if source not in senders:
+            senders[source] = authenticate_sender(message_monitor.sessions, source, SENSOR_KEYS[source])
+        item["message"], item["mac"] = senders[source].sign(item["message"])
 
     print("Sensor authentication, ML health, and scheduling test:")
     pprint.pp(process_messages(test_messages))

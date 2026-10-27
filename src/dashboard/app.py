@@ -11,8 +11,7 @@ import pandas as pd
 import streamlit as st
 
 from src.security import sensor_system
-from src.security.message_auth import create_mac
-from src.security.message_monitor import MessageMonitor
+from src.security.source_sessions import authenticate_sender, AuthenticationError
 from src.security.sensor_health import SensorHealthMonitor
 
 st.set_page_config(
@@ -300,16 +299,41 @@ st.header("Live Sensor Security Simulator")
 
 st.write(
     "Submit a sensor message to the existing authentication, "
-    "sensor-health, and deadline-aware scheduling pipeline."
+    "sensor-health, NIST-based risk assessment, and deadline-aware scheduling pipeline."
+)
+st.caption(
+    "Risk assessment: NIST SP 800-30 Rev. 1, §3.2 Task 2-6 / Table I-2. "
+    "Sensor mappings and validation costs are project-defined. All scheduler "
+    "times and overheads are simulated units, not measured milliseconds."
 )
 if st.button("Reset simulation state"):
-    sensor_system.message_monitor = MessageMonitor(
-        sensor_system.SENSOR_KEYS
-    )
+    sensor_system.message_monitor.sessions.reset()
+    st.session_state.pop("sensor_senders", None)
     sensor_system.health_monitor.reset()
     sensor_system.feature_tracker.reset()
     st.success("Simulation state reset.")
     st.rerun()
+
+manager = sensor_system.message_monitor.sessions
+if st.session_state.get("receiver_context") != manager.receiver_context:
+    st.session_state.sensor_senders = {}
+    st.session_state.receiver_context = manager.receiver_context
+senders = st.session_state.setdefault("sensor_senders", {})
+session_source = st.selectbox("Session source", list(sensor_system.SENSOR_KEYS))
+if st.button("Authenticate / reauthenticate source"):
+    try:
+        senders[session_source] = authenticate_sender(
+            manager, session_source, sensor_system.SENSOR_KEYS[session_source])
+        st.success("Source authentication succeeded.")
+    except AuthenticationError:
+        st.error("Source authentication failed. Check revocation and provisioning status.")
+if st.button("Revoke source session"):
+    manager.revoke_session(session_source)
+if st.button("Flag source credential compromise"):
+    manager.revoke_source(session_source)
+st.caption("The first submission authenticates the simulated sensor. Expired or revoked "
+           "sessions require explicit reauthentication; a compromised source requires key rotation. "
+           "Every message still receives MAC and replay verification.")
 
 with st.form("sensor_simulator"):
     selected_sensor = st.selectbox(
@@ -363,14 +387,14 @@ with st.form("sensor_simulator"):
     )
 
     overhead = st.number_input(
-        "Security overhead",
+        "Per-message security overhead (includes MAC verification; simulated units)",
         min_value=0,
         value=1,
         step=1,
     )
 
     deadline = st.number_input(
-        "Relative deadline",
+        "Absolute deadline (simulation units)",
         min_value=1,
         value=10,
         step=1,
@@ -394,8 +418,14 @@ if submitted:
         "distance_m": float(distance),
     }
 
-    key = sensor_system.SENSOR_KEYS[selected_sensor]
-    mac = create_mac(message, key)
+    if selected_sensor not in senders:
+        try:
+            senders[selected_sensor] = authenticate_sender(
+                manager, selected_sensor, sensor_system.SENSOR_KEYS[selected_sensor])
+        except AuthenticationError:
+            st.error("Source authentication failed; no message was submitted.")
+            st.stop()
+    message, mac = senders[selected_sensor].sign(message)
 
     # Prepare the selected simulation scenario.
     if attack == "Tampered message":
@@ -405,7 +435,7 @@ if submitted:
     if attack == "Replay previous message":
         # Submit the same authenticated message twice.
         replay_message = copy.deepcopy(message)
-        replay_mac = create_mac(replay_message, key)
+        replay_mac = mac
 
         messages = [
             {
@@ -454,6 +484,11 @@ if submitted:
             hide_index=True,
         )
 
+        st.subheader("Backend policy and validation audit")
+        for index, decision in enumerate(result["messages"], start=1):
+            with st.expander(f"Message {index}: {decision['sensor']} — {decision['status']}"):
+                st.json(decision)
+
         st.subheader("Scheduling Result")
 
         st.write(f"**Mode:** {result['schedule']['mode']}")
@@ -479,6 +514,12 @@ if submitted:
                 )
             )
 
-    except Exception as error:
-        st.error(f"Could not process the sensor message: {error}")
-        st.exception(error)
+    except Exception:
+        st.error("Message processing unavailable; no acceptance is reported.")
+
+st.subheader("Source sessions and measured authentication overhead")
+st.dataframe(manager.public_status(), hide_index=True)
+st.dataframe([dict(manager.metrics)], hide_index=True)
+st.caption("Counters come from the receiver. *_ns values are measured elapsed processing "
+           "nanoseconds, not scheduler costs. A new session adds 2 simulated units on "
+           "its first verified message; reuse adds no handshake cost.")

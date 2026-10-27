@@ -1,0 +1,96 @@
+{
+  "method": "Alternating paired runs; full proof exchange every message versus session reuse. Both MAC-verify every message and enforce source-wide sequence monotonicity across reauthentication.",
+  "environment": {
+    "python": "3.12.6",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "timer": "perf_counter_ns elapsed; process_time_ns CPU"
+  },
+  "valid_messages_per_repetition": 1000,
+  "attempts_per_repetition": 1100,
+  "repetitions": 10,
+  "warmup_valid_messages_per_mode": 30,
+  "workload_sha256": "2636e4d4563dc4401d6e6f39b058566359beddc4a34a4e48dcfd68b1ab9cf029",
+  "results": {
+    "full_auth_every_message": {
+      "exchange_latency": {
+        "mean_us": 72.84600909090909,
+        "median_us": 70.1,
+        "p95_us": 89.2
+      },
+      "receiver_authentication_latency": {
+        "mean_us": 41.267709090909094,
+        "median_us": 39.6,
+        "p95_us": 49.2
+      },
+      "total_elapsed_ms": 811.8366,
+      "total_cpu_ms": 796.875,
+      "total_receiver_authentication_ms": 453.9448,
+      "accepted_per_repetition": 1000,
+      "accepted_security_violations": 0,
+      "metrics_totals": {
+        "handshake_attempts": 11000,
+        "full_handshakes": 11000,
+        "successful_session_reuses": 0,
+        "failed_authentications": 1000,
+        "mac_verifications": 11000,
+        "replay_rejections": 500,
+        "handshake_processing_ns": 301116700,
+        "message_verification_ns": 152828100
+      },
+      "per_repetition_mean_us": [
+        74.41909090909091,
+        71.22936363636363,
+        71.77418181818183,
+        74.67218181818183,
+        71.17518181818183,
+        71.52009090909091,
+        71.80654545454546,
+        72.92336363636363,
+        76.41927272727273,
+        72.52081818181817
+      ]
+    },
+    "session_reuse": {
+      "exchange_latency": {
+        "mean_us": 23.90723636363636,
+        "median_us": 22.8,
+        "p95_us": 27.5
+      },
+      "receiver_authentication_latency": {
+        "mean_us": 13.416554545454547,
+        "median_us": 12.8,
+        "p95_us": 13.9
+      },
+      "total_elapsed_ms": 271.4673,
+      "total_cpu_ms": 281.25,
+      "total_receiver_authentication_ms": 147.5821,
+      "accepted_per_repetition": 1000,
+      "accepted_security_violations": 0,
+      "metrics_totals": {
+        "handshake_attempts": 30,
+        "full_handshakes": 30,
+        "successful_session_reuses": 9970,
+        "failed_authentications": 1000,
+        "mac_verifications": 11000,
+        "replay_rejections": 500,
+        "handshake_processing_ns": 838300,
+        "message_verification_ns": 146743800
+      },
+      "per_repetition_mean_us": [
+        23.422,
+        23.781909090909092,
+        23.08,
+        23.110454545454544,
+        23.519454545454543,
+        23.161,
+        23.48381818181818,
+        23.024636363636365,
+        26.333909090909092,
+        26.15518181818182
+      ]
+    }
+  },
+  "receiver_overhead_reduction_percent": 67.48897663328228,
+  "exchange_mean_reduction_percent": 67.18113090615434,
+  "limitations": "Local Python simulation, no network/ECU timing or formal guarantees. Nonces/session IDs necessarily differ; semantic payloads and attacks are identical. Receiver timing excludes sender proof/signing; exchange latency includes both. Measurements are not inserted into EDF costs."
+}
