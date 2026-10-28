@@ -1,0 +1,377 @@
+{
+  "architecture": {
+    "input_size": 8,
+    "hidden_size": 32,
+    "layers": 1,
+    "dropout": 0.2
+  },
+  "window_length": 20,
+  "seed": 42,
+  "epochs_limit": 30,
+  "best_epoch": 12,
+  "patience": 5,
+  "batch_size": 256,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "class_weights": [
+    0.6763014197349548,
+    1.9180262088775635
+  ],
+  "threshold": 0.84,
+  "validation_macro_f1": 0.8989179211932798,
+  "history": [
+    {
+      "epoch": 1,
+      "train_weighted_loss": 0.5796694782647219,
+      "validation_unweighted_loss": 0.7762536554640025,
+      "validation_macro_f1": 0.626303543644902,
+      "validation_anomaly_recall": 0.4072625698324022,
+      "threshold": 0.6499999999999999
+    },
+    {
+      "epoch": 2,
+      "train_weighted_loss": 0.47143258131814725,
+      "validation_unweighted_loss": 0.753243810174048,
+      "validation_macro_f1": 0.74910792857779,
+      "validation_anomaly_recall": 0.5603351955307263,
+      "threshold": 0.62
+    },
+    {
+      "epoch": 3,
+      "train_weighted_loss": 0.4321295546762871,
+      "validation_unweighted_loss": 1.0017194129031939,
+      "validation_macro_f1": 0.7585671409606689,
+      "validation_anomaly_recall": 0.5826815642458101,
+      "threshold": 0.8699999999999999
+    },
+    {
+      "epoch": 4,
+      "train_weighted_loss": 0.4002449695359577,
+      "validation_unweighted_loss": 0.5544216902150941,
+      "validation_macro_f1": 0.7998895198443585,
+      "validation_anomaly_recall": 0.7759776536312849,
+      "threshold": 0.5499999999999999
+    },
+    {
+      "epoch": 5,
+      "train_weighted_loss": 0.3687645018552289,
+      "validation_unweighted_loss": 0.9710157048575766,
+      "validation_macro_f1": 0.8087562440520099,
+      "validation_anomaly_recall": 0.8033519553072626,
+      "threshold": 0.8799999999999999
+    },
+    {
+      "epoch": 6,
+      "train_weighted_loss": 0.353322992835081,
+      "validation_unweighted_loss": 0.4832111708178301,
+      "validation_macro_f1": 0.8915203223596515,
+      "validation_anomaly_recall": 0.7821229050279329,
+      "threshold": 0.7999999999999999
+    },
+    {
+      "epoch": 7,
+      "train_weighted_loss": 0.3255396131990534,
+      "validation_unweighted_loss": 0.6891125122089236,
+      "validation_macro_f1": 0.8969980986953432,
+      "validation_anomaly_recall": 0.776536312849162,
+      "threshold": 0.8899999999999999
+    },
+    {
+      "epoch": 8,
+      "train_weighted_loss": 0.33237009190700273,
+      "validation_unweighted_loss": 0.5042368024322387,
+      "validation_macro_f1": 0.8820702508323398,
+      "validation_anomaly_recall": 0.7385474860335196,
+      "threshold": 0.9099999999999999
+    },
+    {
+      "epoch": 9,
+      "train_weighted_loss": 0.3476381064815955,
+      "validation_unweighted_loss": 0.4064142494189526,
+      "validation_macro_f1": 0.841589218640056,
+      "validation_anomaly_recall": 0.7497206703910615,
+      "threshold": 0.74
+    },
+    {
+      "epoch": 10,
+      "train_weighted_loss": 0.3248061500489712,
+      "validation_unweighted_loss": 0.9667986560489966,
+      "validation_macro_f1": 0.8803237414937359,
+      "validation_anomaly_recall": 0.7832402234636872,
+      "threshold": 0.95
+    },
+    {
+      "epoch": 11,
+      "train_weighted_loss": 0.33054036556771305,
+      "validation_unweighted_loss": 0.43842199226657863,
+      "validation_macro_f1": 0.8346068801655242,
+      "validation_anomaly_recall": 0.7128491620111732,
+      "threshold": 0.8899999999999999
+    },
+    {
+      "epoch": 12,
+      "train_weighted_loss": 0.32689763831369806,
+      "validation_unweighted_loss": 0.570061625216496,
+      "validation_macro_f1": 0.8989179211932798,
+      "validation_anomaly_recall": 0.7955307262569833,
+      "threshold": 0.84
+    },
+    {
+      "epoch": 13,
+      "train_weighted_loss": 0.3193868938269037,
+      "validation_unweighted_loss": 0.4062468272616806,
+      "validation_macro_f1": 0.8497011523916115,
+      "validation_anomaly_recall": 0.7005586592178771,
+      "threshold": 0.8799999999999999
+    },
+    {
+      "epoch": 14,
+      "train_weighted_loss": 0.3193106444721872,
+      "validation_unweighted_loss": 0.5200350412665827,
+      "validation_macro_f1": 0.8963135996729256,
+      "validation_anomaly_recall": 0.7910614525139665,
+      "threshold": 0.8499999999999999
+    },
+    {
+      "epoch": 15,
+      "train_weighted_loss": 0.3130968567548376,
+      "validation_unweighted_loss": 0.3335037359686497,
+      "validation_macro_f1": 0.8832254727621961,
+      "validation_anomaly_recall": 0.7396648044692737,
+      "threshold": 0.7799999999999999
+    },
+    {
+      "epoch": 16,
+      "train_weighted_loss": 0.3161960161770835,
+      "validation_unweighted_loss": 0.390487209724275,
+      "validation_macro_f1": 0.8465599633857601,
+      "validation_anomaly_recall": 0.7245810055865922,
+      "threshold": 0.7799999999999999
+    },
+    {
+      "epoch": 17,
+      "train_weighted_loss": 0.3387274517480171,
+      "validation_unweighted_loss": 0.4296386013044101,
+      "validation_macro_f1": 0.8586442385518093,
+      "validation_anomaly_recall": 0.7402234636871509,
+      "threshold": 0.8599999999999999
+    }
+  ],
+  "training_seconds": 20.722054700000058,
+  "format_version": 1,
+  "features": [
+    "Accelerometer1RMS",
+    "Accelerometer2RMS",
+    "Current",
+    "Pressure",
+    "Temperature",
+    "Thermocouple",
+    "Voltage",
+    "Volume Flow RateRMS"
+  ],
+  "classes": [
+    "normal",
+    "anomalous"
+  ],
+  "domain": "SKAB water circulation testbed",
+  "mean": [
+    0.15265387636891592,
+    0.19075239951050885,
+    1.8055461934457964,
+    0.08523650392699113,
+    81.46793173396017,
+    26.99481689712389,
+    229.36648357300885,
+    85.2604173395188
+  ],
+  "scale": [
+    0.13135947164195008,
+    0.14884475215830173,
+    0.7946898431793004,
+    0.2588625974244065,
+    8.821358353416805,
+    2.5799133160238816,
+    10.952848415541691,
+    44.96837438369807
+  ],
+  "dataset_commit": "b2c0d46c2971dcbfe71e26087b6d231998bb91c2",
+  "preprocessing": {
+    "ambiguous_labels": "exclude targets with conflicting duplicate labels; retain context measurements",
+    "commit": "b2c0d46c2971dcbfe71e26087b6d231998bb91c2",
+    "dataset": "SKAB",
+    "features": [
+      "Accelerometer1RMS",
+      "Accelerometer2RMS",
+      "Current",
+      "Pressure",
+      "Temperature",
+      "Thermocouple",
+      "Voltage",
+      "Volume Flow RateRMS"
+    ],
+    "label_mapping": {
+      "0": "normal",
+      "1": "anomalous"
+    },
+    "maximum_step_seconds": 2,
+    "mean": [
+      0.15265387636891592,
+      0.19075239951050885,
+      1.8055461934457964,
+      0.08523650392699113,
+      81.46793173396017,
+      26.99481689712389,
+      229.36648357300885,
+      85.2604173395188
+    ],
+    "missing_values": "reject",
+    "overlap_components": [
+      [
+        "data/anomaly-free/anomaly-free.csv",
+        "data/other/5.csv"
+      ],
+      [
+        "data/other/1.csv"
+      ],
+      [
+        "data/other/10.csv",
+        "data/other/11.csv"
+      ],
+      [
+        "data/other/12.csv",
+        "data/other/13.csv"
+      ],
+      [
+        "data/other/14.csv"
+      ],
+      [
+        "data/other/2.csv",
+        "data/other/3.csv",
+        "data/other/4.csv"
+      ],
+      [
+        "data/other/6.csv"
+      ],
+      [
+        "data/other/7.csv"
+      ],
+      [
+        "data/other/8.csv"
+      ],
+      [
+        "data/other/9.csv"
+      ],
+      [
+        "data/valve1/0.csv"
+      ],
+      [
+        "data/valve1/1.csv"
+      ],
+      [
+        "data/valve1/10.csv"
+      ],
+      [
+        "data/valve1/11.csv"
+      ],
+      [
+        "data/valve1/12.csv"
+      ],
+      [
+        "data/valve1/13.csv"
+      ],
+      [
+        "data/valve1/14.csv"
+      ],
+      [
+        "data/valve1/15.csv"
+      ],
+      [
+        "data/valve1/2.csv"
+      ],
+      [
+        "data/valve1/3.csv"
+      ],
+      [
+        "data/valve1/4.csv"
+      ],
+      [
+        "data/valve1/5.csv"
+      ],
+      [
+        "data/valve1/6.csv"
+      ],
+      [
+        "data/valve1/7.csv"
+      ],
+      [
+        "data/valve1/8.csv"
+      ],
+      [
+        "data/valve1/9.csv"
+      ],
+      [
+        "data/valve2/0.csv"
+      ],
+      [
+        "data/valve2/1.csv"
+      ],
+      [
+        "data/valve2/2.csv"
+      ],
+      [
+        "data/valve2/3.csv"
+      ]
+    ],
+    "resampling": "none; windows count observations, not seconds",
+    "scale": [
+      0.13135947164195008,
+      0.14884475215830173,
+      0.7946898431793004,
+      0.2588625974244065,
+      8.821358353416805,
+      2.5799133160238816,
+      10.952848415541691,
+      44.96837438369807
+    ],
+    "scaler_fit_groups": [
+      "data/anomaly-free/anomaly-free.csv",
+      "data/other/10.csv",
+      "data/other/11.csv",
+      "data/other/12.csv",
+      "data/other/13.csv",
+      "data/other/2.csv",
+      "data/other/3.csv",
+      "data/other/4.csv",
+      "data/other/5.csv",
+      "data/other/6.csv",
+      "data/other/7.csv",
+      "data/other/8.csv",
+      "data/other/9.csv",
+      "data/valve1/0.csv",
+      "data/valve1/1.csv",
+      "data/valve1/11.csv",
+      "data/valve1/13.csv",
+      "data/valve1/14.csv",
+      "data/valve1/2.csv",
+      "data/valve1/4.csv",
+      "data/valve1/5.csv",
+      "data/valve1/6.csv",
+      "data/valve1/7.csv",
+      "data/valve2/1.csv",
+      "data/valve2/2.csv"
+    ],
+    "seed": 42,
+    "stride": 1,
+    "synthetic_augmentation": false,
+    "target": "original anomaly label at window endpoint",
+    "window_length": 64
+  },
+  "torch_version": "2.7.1+cu126",
+  "training_device": "cuda",
+  "split_hashes": {
+    "train": "f59e6d432fa781c2d89c90a7bc9a8333ea31d8276afd93c674200b9b83d657db",
+    "validation": "f65e4201dd8e7eb9a57fd938b13a0b5c12ec3e37533b0069fa87cb36c68eed25",
+    "test": "1161a70f22d4b4f84d9b522c947a18617b60610c5b5485d33dd095dedcefc5b6"
+  },
+  "sha256": "1f8ccf1a8064fc7a7d99666b8285ed0b62ff838859a76c4f43464ff5f3c7a843"
+}

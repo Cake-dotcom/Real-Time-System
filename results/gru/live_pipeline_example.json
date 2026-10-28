@@ -1,0 +1,97 @@
+{
+  "application_processing_ms": 2.0494,
+  "authentication_metrics": {
+    "failed_authentications": 0,
+    "full_handshakes": 1,
+    "handshake_attempts": 1,
+    "handshake_processing_ns": 69300,
+    "mac_verifications": 1,
+    "message_verification_ns": 32400,
+    "replay_rejections": 0,
+    "successful_session_reuses": 0
+  },
+  "messages": [
+    {
+      "accepted": true,
+      "additional_checks": {
+        "checks": {
+          "reading_plausibility": {
+            "passed": true,
+            "reason": "Reading is within the configured physical range."
+          }
+        },
+        "passed": true
+      },
+      "authentication": "passed",
+      "baseline_security_overhead": 1,
+      "deadline_met": true,
+      "health": {
+        "anomaly_score": 0.0016935976454988122,
+        "dataset_prediction": "normal",
+        "healthy": true,
+        "history_length": 19,
+        "inference_ms": 1.8823,
+        "issues": [],
+        "model": "GRU / SKAB",
+        "prediction": "normal",
+        "probabilities": {
+          "anomalous": 0.0016935976454988122,
+          "normal": 0.9983064023545012
+        },
+        "risk_level": "low",
+        "sequence_ready": true,
+        "threshold": 0.84,
+        "window_length": 20
+      },
+      "measured_verification_ns": 32400,
+      "ml_prediction": "normal",
+      "policy": {
+        "evidence": [
+          "health_prediction=normal",
+          "sensor_criticality=1"
+        ],
+        "framework": "NIST SP 800-30 Rev. 1 / project sensor profile v1",
+        "impact": "moderate",
+        "likelihood": "low",
+        "matrix_risk": "low",
+        "reason": "Table I-2: low likelihood and moderate impact yield low risk. No elevated risk evidence was supplied. ",
+        "required_checks": [
+          "reading_plausibility"
+        ],
+        "response": "validate",
+        "risk_level": "low",
+        "simulated_extra_cost": 0.0,
+        "source_section": "Section 3.2 Task 2-6; Appendix I Table I-2 (p. I-1)",
+        "source_url": "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-30r1.pdf",
+        "uncertainty": "Project-defined qualitative proxies; not calibrated probabilities.",
+        "validation_level": "standard"
+      },
+      "reason": "Authenticated, healthy, and processed before deadline",
+      "replay": "passed",
+      "risk_level": "low",
+      "sensor": "SKAB_01",
+      "session_reused": false,
+      "simulated_extra_cost": 0.0,
+      "simulated_handshake_cost": 2.0,
+      "source_authentication": "passed",
+      "status": "NORMAL",
+      "task_id": "SKAB_01-1",
+      "total_security_overhead": 3.0
+    }
+  ],
+  "safety_response": "Normal scheduling",
+  "schedule": {
+    "deferred_sensors": [],
+    "mode": "ALL_SENSORS",
+    "results": [
+      {
+        "deadline": 20,
+        "deadline_met": true,
+        "finish": 6.0,
+        "sensor": "SKAB_01",
+        "start": 0,
+        "task_id": "SKAB_01-1"
+      }
+    ]
+  }
+}

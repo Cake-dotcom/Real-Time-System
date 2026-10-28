@@ -1,0 +1,37 @@
+{
+  "application": {
+    "median_ms": 0.7726,
+    "outcomes": {
+      "NORMAL": 200
+    },
+    "p95_ms": 1.0586849999999988,
+    "protocol": "isolated repeated nominal candidate; trusted commissioning and signing outside timer",
+    "repetitions": 200,
+    "warmup": 20
+  },
+  "cpu_threads": 2,
+  "handshake": {
+    "batch_size": 1,
+    "max_ms": 0.079,
+    "mean_ms": 0.047754000000000005,
+    "median_ms": 0.0471,
+    "p95_ms": 0.050005,
+    "repetitions": 200,
+    "warmup": 20
+  },
+  "message_verification": {
+    "includes": "session lookup, MAC, replay checks; sender signing excluded",
+    "median_ms": 0.0164,
+    "p95_ms": 0.030905,
+    "repetitions": 200,
+    "warmup": 20
+  },
+  "scheduler": {
+    "base_security": 1,
+    "deadline": 20,
+    "execution": 3,
+    "measured_time_conversion": null,
+    "unit": "simulation units"
+  },
+  "window_length": 20
+}

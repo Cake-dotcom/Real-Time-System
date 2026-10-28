@@ -1,18 +1,44 @@
-# Python virtual environment
+# Local Python environments (dependencies are in requirements.txt)
 .venv/
+venv/
+env/
 
-# Python cache
+# Python and test/tool caches
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
 
-# Generated datasets
-data/processed/
+# Local editor and OS state
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
 
-# Trained models
-models/*.pkl
-
-# Environment variables and secrets
+# Local secrets and machine-specific configuration
 .env
+.env.*
+!.env.example
 
 # Streamlit configuration
 .streamlit/secrets.toml
+/.secrets/
+/.credentials/
+
+# Root scratch logs; canonical research logs remain included
+/baseline_tests.log
+/optimization_tests.log
+/streamlit.log
+
+# Keep data/, models/ and results/ eligible for Git: required inference artifacts,
+# reproducible splits, third-party licenses and research evidence live there.

@@ -1,0 +1,38 @@
+[
+  {
+    "path": "src\\dashboard\\__pycache__",
+    "bytes": 62378.0
+  },
+  {
+    "path": "src\\lab\\__pycache__",
+    "bytes": 54383.0
+  },
+  {
+    "path": "src\\ml\\__pycache__",
+    "bytes": 134236.0
+  },
+  {
+    "path": "src\\scheduler\\__pycache__",
+    "bytes": 124494.0
+  },
+  {
+    "path": "src\\security\\__pycache__",
+    "bytes": 69905.0
+  },
+  {
+    "path": "tests\\__pycache__",
+    "bytes": 488630.0
+  },
+  {
+    "path": ".pytest_cache",
+    "bytes": 25637.0
+  },
+  {
+    "path": "baseline_tests.log",
+    "bytes": 346
+  },
+  {
+    "path": "optimization_tests.log",
+    "bytes": 346
+  }
+]

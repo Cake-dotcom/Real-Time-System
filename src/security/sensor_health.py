@@ -10,6 +10,8 @@ MODEL_PATH = Path("models/sensor_health_model.joblib")
 
 
 class SensorHealthMonitor:
+    # Retained vehicle-domain RF baseline. The live system defaults to GRUHealthMonitor.
+    model_name = "Random Forest / vehicle baseline"
     def __init__(self, max_distance_change=MAX_READING_DELTA, model_path=MODEL_PATH):
         self.max_distance_change = max_distance_change
         self.last_distance = {}

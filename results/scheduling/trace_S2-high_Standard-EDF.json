@@ -1,0 +1,879 @@
+{
+  "algorithm": "Standard-EDF",
+  "jobs": [
+    {
+      "job_id": "0:0",
+      "task_id": "0",
+      "release": 0,
+      "deadline": 200,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 8.654037517928415,
+      "state": "failed",
+      "admitted": true,
+      "critical": true,
+      "start": null,
+      "finish": null,
+      "remaining_base": 8.654037517928415,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 0.0,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 0.0,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 0.0,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "1:0",
+      "task_id": "1",
+      "release": 0,
+      "deadline": 171.15642257593598,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 9.629889633608748,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 9.629889633608748,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 0.0,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 0.0,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 0.0,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "2:0",
+      "task_id": "2",
+      "release": 0,
+      "deadline": 100,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 6.470724713770865,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 6.470724713770865,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 0.0,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 0.0,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 0.0,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "3:0",
+      "task_id": "3",
+      "release": 0,
+      "deadline": 93.29213057462415,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 4.387311710460554,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 4.387311710460554,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 0.0,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 0.0,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 0.0,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "2:1",
+      "task_id": "2",
+      "release": 100,
+      "deadline": 200,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 6.470724713770865,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 6.470724713770865,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 100,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 100,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 100,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "3:1",
+      "task_id": "3",
+      "release": 102.08008693676621,
+      "deadline": 195.37221751139037,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 4.387311710460554,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 4.387311710460554,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 102.08008693676621,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 102.08008693676621,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 102.08008693676621,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "1:1",
+      "task_id": "1",
+      "release": 200,
+      "deadline": 371.15642257593595,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 9.629889633608748,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 9.629889633608748,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 200,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 200,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 200,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "2:2",
+      "task_id": "2",
+      "release": 200,
+      "deadline": 300,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 6.470724713770865,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 6.470724713770865,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 200,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 200,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 200,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "3:2",
+      "task_id": "3",
+      "release": 208.4299555091349,
+      "deadline": 301.72208608375905,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 4.387311710460554,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 4.387311710460554,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 208.4299555091349,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 208.4299555091349,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 208.4299555091349,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "0:1",
+      "task_id": "0",
+      "release": 222.32965763784992,
+      "deadline": 422.3296576378499,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 8.654037517928415,
+      "state": "failed",
+      "admitted": true,
+      "critical": true,
+      "start": null,
+      "finish": null,
+      "remaining_base": 8.654037517928415,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 222.32965763784992,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 222.32965763784992,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 222.32965763784992,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "2:3",
+      "task_id": "2",
+      "release": 300,
+      "deadline": 400,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 6.470724713770865,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 6.470724713770865,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 300,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 300,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 300,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "3:3",
+      "task_id": "3",
+      "release": 327.3797067353041,
+      "deadline": 420.67183730992826,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 4.387311710460554,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 4.387311710460554,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 327.3797067353041,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 327.3797067353041,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 327.3797067353041,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    }
+  ],
+  "events": [
+    {
+      "time": 0.0,
+      "event": "release",
+      "job": "0:0",
+      "deadline": 200
+    },
+    {
+      "time": 0.0,
+      "event": "release",
+      "job": "1:0",
+      "deadline": 171.15642257593598
+    },
+    {
+      "time": 0.0,
+      "event": "release",
+      "job": "2:0",
+      "deadline": 100
+    },
+    {
+      "time": 0.0,
+      "event": "release",
+      "job": "3:0",
+      "deadline": 93.29213057462415
+    },
+    {
+      "time": 0.0,
+      "event": "admitted",
+      "job": "0:0",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 0.0,
+      "event": "admitted",
+      "job": "3:0",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 0.0,
+      "event": "admitted",
+      "job": "2:0",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 0.0,
+      "event": "admitted",
+      "job": "1:0",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 0.0,
+      "event": "failed",
+      "job": "3:0",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 0.0,
+      "event": "failed",
+      "job": "2:0",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 0.0,
+      "event": "failed",
+      "job": "1:0",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 0.0,
+      "event": "failed",
+      "job": "0:0",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 0.0,
+      "event": "safe_state",
+      "job": "0:0",
+      "reason": "Protected workload infeasible: No feasible compliant mechanism"
+    },
+    {
+      "time": 100,
+      "event": "release",
+      "job": "2:1",
+      "deadline": 200
+    },
+    {
+      "time": 100,
+      "event": "admitted",
+      "job": "2:1",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 100,
+      "event": "failed",
+      "job": "2:1",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 102.08008693676621,
+      "event": "release",
+      "job": "3:1",
+      "deadline": 195.37221751139037
+    },
+    {
+      "time": 102.08008693676621,
+      "event": "admitted",
+      "job": "3:1",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 102.08008693676621,
+      "event": "failed",
+      "job": "3:1",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 200,
+      "event": "release",
+      "job": "1:1",
+      "deadline": 371.15642257593595
+    },
+    {
+      "time": 200,
+      "event": "release",
+      "job": "2:2",
+      "deadline": 300
+    },
+    {
+      "time": 200,
+      "event": "admitted",
+      "job": "2:2",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 200,
+      "event": "admitted",
+      "job": "1:1",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 200,
+      "event": "failed",
+      "job": "2:2",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 200,
+      "event": "failed",
+      "job": "1:1",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 208.4299555091349,
+      "event": "release",
+      "job": "3:2",
+      "deadline": 301.72208608375905
+    },
+    {
+      "time": 208.4299555091349,
+      "event": "admitted",
+      "job": "3:2",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 208.4299555091349,
+      "event": "failed",
+      "job": "3:2",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 222.32965763784992,
+      "event": "release",
+      "job": "0:1",
+      "deadline": 422.3296576378499
+    },
+    {
+      "time": 222.32965763784992,
+      "event": "admitted",
+      "job": "0:1",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 222.32965763784992,
+      "event": "failed",
+      "job": "0:1",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 222.32965763784992,
+      "event": "safe_state",
+      "job": "0:1",
+      "reason": "Protected workload infeasible: No feasible compliant mechanism"
+    },
+    {
+      "time": 300,
+      "event": "release",
+      "job": "2:3",
+      "deadline": 400
+    },
+    {
+      "time": 300,
+      "event": "admitted",
+      "job": "2:3",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 300,
+      "event": "failed",
+      "job": "2:3",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 327.3797067353041,
+      "event": "release",
+      "job": "3:3",
+      "deadline": 420.67183730992826
+    },
+    {
+      "time": 327.3797067353041,
+      "event": "admitted",
+      "job": "3:3",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 327.3797067353041,
+      "event": "failed",
+      "job": "3:3",
+      "reason": "No feasible compliant mechanism"
+    }
+  ],
+  "timeline": [
+    {
+      "start": 0.0,
+      "end": 100,
+      "job": null,
+      "costs": {}
+    },
+    {
+      "start": 100,
+      "end": 102.08008693676621,
+      "job": null,
+      "costs": {}
+    },
+    {
+      "start": 102.08008693676621,
+      "end": 200,
+      "job": null,
+      "costs": {}
+    },
+    {
+      "start": 200,
+      "end": 208.4299555091349,
+      "job": null,
+      "costs": {}
+    },
+    {
+      "start": 208.4299555091349,
+      "end": 222.32965763784992,
+      "job": null,
+      "costs": {}
+    },
+    {
+      "start": 222.32965763784992,
+      "end": 300,
+      "job": null,
+      "costs": {}
+    },
+    {
+      "start": 300,
+      "end": 327.3797067353041,
+      "job": null,
+      "costs": {}
+    }
+  ],
+  "reservations": [],
+  "risk_history": {
+    "0": [
+      {
+        "time": 0.0,
+        "value": [
+          0.9,
+          3,
+          false
+        ]
+      }
+    ],
+    "1": [
+      {
+        "time": 0.0,
+        "value": [
+          0.9,
+          3,
+          false
+        ]
+      }
+    ],
+    "2": [
+      {
+        "time": 0.0,
+        "value": [
+          0.9,
+          3,
+          false
+        ]
+      }
+    ],
+    "3": [
+      {
+        "time": 0.0,
+        "value": [
+          0.9,
+          3,
+          false
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "released_jobs": 12,
+    "admitted_jobs": 12,
+    "completed_jobs": 0,
+    "critical_jobs": 2,
+    "deadline_misses": 0,
+    "critical_completed_jobs": 0,
+    "critical_rejected_jobs": 0,
+    "critical_failed_jobs": 2,
+    "deadline_miss_ratio": 0.0,
+    "critical_deadline_miss_ratio": 0.0,
+    "admitted_on_time_ratio": 0.0,
+    "released_on_time_ratio": 0.0,
+    "finite_trace_success": false,
+    "response_mean": null,
+    "response_max": null,
+    "response_p95": null,
+    "observation_interval": 400,
+    "simulated_cpu_utilization": 0.0,
+    "idle_time": 400,
+    "cost_categories": {},
+    "security_overhead": 0,
+    "residual_risk_time_integral": 0.0,
+    "mean_residual_risk_while_executing": null,
+    "security_compliance": null,
+    "preemptions": 0,
+    "mechanism_switches": 0,
+    "rejection_ratio": 0.0,
+    "ever_deferred_ratio": 0.0,
+    "overload_events": 0,
+    "overload_recovery_durations": [],
+    "safe_state_events": 2,
+    "failed_jobs": 12,
+    "reservation_utilization": null,
+    "reservation_violations": 0,
+    "simulation_wall_ms": 0.4152,
+    "scheduler_wall_ms": 0.305,
+    "formal_dynamic_schedulability": null
+  },
+  "snapshots": [],
+  "static_analysis": null
+}

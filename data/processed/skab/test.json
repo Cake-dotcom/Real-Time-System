@@ -1,0 +1,37 @@
+[
+  {
+    "file": "other__14.npz",
+    "group": "data/other/14.csv",
+    "rows": 905,
+    "sha256": "05d80bf9e1a156af7e37fc3f73f003edff546b2b726b8e6ba1fa6c87bacd1af3",
+    "windows": 842
+  },
+  {
+    "file": "valve1__10.npz",
+    "group": "data/valve1/10.csv",
+    "rows": 1146,
+    "sha256": "8bf2dd3c9dd10f58e2e670d365774e3472d9572c3eb492b7e62aa34b1c59f80d",
+    "windows": 1083
+  },
+  {
+    "file": "valve1__8.npz",
+    "group": "data/valve1/8.csv",
+    "rows": 1144,
+    "sha256": "068943a9e9e3c464cf529464162033a56efd33e35f79d1ca6fe772c1d1f3bc53",
+    "windows": 1081
+  },
+  {
+    "file": "valve1__9.npz",
+    "group": "data/valve1/9.csv",
+    "rows": 1148,
+    "sha256": "1753530f5813a9748baefcc33979919b0a2700503f6db0afecd0a74c733b5fe6",
+    "windows": 1085
+  },
+  {
+    "file": "valve2__0.npz",
+    "group": "data/valve2/0.csv",
+    "rows": 1125,
+    "sha256": "e53ce99f659d9b1120eb9d41267497803308019781e397633d3c801dce67f575",
+    "windows": 1062
+  }
+]

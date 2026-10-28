@@ -1,0 +1,158 @@
+{
+  "protected_files_unchanged": 313,
+  "syntax_files": 64,
+  "readme_links": "passed",
+  "illustrative_finishes": [
+    2.081,
+    3.142
+  ],
+  "scheduling_checks": [
+    {
+      "seed": 101,
+      "algorithm": "Standard-EDF",
+      "completed": 7
+    },
+    {
+      "seed": 101,
+      "algorithm": "Static-Sec-EDF",
+      "completed": 8
+    },
+    {
+      "seed": 101,
+      "algorithm": "MPS-LP-EDF-structural",
+      "completed": 8
+    },
+    {
+      "seed": 101,
+      "algorithm": "SAEDF-style",
+      "completed": 8
+    },
+    {
+      "seed": 101,
+      "algorithm": "RA-LP-EDF",
+      "completed": 8
+    },
+    {
+      "seed": 101,
+      "algorithm": "RA-LP-EDF-Admission",
+      "completed": 8
+    },
+    {
+      "seed": 101,
+      "algorithm": "RA-LP-EDF-Preemption",
+      "completed": 8
+    },
+    {
+      "seed": 101,
+      "algorithm": "RA-LP-EDF-Optimized",
+      "completed": 8
+    },
+    {
+      "seed": 102,
+      "algorithm": "Standard-EDF",
+      "completed": 6
+    },
+    {
+      "seed": 102,
+      "algorithm": "Static-Sec-EDF",
+      "completed": 6
+    },
+    {
+      "seed": 102,
+      "algorithm": "MPS-LP-EDF-structural",
+      "completed": 6
+    },
+    {
+      "seed": 102,
+      "algorithm": "SAEDF-style",
+      "completed": 6
+    },
+    {
+      "seed": 102,
+      "algorithm": "RA-LP-EDF",
+      "completed": 6
+    },
+    {
+      "seed": 102,
+      "algorithm": "RA-LP-EDF-Admission",
+      "completed": 6
+    },
+    {
+      "seed": 102,
+      "algorithm": "RA-LP-EDF-Preemption",
+      "completed": 6
+    },
+    {
+      "seed": 102,
+      "algorithm": "RA-LP-EDF-Optimized",
+      "completed": 6
+    },
+    {
+      "seed": 103,
+      "algorithm": "Standard-EDF",
+      "completed": 6
+    },
+    {
+      "seed": 103,
+      "algorithm": "Static-Sec-EDF",
+      "completed": 7
+    },
+    {
+      "seed": 103,
+      "algorithm": "MPS-LP-EDF-structural",
+      "completed": 7
+    },
+    {
+      "seed": 103,
+      "algorithm": "SAEDF-style",
+      "completed": 7
+    },
+    {
+      "seed": 103,
+      "algorithm": "RA-LP-EDF",
+      "completed": 7
+    },
+    {
+      "seed": 103,
+      "algorithm": "RA-LP-EDF-Admission",
+      "completed": 7
+    },
+    {
+      "seed": 103,
+      "algorithm": "RA-LP-EDF-Preemption",
+      "completed": 7
+    },
+    {
+      "seed": 103,
+      "algorithm": "RA-LP-EDF-Optimized",
+      "completed": 7
+    }
+  ],
+  "sensor_policy_names": "passed",
+  "login_block_override": "passed",
+  "saved_overload_count": 440,
+  "verified_module_paths": [
+    "src.ml.benchmark_gru_pipeline",
+    "src.ml.benchmark_source_auth",
+    "src.ml.cross_validate_gru",
+    "src.ml.evaluate_gru_sensor_model",
+    "src.ml.evaluate_sensor_model",
+    "src.ml.skab_dataset",
+    "src.ml.train_gru_sensor_model",
+    "src.ml.train_sensor_model",
+    "src.ml.validate_sensor_dataset",
+    "src.scheduler.experiments",
+    "src.security.security_system"
+  ],
+  "verified_script_paths": [
+    "docs/documentation_sources/verify_documentation.py",
+    "scripts/benchmark_optimization.py",
+    "scripts/evaluate_laboratory.py",
+    "scripts/evaluate_optimized_laboratory.py",
+    "scripts/report_optimization.py",
+    "scripts/report_scheduling.py"
+  ],
+  "full_suite": "Not rerun: project environment removed by prior cleanup. Historical 278 passed in 57.09s retained.",
+  "setup": "Source/CLI and prior environment evidence checked; no new clean dependency install or training.",
+  "external_links": "Official SKAB, pinned data, NIST 800-30/800-82, MPS paper, SAEDF paper, PyTorch/scikit-learn opened during source research."
+}

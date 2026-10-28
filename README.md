@@ -1,395 +1,348 @@
 # Security-Aware Real-Time Sensor Scheduling System
 
-A machine-learning-assisted security and scheduling prototype for real-time sensor systems.
+A Python research prototype that combines authenticated sensor messages, sensor-health models and deadline-aware scheduling. Its Streamlit laboratory lets you configure recurring tasks and security events, run the actual backend, and inspect admission decisions, security checks, execution traces and deadline outcomes.
 
-## Overview
+**Scope:** execution is simulated. This is not an RTOS, a certified safety controller, or a guarantee that every critical job meets its deadline under arbitrary overload.
 
-Real-time systems process data from sensors under timing constraints. Unauthenticated, replayed, anomalous, or late messages can reduce the reliability of downstream decisions.
+## Contents
 
-This project combines message authentication, replay protection, rule-based sensor checks, a trained machine-learning model, and deadline-aware task scheduling. A Streamlit dashboard supports dataset analysis and interactive testing of sensor-message scenarios.
+- [Problem statement and objectives](#problem-statement-and-objectives)
+- [Key features](#key-features)
+- [Documentation deliverables](#documentation-deliverables)
+- [Architecture and data flow](#architecture-and-data-flow)
+- [Scheduling algorithms and policies](#scheduling-algorithms-and-policies)
+- [Security pipeline](#security-pipeline)
+- [Machine learning and domain boundaries](#machine-learning-and-domain-boundaries)
+- [Repository structure](#repository-structure)
+- [Prerequisites and installation](#prerequisites-and-installation)
+- [First run](#first-run)
+- [Run the dashboard](#run-the-dashboard)
+- [Tests and verification](#tests-and-verification)
+- [Model training and evaluation](#model-training-and-evaluation)
+- [Scheduling experiments and algorithm comparisons](#scheduling-experiments-and-algorithm-comparisons)
+- [Datasets and reproducible artifacts](#datasets-and-reproducible-artifacts)
+- [Configuration](#configuration)
+- [Metrics and interpretation](#metrics-and-interpretation)
+- [Example execution](#example-execution)
+- [Troubleshooting](#troubleshooting)
+- [Research reproducibility](#research-reproducibility)
+- [Security considerations and research limitations](#security-considerations-and-research-limitations)
+- [Repository size and GitHub preparation](#repository-size-and-github-preparation)
+- [Future work](#future-work)
+- [License and attribution](#license-and-attribution)
 
-The live pipeline now applies **NIST SP 800-30 Rev. 1, §3.2 Task 2-6 and Appendix I Table I-2** to combine project-defined likelihood and impact evidence. OT response context comes from **NIST SP 800-82 Rev. 3 §§4.1.2–4.1.3**. See [the integrated policy](docs/risk_validation_policy.md) and [research/design note](docs/policy_research_note.md) for official URLs, exact sections, assumptions, response choices and limitations. NIST does not prescribe our sensor thresholds, validation costs or EDF algorithm.
+## Problem statement and objectives
 
-> **Scope:** This is an academic simulation prototype. It is not a hard real-time operating-system implementation and is not certified for safety-critical deployment.
+The deadline budget must include authentication, validation and modeled protection overhead. A schedule based only on base computation can appear feasible while required security makes it late. The objectives are to preserve mandatory gates, adapt modeled protection to current risk, prioritize feasible critical work during overload, account for every fixed-point cost, and evaluate against explicit baselines on identical workloads.
 
-## Source authentication and session reuse
+The intended scenario is a research sensor-processing laboratory, not a certified vehicle controller. Water-testbed anomaly detection and legacy login risk remain separate experimental domains.
 
-The receiver now requires a short-lived authenticated source session before accepting any sensor message. A sensor proves possession of its provisioned secret using HMAC-SHA256 over a random challenge bound to its identity and the receiver's boot context. Successful authentication establishes a random session ID and a separately derived message key. Challenges expire after 5 seconds and sessions after 60 seconds, using a monotonic clock.
+## Key features
 
-**Session reuse never skips per-message verification.** Every message MAC covers its source, session ID, sequence and full contents using canonical serialization. The receiver checks session validity, MAC and a strictly increasing source-wide sequence. Replay counters survive reauthentication. Session revocation, source compromise revocation, administrative key rotation, reset/restart rejection and bounded cleanup are implemented. Expired/revoked sessions fail closed; the dashboard supports explicit reauthentication and displays actual receiver state/counters.
+Security verification and health inference consume time; stronger protection and frequent preemption can make a previously feasible workload miss deadlines. This project explores that trade-off while keeping authentication, replay checks and required protection mandatory.
 
-Threat model: an attacker may inject, tamper with, replay or reorder messages; the receiver, clock, provisioned key map and administrative operations are trusted. A stolen sensor secret permits impersonation until source revocation/key rotation. Keys are simulated, state is in memory, and production restart must reload revoked identities. No encryption, forward secrecy, mutual receiver authentication, wire transport or production automotive key management is claimed. The shared-state dashboard is a local demonstration, not an authenticated administration service.
+- Source challenge-response sessions, per-message HMAC-SHA256 integrity, replay rejection, expiry and revocation.
+- Input/timing validation, vehicle Random Forest (RF) health checks and a separate SKAB-domain GRU detector.
+- Risk-derived validation requirements, fail-closed handling and trusted history committed only after successful execution.
+- Periodic, sporadic and one-shot tasks; absolute deadlines; phases and fixed preemption points.
+- Admission, protected-work reservations, overload handling and dynamic risk adaptation.
+- Original and optimized scheduling strategies with actual Gantt traces, event playback, CSV/JSON exports and paired comparisons.
+- Saved datasets, model artifacts, tests, research protocols and reproducible experiment evidence.
 
-The scheduler's per-message `security_overhead` already includes MAC verification. A new session adds **2 simulated units once**, on its first successfully verified message, plus the selected validation cost (0/1/2). Reuse adds zero handshake units, while the MAC check still runs. Measured nanoseconds are reported separately and never inserted into EDF costs. The 2-unit handshake cost is an uncalibrated project parameter. CPU work spent rejecting traffic or checking deferred tasks is not modeled as scheduler demand.
+## Documentation deliverables
 
-See [protocol, lifecycle and methodology](docs/source_authentication.md) and [actual verification results](docs/source_auth_verification.md). These supersede the earlier policy-only timing examples.
+- [Presentation quick reference](docs/Presentation_Quick_Reference.pdf): five-page speaking guide.
+- [Complete technical documentation](docs/Complete_Technical_Documentation.pdf): implementation, policy rules, examples and developer workflow.
+- [Presentation flowchart](docs/Project_Workflow_Flowchart.png) and [editable Mermaid](docs/Project_Workflow_Flowchart.mmd).
+- [Command contracts and verification status](docs/documentation_sources/Command_Reference.md): inputs, outputs, errors and which commands were actually executed.
 
-### Current verification and benchmark
+## Architecture and data flow
 
-**99 tests passed in 16.88 seconds** on 2026-10-27, including session security, accepted-history invariants, all original scenarios, real Streamlit form/lifecycle tests and the repaired legacy login coordinator. No dependencies or model artifacts were changed.
-
-Benchmark: 10 alternating paired repetitions, each with 1,000 valid messages, 50 replays and 50 tampered messages across three sensors. Both approaches use the same payloads, MAC verification and source-wide replay policy. The baseline repeats the new source handshake for every message; it is not the previous bare-HMAC implementation. Warmup is excluded.
-
-| Measured quantity | Full authentication each message | Session reuse |
-|---|---:|---:|
-| Full handshakes | 11,000 | 30 |
-| MAC verifications | 11,000 | 11,000 |
-| Exchange mean / median / p95 (µs) | 72.85 / 70.10 / 89.20 | 23.91 / 22.80 / 27.50 |
-| Receiver mean / median / p95 (µs) | 41.27 / 39.60 / 49.20 | 13.42 / 12.80 / 13.90 |
-| Total measured receiver authentication (ms) | 453.94 | 147.58 |
-| Total measured loop elapsed time (ms) | 811.84 | 271.47 |
-| Accepted injected attacks | 0 | 0 |
-
-Receiver authentication time was **67.49% lower in this run**. This is a local in-process Python measurement, not network/ECU latency or a hard-real-time bound. `perf_counter_ns` measures elapsed time; separate process CPU totals and per-repetition means are saved in `results/source_auth/benchmark.json`.
-
-The 40-message policy comparison uses the same mandatory source/MAC/replay/health gates in all modes. Base EDF / fixed / adaptive accepted 5 / 3 / 4 messages, missed 6 / 7 / 7 scheduled deadlines, deferred 4 / 5 / 4 messages, and accepted **zero mandatory-security violations**. Scheduled total security overhead was 33 / 50 / 43 simulated units. Full counts and denominators are in `results/source_auth/policy_comparison.json`; this toy workload does not establish broad superiority.
-
-Reproduce from the project directory with the existing environment:
-
-```powershell
-.\.venv\Scripts\python.exe -m pytest -v
-.\.venv\Scripts\python.exe -m streamlit run src/dashboard/app.py
-.\.venv\Scripts\python.exe -m src.ml.benchmark_source_auth --messages 1000 --repetitions 10
-.\.venv\Scripts\python.exe -m src.ml.compare_validation_policies
-.\.venv\Scripts\python.exe -m src.ml.evaluate_sensor_model --all-runs --output-dir results/source_auth
-.\.venv\Scripts\python.exe -m src.security.security_system
+```mermaid
+flowchart TD
+    A[Sensor message] --> B[Source session and per-message MAC]
+    B --> C[Replay and input/timing checks]
+    C --> D[Sensor health: RF or GRU]
+    D --> E[Risk assessment and required validation]
+    E --> F[Eligible tasks and admission]
+    F --> G[Deadline-aware scheduling and execution]
+    G --> H{Completed on time?}
+    H -->|Yes| I[Commit trusted history]
+    H -->|No| J[Reject, defer or record safe-state response]
+    B -->|Invalid| J
+    C -->|Invalid| J
+    D -->|Missing or unhealthy evidence| J
+    E -->|Required checks fail| J
 ```
 
-## Objectives
+The laboratory uses `src/lab/simulation.py` and `SecurityRuntime` to call the production pipeline in `src/security/sensor_system.py` before invoking `src/scheduler/ra_lp_edf.py`. Each laboratory run isolates sessions and histories. Dashboard explanations are derived from recorded backend events, not invented schedules.
 
-- Authenticate messages with HMAC-SHA256.
-- Reject tampered, replayed, out-of-order, and unknown-sensor messages.
-- Validate sensor readings and detect sudden changes.
-- Use a Random Forest model to classify readings as `normal`, `anomalous_reading`, or `faulty`.
-- Simulate deadline-aware scheduling while accounting for execution time and security overhead.
-- Defer non-critical tasks when the scheduler enters fallback mode.
-- Avoid committing rejected or deadline-missed readings to accepted-reading history.
-- Visualize dataset, sensor-health, and scheduling results in a dashboard.
+The older live-message panel and legacy login-risk demonstration remain available. Their interfaces and models are retained for compatibility; they are distinct from the recurring-task laboratory.
 
-## Main Features
+## Scheduling algorithms and policies
 
-### Message authentication and replay protection
-
-- Challenge-response source authentication using provisioned demo keys, then HMAC-SHA256 per-message authentication with session-derived keys.
-- Constant-time MAC comparison.
-- Per-sensor sequence tracking to reject duplicate and out-of-order messages.
-
-### Sensor-health monitoring
-
-- Sensor ID and reading-range validation.
-- Rule-based detection of sudden changes in accepted readings.
-- ML predictions for normal, anomalous, and faulty readings.
-- Feature extraction using sensor metadata, sequence changes, message age, reading statistics, and MAC verification status.
-
-### Machine learning
-
-The sensor-health model is trained by `src/ml/train_sensor_model.py` using a Random Forest classifier and a preprocessing pipeline for numeric and categorical features. Evaluation uses a group-based split by `run_id` to reduce leakage between records from the same run.
-
-### Deadline-aware scheduling and fallback
-
-The scheduler in `src/scheduler/scheduler.py` simulates non-preemptive Earliest Deadline First (EDF) scheduling. It considers task arrival time, execution time, security overhead, and deadline.
-
-The pipeline reports scheduling modes including:
-
-- `ALL_SENSORS` — all eligible tasks meet their deadlines.
-- `CRITICAL_ONLY` — critical tasks meet their deadlines while non-critical work is deferred.
-- `CRITICAL_DEADLINE_FAILURE` — critical task deadlines cannot be met.
-- `NO_VALID_TASKS` — no eligible tasks are available.
-
-The system emits a software safety-response message for relevant failure modes. Actual safe-state actuation is not implemented.
-
-### Streamlit dashboard
-
-The dashboard in `src/dashboard/app.py` provides dataset summaries, scenario deadline-miss analysis, sensor-health and authentication summaries, timing statistics, record inspection, and a live simulator for valid, tampered, and replayed messages. The simulator supports resetting its state for repeatable experiments.
-
-## Architecture
-
-```text
-Sensor message
-      |
-      v
-Authenticated source session (challenge-response, expiry/revocation)
-      |
-      v
-HMAC authentication and sequence/replay checks
-      |
-      v
-Input validation and feature extraction
-      |
-      v
-Rule-based sensor checks + ML classification
-      |
-      v
-Likelihood/impact assessment (NIST Table I-2)
-      |
-      v
-Required additional checks + fail-closed policy response
-      |
-      v
-Eligible sensor tasks
-      |
-      v
-Deadline-aware EDF scheduling
-      |
-      +---- Normal scheduling
-      |
-      +---- Critical-only fallback / deadline-failure response
-      |
-      v
-Final acceptance decision and dashboard results
-```
-
-Sensor feature history and health history are committed only after final acceptance. Rejected messages and tasks that miss deadlines should not update accepted-reading history.
-
-Authentication/replay failures exit before policy evaluation. Missing model/evidence prevents acceptance. Healthy messages must pass selected checks and meet their deadline. The dashboard displays the backend decision and per-check audit. Normal critical sensors receive additional validation (1 simulated unit); normal camera readings use standard plausibility checks (0 extra units). All thresholds and 0/1/2 costs are centralized in `src/security/validation_config.py` and are project assumptions. Scheduler deadlines are absolute, and scheduler times are abstract simulation units.
-
-## Technology Stack
-
-| Component | Technology |
+| Mode | Implemented behavior |
 |---|---|
-| Language | Python 3.12 |
-| Machine learning | scikit-learn |
-| Data processing | pandas, NumPy |
-| Model persistence | joblib |
-| Dashboard | Streamlit |
-| Visualization | Matplotlib and Streamlit displays |
-| Message authentication | HMAC-SHA256 |
-| Testing | pytest |
+| Legacy EDF | Non-preemptive sensor-task EDF with critical-only fallback in `src/scheduler/scheduler.py`. |
+| `Standard-EDF` | Fixed-light protection with configurable checkpoint approximation. Rejects requirements it cannot meet. |
+| `Static-Sec-EDF` | Fixed strong protection and checkpoint EDF. |
+| `MPS-LP-EDF-structural` | Structural multi-phase limited-preemption baseline and separate static analysis; not a dynamic-risk guarantee. |
+| `SAEDF-style` | Single-CPU stronger-protection preference; not a reproduction of a distributed-cluster implementation. |
+| `RA-LP-EDF` | Original risk-aware fixed-point EDF, admission, conservative protected budgets and overload handling. Laboratory default. |
+| `RA-LP-EDF-Admission` | Critical-first feasible-subset selection and deferred-job recovery. |
+| `RA-LP-EDF-Preemption` | Avoids an interruption when a complete-current-first bound still meets all released deadlines. |
+| `RA-LP-EDF-Optimized` | Combines subset admission, limited interruption and least-full-cost compliant mechanism selection with event-local budget caching. |
 
-## Project Structure
+A job's absolute deadline is its release plus relative deadline. The release horizon stops new releases; already released jobs drain to terminal outcomes. Admission checks bound remaining released demand, including modeled security and transition costs. Reservations protect selected remaining critical demand, not all future arrivals. Preemption occurs only at configured phase/chunk boundaries and respects caps; atomic security intervals are not interrupted merely to improve a metric.
+
+Risk increases can require stronger protection immediately. An increase inside an under-strength atomic interval triggers safe stop/cleanup. Recovery respects hysteresis and dwell. In overload, work can be deferred or rejected, and infeasible protected work produces an explicit safe-state event. No deadlines or workload budgets are silently changed.
+
+The optimized mode can save deadlines and overhead, but is **not uniformly superior**: optional stronger protection selected by the original policy can survive an unexpected spike that forces least-cost protection to stop. The original remains the default. See [design and reference sections](docs/scheduling_design.md), [optimization methodology and counterexample](docs/scheduler_optimization.md), and [paired results](results/optimization/report.md).
+
+## Security pipeline
+
+1. A sensor proves possession of a provisioned demonstration secret using a random challenge bound to identity and receiver context.
+2. A short-lived session establishes a derived message key. Every message still requires a MAC over its canonical contents.
+3. Session validity and increasing source-wide sequence numbers reject expired, revoked, replayed or reordered messages. Replay counters survive reauthentication.
+4. Input/timing, deterministic sensor checks and the selected ML backend supply required health evidence.
+5. The risk policy selects mandatory additional checks; unavailable evidence fails closed.
+6. Only eligible tasks reach scheduling. Only successfully completed, on-time work updates trusted feature/health history.
+
+The application risk policy adapts **NIST SP 800-30 Rev. 1, section 3.2 Task 2-6 and Appendix I Table I-2**, with OT context from **NIST SP 800-82 Rev. 3, sections 4.1.2–4.1.3**. Sensor thresholds, costs and scheduler rules are project choices, not NIST prescriptions. The scheduling simulator's exposure/impact model is also a configured scenario model, not a calibrated probability of attack. See [policy and official source links](docs/risk_validation_policy.md), [research note](docs/policy_research_note.md) and [session protocol](docs/source_authentication.md).
+
+The sensor validation names are `standard`, `additional`, `enhanced`, `reject` and `unavailable`. They supplement mandatory MAC/replay, not replace it. The scheduler's `light`, `medium`, `strong` names denote modeled cost/protection levels. Legacy login actions (`password`, `password_plus_mfa`, `strong_mfa`, `throttle_and_strong_mfa`, `temporary_block`) are separate action descriptors; an interactive MFA provider is not implemented. See technical Chapters 9-10 for thresholds, checks and costs.
+
+## Machine learning and domain boundaries
+
+| Component | Intended input and output | Artifact |
+|---|---|---|
+| Vehicle RF | Vehicle-message features and distance plausibility; normal, anomalous-reading or faulty classification | `models/sensor_health_model.joblib` |
+| GRU | Ordered windows of eight SKAB physical measurements; binary normal/anomalous classification | `models/gru_sensor_health.pt` plus matching `.json` metadata |
+| SKAB RF comparison | RF refitted to SKAB endpoint features for a same-domain comparison | `models/skab_random_forest.joblib` |
+| Legacy login model | Retained login-risk demonstration | `models/login_risk_model.joblib` |
+
+The production sensor module defaults to GRU; vehicle laboratory presets explicitly select RF. GRU requires signed SKAB features, recording/session context and trusted startup history. It does not convert a vehicle distance into water-process measurements and does not silently fall back to RF when evidence is missing.
+
+**SKAB is a water-circulation testbed, not a vehicle-sensor or authenticated cyberattack dataset.** Its anomaly labels do not establish sensor fault, malicious-source attribution or vehicle-domain accuracy. The saved GRU evaluation uses grouped recordings/overlap controls, training-only scaling, validation-selected threshold and a held-out test. The saved GRU has lower held-out macro-F1 than the refitted SKAB RF despite its smaller inference artifact. See [GRU protocol and limitations](docs/gru_sensor_model.md) and [measured model evaluation](results/gru/evaluation_report.md).
+
+### Model protocol and verified saved results
+
+Vehicle RF uses 300 balanced trees, seed 42, nine numeric/two categorical features and a grouped 25% run holdout. SKAB uses training-only scaling and overlap-group separation: 33,623 training, 4,863 validation and 5,153 test windows. The saved GRU has one layer, hidden size 32, window 20, dropout .2 and threshold .84, selected by validation before the held-out test. Saved GRU accuracy/macro-F1 are .8317/.8143 versus .8413/.8248 for the separate SKAB RF refit; this does not establish vehicle accuracy. The login model's original training/split provenance is not available.
+
+## Repository structure
 
 ```text
-Real time systems project/
+.
 ├── data/
-│   ├── raw/
-│   │   ├── av_sensor_messages.csv
-│   │   └── login_activity.csv              # legacy dataset, if retained
-│   └── processed/
-├── models/
-│   └── sensor_health_model.joblib
-├── results/
-│   ├── deadline_miss_by_scenario.png
-│   └── sensor_model_report.txt
+│   ├── raw/                 # Vehicle/login CSVs and original SKAB files/license
+│   ├── processed/skab/      # Prepared arrays and manifests used by evaluation/tests
+│   ├── skab/                # Source hashes, split/scaler configuration, provenance
+│   └── SKAB_DATASET.md
+├── models/                  # Required RF, GRU and legacy inference artifacts
 ├── src/
-│   ├── dashboard/
-│   │   └── app.py
-│   ├── ml/
-│   │   ├── evaluate_sensor_dataset.py
-│   │   ├── train_sensor_model.py
-│   │   ├── validate_dataset.py             # older/general validator
-│   │   └── validate_sensor_dataset.py
-│   ├── scheduler/
-│   │   └── scheduler.py
-│   └── security/
-│       ├── auth_policy.py                  # legacy login-risk code
-│       ├── message_auth.py
-│       ├── message_monitor.py
-│       ├── risk_engine.py                  # legacy login-risk code
-│       ├── security_system.py               # legacy login-risk code
-│       ├── sensor_features.py
-│       ├── sensor_health.py
-│       └── sensor_system.py
-├── tests/
-│   ├── test_sensor_system.py
-│   └── test_setup.py
-├── .gitignore
-└── README.md
+│   ├── dashboard/           # Streamlit application and comparison panels
+│   ├── lab/                 # Workload validation, real security gates, simulation
+│   ├── scheduler/           # Legacy EDF, RA engine, analysis, costs and metrics
+│   ├── security/            # Sessions, integrity/replay, health and risk validation
+│   └── ml/                  # Data preparation, training, evaluation and benchmarks
+├── tests/                   # Security, models, schedulers and dashboard tests
+├── scripts/                 # Experiment/report runners and repository audit
+├── docs/                    # Design, protocols, traceability and limitations
+├── results/                 # Preserved metrics, full traces and verification evidence
+├── requirements.txt         # Pinned dependencies
+└── .gitignore               # Local environments/caches/secrets; keeps research assets
 ```
 
-`__pycache__`, `.pytest_cache`, and `.venv` are local/generated directories and should normally not be committed. The login-risk scripts and `login_activity.csv` are retained legacy files; the current sensor pipeline uses the sensor-specific scripts listed above.
+## Prerequisites and installation
 
-## Dataset
+Validated with **Python 3.12.6**. Main dependencies are PyTorch, scikit-learn, NumPy, pandas, joblib, Streamlit, Altair, Matplotlib and pytest; use the complete pinned `requirements.txt`. A GPU is not required for saved-model inference. PyTorch installations with CUDA libraries can occupy several GB independently of this repository.
 
-The main dataset is `data/raw/av_sensor_messages.csv`. The current dataset version contains 20,629 records and 31 columns covering sensor readings, sequence information, authentication flags, timing measurements, scheduling outcomes, and labels.
-
-Scenario labels include normal operation, overload, tampering, replay, and sensor fault. Sensor-health labels are `normal`, `anomalous_reading`, and `faulty`. Sensor types in the dataset include LiDAR, radar, camera, GPS, IMU, and ultrasonic. The live simulator currently demonstrates `LIDAR_01`, `RADAR_01`, and `CAMERA_01`.
-
-## Setup
-### 3. Install Dependencies
-
-Install all required Python packages from the repository's `requirements.txt` file:
-
-```powershell
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-```
-
-The `requirements.txt` file contains the Python dependencies used by the project.
-
-## Running the Project
-
-Run the following commands from the project root directory.
-
-### Launch the Dashboard
-
-```powershell
-python -m streamlit run src/dashboard/app.py
-```
-
-Open the local URL displayed in the terminal, usually `http://localhost:8501`.
-
-### Run the Tests
-
-```powershell
-python -m pytest -v
-```
-
-### Train the Sensor-Health Model
-
-```powershell
-python -m src.ml.train_sensor_model
-```
-
-Training generates the model artifact under `models/`. You can skip this step if the pre-trained `models/sensor_health_model.joblib` file is already available.
-
-### Prerequisites
-
-- Python 3.12 or a compatible version
-- pip
-- The project dataset at `data/raw/av_sensor_messages.csv`
-
-### Clone the repository
-
-```bash
-git clone https://github.com/Cake-dotcom/Real-Time-System.git
-cd Real-Time-System
-```
-
-If you already have the project open in VS Code, run the commands below from the project root instead.
-
-### Create and activate a virtual environment (Windows PowerShell)
+Run all commands from the repository root. Create a local environment after cloning:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-```
-
-### Install dependencies
-
-```powershell
 python -m pip install --upgrade pip
-python -m pip install pandas numpy scikit-learn matplotlib streamlit joblib pytest
+python -m pip install -r requirements.txt
+python -m pip check
 ```
 
-## Run the Project
+On Linux/macOS, activate with `source .venv/bin/activate` instead. If PowerShell activation is restricted, invoke `.\.venv\Scripts\python.exe -m ...` directly; changing machine execution policy is not necessary.
 
-Run these commands from the repository root.
+The local environment is intentionally excluded from Git and from the cleaned distribution. Recreating it can increase local disk usage beyond the packaged repository size. The cleanup verification environment's installed versions are recorded in [installed-requirements.txt](results/repository_cleanup/installed-requirements.txt); its CUDA-specific wheel build is provenance, not an instruction to replace the portable root dependency manifest. Fresh installation on every OS/hardware combination is not certified.
 
-### Start the dashboard
+## First run
+
+1. From the project root, create/activate the environment and install `requirements.txt` using the setup commands above.
+2. Confirm the included `models/`, vehicle CSV and prepared SKAB files are present. Acquisition, preparation and retraining are **optional**, not prerequisites when included assets are intact.
+3. Launch the dashboard below. Select **Normal operation**, run the laboratory, inspect actual gate outcomes and job deadlines.
+4. Load **Tampered and replayed** to demonstrate mandatory rejection. Compare original and optimized on an unchanged workload.
+5. Export JSON/CSV from the result tabs. For standalone login output, optionally run `python -m src.security.security_system`; it is a separate legacy simulation.
+
+Every command below is root-relative. The [command ledger](docs/documentation_sources/Command_Reference.md) specifies required inputs, expected outputs, overwrite risks and verification status. Source/CLI verification is not claimed as a new network installation or training run.
+
+## Run the dashboard
 
 ```powershell
 python -m streamlit run src/dashboard/app.py
 ```
 
-Open the local URL printed by Streamlit, usually `http://localhost:8501`.
+Open the localhost URL printed by Streamlit. In **Simulation Setup**, select a preset or edit task templates, release horizon, deadlines, criticality, phases and security events. Use **Run laboratory**, then inspect **Live Simulation**, **Security and Sensor Monitoring**, **Results and Analysis**, and **Algorithm Comparison**.
 
-### Train the sensor-health model
+For the optimized comparison, choose **Compare algorithms**, select `RA-LP-EDF` and `RA-LP-EDF-Optimized`, and run the same configuration. Both actual Gantts and critical/total completion counts appear side by side. The **Tampered and replayed** preset exercises real gates. Exports include workload JSON, complete run JSON and job/event/security CSVs. See [laboratory guide](docs/laboratory.md).
 
-```powershell
-python -m src.ml.train_sensor_model
-```
-
-This trains and saves `models/sensor_health_model.joblib` and writes the model evaluation report to `results/sensor_model_report.txt` (as configured by the training script).
-
-### Validate the sensor dataset
+## Tests and verification
 
 ```powershell
+python -m pytest -q --tb=short
+python -m compileall -q src tests
 python -m src.ml.validate_sensor_dataset
 ```
 
-### Evaluate the dataset
+Tests cover sessions, tamper/replay bypass attempts, missing evidence, trusted history, RF/GRU paths, admission/reservations, exact modeled costs, fixed-point preemption, overload, risk transitions, recurring deadlines and Streamlit UI/backend correspondence. The pre-cleanup implementation passed 278 tests; [cleanup verification](docs/repository_cleanup_report.md) records the actual post-cleanup result and preservation audit.
+
+## Model training and evaluation
+
+The saved artifacts and prepared data are included, so retraining is not required to run the application or tests. Training changes model artifacts and results: do it in a separate checkout or preserve originals first.
 
 ```powershell
-python -m src.ml.evaluate_sensor_dataset
+# Vehicle RF: trains and writes the vehicle model/report
+python -m src.ml.train_sensor_model
+
+# Vehicle RF diagnostics: output to a new directory
+python -m src.ml.evaluate_sensor_model --all-runs --output-dir results/local_rf_evaluation
+
+# SKAB recovery/preparation; unnecessary when included files are intact
+python -m src.ml.skab_dataset acquire
+python -m src.ml.skab_dataset prepare
+
+# GRU candidate training and evaluation
+python -m src.ml.train_gru_sensor_model --epochs 30 --batch-size 256 --lr 0.001 --seed 42
+python -m src.ml.evaluate_gru_sensor_model
+python -m src.ml.cross_validate_gru
+python -m src.ml.benchmark_gru_pipeline
 ```
 
-The evaluation script reports dataset and deadline statistics and generates `results/deadline_miss_by_scenario.png`.
+Acquisition is pinned and verifies original hashes; it refuses conflicting originals. Evaluation refuses to overwrite its existing held-out test report. Some other training/evaluation scripts use fixed output paths, so preserve the recorded experiment directories first. Outputs include model weights/JSON metadata, epoch histories, endpoint predictions, per-class metrics, PR curves and timing JSON. See [detailed commands and protocol](docs/gru_sensor_model.md).
 
-### Run the sensor-system demonstration
+## Scheduling experiments and algorithm comparisons
 
 ```powershell
-python -m src.security.sensor_system
+# Fresh output directory: the existing scheduler experiment runner
+python -m src.scheduler.experiments --full --workers 4 --output results/local_scheduling
+
+# Authenticated presets, comparisons and repeated trials
+python scripts/evaluate_laboratory.py --output results/local_laboratory
+
+# Saved optimization comparison and trace consistency report
+python scripts/report_optimization.py
+
+# Reproduce optimization stages only after preserving their existing directories
+python scripts/benchmark_optimization.py baseline --workers 4 --seeds 20
+python scripts/benchmark_optimization.py optimized --workers 4 --seeds 20
+python scripts/evaluate_optimized_laboratory.py
+
+# Per-message authentication versus session reuse, in a new output file
+python -m src.ml.benchmark_source_auth --messages 1000 --repetitions 10 --output results/local_source_auth.json
 ```
 
-### Run all tests
+The optimization benchmark refuses to overwrite a completed stage. The authenticated optimization evaluator writes to its fixed laboratory output directory; preserve existing evidence before running it. `scripts/report_scheduling.py` analyzes the saved canonical scheduling results. Experiment outputs include exact task sets, seeds, source hashes, policy parameters, raw metrics, full traces, aggregates and paired statistics. The current algorithm registry includes the optimized modes; historical reports retain the algorithm population used when they were produced.
 
-```powershell
-python -m pytest -v
+The saved 20-seed, two-size optimization study reports overload completion improving from **407 to 440 of 543** and critical completion from **116 to 132 of 132**, with no improvement in some other scenarios. These are fixed synthetic workloads, not a universal guarantee. The separate unexpected-spike counterexample shows a critical regression under least-cost protection. [Full results](results/optimization/report.md) and [interpretation](docs/scheduler_optimization.md) preserve both findings.
+
+## Datasets and reproducible artifacts
+
+- `data/raw/av_sensor_messages.csv`: vehicle-message research data used by the dashboard and RF workflow. The recorded evaluation has only four runs; headline accuracy does not establish generalization.
+- `data/raw/login_activity.csv`: 15,000-row supplied legacy login CSV with normal/suspicious/brute_force labels. No official public source URL or redistribution permission is verified; do not assume it is public.
+- `data/raw/skab/`: original [SKAB repository](https://github.com/waico/SKAB) CSVs ([direct pinned data](https://github.com/waico/SKAB/tree/b2c0d46c2971dcbfe71e26087b6d231998bb91c2/data)) and upstream documentation/license, acquired at pinned commit `b2c0d46c2971dcbfe71e26087b6d231998bb91c2`.
+- `data/skab/source_manifest.json`: original URLs, byte sizes and SHA-256 hashes. Prepared split/scaler/manifests are retained in `data/skab/` and `data/processed/skab/`.
+- `models/`: all runtime and comparison artifacts listed above; GRU metadata checks its weight checksum and feature schema on loading.
+- `results/`: historical evidence is retained, including source snapshots and initial/final optimization traces. Do not treat an older result as a measurement of subsequently changed code.
+
+No external download is needed for the included runtime artifacts/data. The acquisition command documents recovery if SKAB originals are lost. See [dataset provenance, grouping and annotation caveats](data/SKAB_DATASET.md). That historical stage document describes its original ignore rules; the current packaging deliberately includes the raw/prepared assets and model weights.
+
+## Configuration
+
+Use dashboard controls for workload time units (`s` or `ms`), horizon, seed, arrivals, deadlines, criticality, phase budgets, mechanisms, preemption limits and timed sensor/security conditions. Exports retain internal milliseconds and the selected display unit.
+
+Developer configuration lives in:
+
+- `src/security/validation_config.py`: sensor bounds and validation assumptions.
+- `src/security/source_sessions.py`: session/challenge lifetime and simulated handshake cost.
+- `src/scheduler/dynamic_risk.py`: thresholds, hysteresis, dwell, freshness and policy switches.
+- `src/scheduler/security_costs.py`: configured mechanism and transition costs.
+- `src/lab/config.py`: validation limits, presets and workload schema.
+
+No production credential environment-variable interface is claimed. `.env*` and `.streamlit/secrets.toml` are ignored as local-secret safeguards; changing them does not by itself provision this prototype.
+
+## Metrics and interpretation
+
+- **On-time completion:** actually completed by absolute deadline divided by all released jobs. Protected-job completion uses all protected releases, including rejected/failed jobs.
+- **Deadline-miss ratio:** deadline-expired outcomes only. Noncompletion additionally includes rejection and fail-stop; inspect both and distinguish never-admitted from admitted failures.
+- **Criticality:** the protected flag includes safety-critical and critical/high tasks; textual criticality statistics are reported separately.
+- **Costs:** base work, mandatory validation, security execution, startup, teardown, switching, preemption, resume and scheduler charges are separate categories.
+- **Residual risk:** configured exposure × impact × (1 − assumed mechanism effectiveness), averaged over modeled executing time; not an empirical attack probability.
+- **Compliance:** executing time meeting current policy requirements divided by modeled executing time; not certification.
+- **Utilization/idle:** modeled CPU occupancy over the observation/drain interval.
+- **Wall time:** measured Python computation/inference time, separate from simulated execution costs. Neither a configured cost nor desktop elapsed timing establishes hardware WCET.
+
+## Example execution
+
+**Saved authenticated trace:** `results/laboratory/normal_operation.json` records `T1:0` passing authentication/replay, with a 4 ms mandatory budget and completion at 416.41 ms simulated time. Only its successful, newer reading commits trusted history. Tampering after signing fails MAC before scheduling; a valid old packet can pass MAC but fail replay.
+
+**Illustrative scheduler-only run:** this deliberately small input does not execute real message gates. With one light interval each, A completes at 2.081 and B at 3.142 simulation units. These are configured-cost calculations, not cryptographic measurements.
+
+```python
+from src.scheduler.model import Task, Phase
+from src.scheduler.experiments import run_algorithm
+
+tasks = [
+    Task("A", (Phase("p", 2),), 10, 3, kind="oneshot"),
+    Task("B", (Phase("p", 1),), 10, 5, kind="oneshot"),
+]
+trace = run_algorithm(tasks, [], "RA-LP-EDF-Optimized", horizon=10)
+print([(j["job_id"], round(j["finish"], 3)) for j in trace["jobs"]])
+# [('A:0', 2.081), ('B:0', 3.142)]
 ```
 
-### Check Python syntax
+Run this from a root-level Python session, or execute `python docs/documentation_sources/verify_documentation.py` for the recorded documentation checks and example trace.
 
-```powershell
-python -m compileall -q src tests
-```
+## Troubleshooting
 
-## Tests
+| Problem | Remedy |
+|---|---|
+| Imports fail after cleanup | Recreate the environment; use its interpreter and pinned manifest. |
+| Missing relative data/model path | Run from repository root; restore included artifacts. |
+| GRU unavailable or history not ready | Check matching metadata/weights, SKAB feature order and trusted source/session/recording context. Never silently switch domains. |
+| Replay/MAC/policy rejection | Inspect audit reasons; fix valid input/session state rather than bypass the gate. |
+| Critical deadline failure | Read cost/blocking/risk events; criticality is not a feasibility guarantee. |
+| Evaluation refuses overwrite | Preserve evidence and use a separate checkout or supported new output directory. |
+| Dashboard cannot bind port | Choose another local port with `--server.port`; confirm required imports. |
 
-The suite includes the original sensor/policy tests, `tests/test_source_sessions.py`, backend integration tests in `tests/test_policy_integration.py`, and Streamlit form tests in `tests/test_dashboard_policy.py`. These exercise source lifecycle, permissive-policy bypass attempts, evidence selection, executed checks, missing evidence, authentication/validation cost-caused misses, history preservation, and dashboard/backend correspondence. See `docs/source_auth_verification.md` for the current run; `docs/policy_verification.md` preserves the earlier policy-only run.
+## Research reproducibility
 
-Re-run the tests after changing code; the result reported here describes the latest run available when this README was prepared and may not reflect future changes.
+Preserve workload seeds, release/risk-event lists, unit conversions, policy/registry parameters, source hashes and model/split metadata. A Git HEAD alone does not identify uncommitted research code; archived source snapshots supplement it. Do not reuse held-out labels for threshold tuning. Frozen historical outputs remain evidence of their original version, not a new benchmark of later code. New experiments should use new directories or isolated checkouts.
 
-## Preliminary Results
+## Security considerations and research limitations
 
-The reported held-out-run model evaluation produced the following results:
+The source contains explicit demonstration keys and an in-memory trusted receiver/session model. It is not a production key store or authenticated administration service. A compromised provisioned secret permits impersonation until revocation/rotation. No encryption, forward secrecy, mutual receiver authentication, network transport security or automotive key-management compliance is claimed. Rejected-message CPU work is not part of simulated scheduler demand. Safe state is a recorded software response, not physical actuation.
 
-| Metric | Result |
-|---|---:|
-| Accuracy | 99.04% |
-| Balanced accuracy | 89.91% |
-| Normal-class F1-score | 1.00 |
-| Anomalous-reading F1-score | 0.98 |
-| Faulty-class F1-score | 0.72 |
+Only load trusted model artifacts: joblib/pickle-based models can execute code during deserialization. Keep this dashboard local; do not expose its administrative controls as a public service without a separate security design.
 
-These are preliminary results from a dataset with only four distinct runs. The `faulty` class is more difficult to detect, so overall accuracy alone is not sufficient to establish model reliability.
+Feasibility is conditional on bounded released demand and current evidence. Future arrivals, sudden threats, domain shift and excessive overload can invalidate it. Small-subset enumeration and larger-workload heuristics do not establish global online optimality. SKAB uses one physical rig and correlated windows; vehicle data has few independent runs. Confidence intervals from synthetic experiments are not deployment guarantees. See the linked design/model documents for the complete assumptions.
 
-The new four-fold leave-one-run-out evaluation shows considerably weaker fault detection on other runs:
+## Repository size and GitHub preparation
 
-| Held-out run | Accuracy | Balanced accuracy | Faulty F1 |
-|---|---:|---:|---:|
-| 0 | 0.9775 | 0.7197 | 0.2302 |
-| 1 | 0.9904 | 0.8991 | 0.7215 |
-| 2 | 0.9807 | 0.7242 | 0.2636 |
-| 3 | 0.9765 | 0.7113 | 0.3125 |
+The cleaned repository includes required data, all models and research evidence. Local environments, bytecode, tool caches, editor state and local secrets are excluded. [Cleanup report](docs/repository_cleanup_report.md) records measured working-tree, intended-commit and clone-size estimates, largest files, retained evidence and verification. The cleanup does not automatically stage, commit, push, migrate to Git LFS or rewrite history. A clone contains committed files only: include the existing untracked project work and newly unignored required assets when preparing the commit.
 
-Run 1 was the original single holdout. Full per-class metrics/confusion matrices are in `results/source_auth/sensor_model_evaluation.json`. The saved artifact agrees with the fresh refit on that reconstructed holdout, but lacks stored split provenance. Accuracy is not evidence of system security or generalization. All evaluation refits stay in memory and preserve the saved model.
+Historical verification/profiling evidence may contain local-path metadata. Review those files before public publication if that metadata is sensitive; the cleanup preserves their bytes rather than altering experimental records. The credential-pattern audit is a heuristic, not proof that all possible secrets have been detected.
 
-The grouped evaluation was reproduced with an in-memory refit, preserving the existing model artifacts. Full per-class metrics, confusion matrix, split IDs and hashes are in `results/policy_evaluation/sensor_model_evaluation.json`. Reproduce it and the small synthetic baseline/fixed/adaptive comparison with:
+## Future work
 
-```powershell
-.\.venv\Scripts\python.exe -m src.ml.evaluate_sensor_model
-.\.venv\Scripts\python.exe -m src.ml.compare_validation_policies
-```
+Measure full execution/rejection costs on target hardware; strengthen durable key lifecycle/transport; collect independent domain-appropriate data; calibrate thresholds; evaluate future-arrival reservations and fairness; integrate a validated physical safe-state controller. These are proposed extensions, not implemented capabilities.
 
-The comparison uses identical signed inputs and the real backend/model. Its results illustrate assumed validation costs; they do not establish real-world security or performance improvements. Rejection CPU work is not modeled. Outcomes grouped by health are model predictions, not independently labeled classes.
+## License and attribution
 
-The dataset evaluation reported 586 deadline misses among 20,629 records (approximately 2.84%). These are dataset-derived statistics, not measured performance guarantees for a production real-time system.
+No root project license is present. This README does not assign one or imply permission to redistribute the original project under a particular license. Choose an appropriate project license before granting reuse rights.
 
-## Limitations
-
-- Scheduling is simulated in Python; this is not a hard real-time operating-system scheduler.
-- The live simulator uses synthetic messages and demonstration keys.
-- The dataset has only four distinct runs, limiting the strength of grouped evaluation.
-- Model performance may not generalize to real-world sensor data.
-- Sensor-specific units and features require further validation before extending the live pipeline to all sensor types.
-- The safe-state response is a software message, not an integrated safety controller.
-- The prototype is not certified or validated for deployment in autonomous vehicles or other safety-critical systems.
-
-## Future Work
-
-- Collect more diverse sensor data and evaluate on additional independent runs.
-- Improve detection of the `faulty` class.
-- Implement and validate sensor-specific feature extraction for GPS, IMU, and ultrasonic data.
-- Compare EDF with alternative real-time scheduling strategies.
-- Measure authentication and inference overhead on representative sensor/ECU hardware; the current benchmark measures local authentication only.
-- Add overload and burst-arrival stress tests.
-- Integrate a validated safe-state interface where appropriate.
-- Add experiment logging and exportable reports.
-
-## Conclusion
-
-This project demonstrates an academic prototype combining cryptographic message authentication, sensor-health classification, and deadline-aware scheduling. It explores how security checks and anomaly detection can affect the processing of real-time sensor tasks and how fallback behavior can respond when timing constraints cannot be satisfied.
-
-The implementation is intended for academic experimentation and further research, not direct deployment in safety-critical environments.
-
-```
+SKAB retains its upstream license in `data/raw/skab/LICENSE` and attribution in [the dataset provenance document](data/SKAB_DATASET.md). The preserved upstream repository declares GPL-3.0; no separate data-specific license was identified in the recorded acquisition. Review applicable upstream terms before public redistribution. This statement does not relicense the project or its other artifacts.

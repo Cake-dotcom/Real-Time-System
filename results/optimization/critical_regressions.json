@@ -1,0 +1,2420 @@
+[
+  {
+    "workload_id": "c9b10b4ec218c9d253ec8290716704ad5262f86cc7e2a381b863a8e435b41a90",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 101,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "91db1c6aa1614b6aa30b585a1e7bddd4ec92c6be7aed99942346fa4cda7b0470",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 101,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "91db1c6aa1614b6aa30b585a1e7bddd4ec92c6be7aed99942346fa4cda7b0470",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 101,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "4eec3a2070e9bd1c139ebb647c867e79077a3c345648fa0717c92a82b4508d57",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 101,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "4eec3a2070e9bd1c139ebb647c867e79077a3c345648fa0717c92a82b4508d57",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 101,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "075adeeb08ffec0dbf5611b1c6575a2d5fba0179bc4aff08a49a19d78a9ad47f",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 101,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "2ca792dbe0bf72d8ae8dc0ecc71e162e1f4767c7d53c20dee64665d58a34c573",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 101,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "2ca792dbe0bf72d8ae8dc0ecc71e162e1f4767c7d53c20dee64665d58a34c573",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 101,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "MPS-LP-EDF-structural",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "f647070d506af3178ae0d106d202e5ed6d2a3fe6afa279ac9713f56035f85710",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 101,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "f647070d506af3178ae0d106d202e5ed6d2a3fe6afa279ac9713f56035f85710",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 101,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "3ea14e2e11e41f0fa538b3d5998116d5ac86d0cdeb7970bc8be29a2f873f7be7",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 101,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "3ea14e2e11e41f0fa538b3d5998116d5ac86d0cdeb7970bc8be29a2f873f7be7",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 101,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "3ea14e2e11e41f0fa538b3d5998116d5ac86d0cdeb7970bc8be29a2f873f7be7",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 101,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "MPS-LP-EDF-structural",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "87ddea7075324ed67158bce7b2a0e5968a679954a3c9da6e66e5649a6d1a51d3",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 101,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 3
+  },
+  {
+    "workload_id": "87ddea7075324ed67158bce7b2a0e5968a679954a3c9da6e66e5649a6d1a51d3",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 101,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 2
+  },
+  {
+    "workload_id": "36531e19b8bee9c2087a72d0e87ce7101c7626b2636fe9d8352fcbcba9bdfe46",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 102,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "3de1f4c026383bd7e5ae9be90de3e9b49a8c5affa56a4432f68ed98329254433",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 102,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "3de1f4c026383bd7e5ae9be90de3e9b49a8c5affa56a4432f68ed98329254433",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 102,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "cbcda9753db90ff4031f642a9b432e7aabca6bcea39019622c4fe901dc31857a",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 102,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "e485acb3ce97326f2757ce2702122fad1c93561f57a437e3be4e6aa9ddc2a495",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 102,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "c7219affd364a0d92a0c5e5c776578824785df16395c6ada593dd34f357c0cb0",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 102,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "4715587f09cc27f2e88906633be5f986b7a6acdcaee94f90611d8b19fbf15d09",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 103,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "35e2d6a92ac68e59a2cdc36b22eeeeea9e8092639d361ba0c7a945749622f7df",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 103,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "35e2d6a92ac68e59a2cdc36b22eeeeea9e8092639d361ba0c7a945749622f7df",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 103,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "f1629128bd7e33cb06cab3658b9a71991b9d7cf44091af398c557ef837ff3c31",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 103,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "f1629128bd7e33cb06cab3658b9a71991b9d7cf44091af398c557ef837ff3c31",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 103,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "75e1f334bd53943db6de90e797ff381f4d6d7daa97f7d39a194a532a65d30659",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 103,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "b1a2afdf02c579b0219f357c1ae56883ef695a943d524bd35cf3ffef15f0a792",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 103,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "b1a2afdf02c579b0219f357c1ae56883ef695a943d524bd35cf3ffef15f0a792",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 103,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "d6705f52897b181fb89373d6df0078ccf50671339213c73a645ecccc763a725c",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 103,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "d6705f52897b181fb89373d6df0078ccf50671339213c73a645ecccc763a725c",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 103,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "7d4b8816f55203424f57d0646bc6f2e58dea00dc48ae3087bb94d3ae2b4b7c57",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 103,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 3,
+    "candidate_critical": 2
+  },
+  {
+    "workload_id": "5f3de2d6ca280651183a35451ab9d263fca2e6115c1f79f129d0140449364654",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 104,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "4a47b0521488b74ce599ed4bb53f7ad412705bac03c1c37398d78e0e9a431185",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 104,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "7141821bc8beef19bb5c3871f51034b3f3e8cd6e650e3478e85a4b5672201fe0",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 104,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "7141821bc8beef19bb5c3871f51034b3f3e8cd6e650e3478e85a4b5672201fe0",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 104,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "5ebe2cd767f2002200e0361535e852cc23d943b29e12a8f04a6560a7653e0de6",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 104,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "56c5dce5e3a81ebde52ccb4144943585ae50d5634b72b16f934e169735d3c90c",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 104,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "56c5dce5e3a81ebde52ccb4144943585ae50d5634b72b16f934e169735d3c90c",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 104,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "b6137a94c41730d7b6617e436c0e31147fdbe30f06bcbe1b6c1941b5a0c97bc3",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 104,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "b6137a94c41730d7b6617e436c0e31147fdbe30f06bcbe1b6c1941b5a0c97bc3",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 104,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "0030e053fa1dad4116390aa47cf81a78acd2dfa90d71b6256696128c16a96fc5",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 104,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "7503b13f0c011b1537de9b7ec1c9731e371680fb77ce209a16dc5b641df56842",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 105,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "63c79f25503c3993beffd09538395c440ee45cb93e378a4378769527c5bf150a",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 105,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "63c79f25503c3993beffd09538395c440ee45cb93e378a4378769527c5bf150a",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 105,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "c02d76fb7cde45cb07c608436bb169aaad78d5b57196975ca9d0bd3bb02b548f",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 105,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "c02d76fb7cde45cb07c608436bb169aaad78d5b57196975ca9d0bd3bb02b548f",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 105,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "49049cdc5995dd452d9d03113d88bd8ca9dd8c87fbae33eac095ce0cb17034c2",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 105,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "967071cd48e14b0612f2685ebe6a91b29b2fdc4dc18951f4993ea7fae135a793",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 105,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 3
+  },
+  {
+    "workload_id": "d3a332d419bdc79fb6f1da8a8beefd52c01669feec36a0d36090381ffce063f6",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 105,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 3
+  },
+  {
+    "workload_id": "d3a332d419bdc79fb6f1da8a8beefd52c01669feec36a0d36090381ffce063f6",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 105,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 2
+  },
+  {
+    "workload_id": "73b424accfe7dcf8f318c37d52086c65185cc0d0f7fa89a15245383351815b8d",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 106,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "8d518ab70512a247be7728e876e571db41b7ddb17c818c83f21e6cb943d87f5e",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 106,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "8d518ab70512a247be7728e876e571db41b7ddb17c818c83f21e6cb943d87f5e",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 106,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "067aeba45040b8ebfd7894378fec993be73fa3fedd19423ff0a3f8475e1b76d0",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 106,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "ac14a837019a7b679fabfd941dcb386c6dc3e977785aebaa237dd056c0ecb8fb",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 106,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "ac14a837019a7b679fabfd941dcb386c6dc3e977785aebaa237dd056c0ecb8fb",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 106,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "cabcac49d01fee6c6753faf44665f72fbb8a22903bb9430b2dc1fa4ea0ac3178",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 106,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "2aaf048ce1a62922d2ac9a9f8917373a2733ef9a0a51be5f0db0cb60f2d609a9",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 106,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "8d3ebd97bf1499f432fdced342e8aef1749d865362ba1c3d5adbb238b380d8e5",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 106,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 3,
+    "candidate_critical": 2
+  },
+  {
+    "workload_id": "8ddfef154e3451c78ea23e9fae45a4037a5921e1855abf016a046cfae05dfc4d",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 107,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "1227f06754f2c5bfab59676476386d4c0880eedaf3fc8a2f38345a773759e35e",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 107,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "1227f06754f2c5bfab59676476386d4c0880eedaf3fc8a2f38345a773759e35e",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 107,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "c35ef718b36a8ef044bb3326fc10f18474bee31aa1c4f94101c0c63dddc18cbd",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 107,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "c35ef718b36a8ef044bb3326fc10f18474bee31aa1c4f94101c0c63dddc18cbd",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 107,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "be5830d9d20c88f79fb48cad41d766e1612de91bd6b79ec1f7bfb6613cfef884",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 107,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "be5830d9d20c88f79fb48cad41d766e1612de91bd6b79ec1f7bfb6613cfef884",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 107,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "306c0b13153344c8dd7f7a1ada6cd08969b3b3918b5aca97d96a75d68e358c4f",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 107,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "04523c637adf73af66a6f9750f02fdbd9e06d2d5b09f2e7b4b95133f456db2c2",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 107,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "04523c637adf73af66a6f9750f02fdbd9e06d2d5b09f2e7b4b95133f456db2c2",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 107,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "dc545890ac37e451a00cb5cb6358f43b82c73cf20fc54c5f5746a85933b03fc1",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 107,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "dc545890ac37e451a00cb5cb6358f43b82c73cf20fc54c5f5746a85933b03fc1",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 107,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "7354bb590e31bdcb98bd16cc49adc82c51c22ff15a46fae2d250297b9db5a4d8",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 107,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "0a819c119b207ee025dd8ab34580056fad779e9c29877f83921a7d4dd57aecb2",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 108,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "bfd600eda43daa22fc752efc1901450bfe5874941d43543cb4d2da28cb235550",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 108,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "fafe4c7a7702addf7d61d81a99e57dc6b3c07bb3777bf70c21edab1b7a926c3c",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 108,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "fafe4c7a7702addf7d61d81a99e57dc6b3c07bb3777bf70c21edab1b7a926c3c",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 108,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "00a7a600a8e02bd8aa99718c7689af30fb00974014f2743cd6093b293e1ffe1b",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 108,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 3,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "23dbcb60a3e184855c65c02ac862b743f6d1ea8c16b8de5f5c6703f68815e2c9",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 108,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 3,
+    "candidate_critical": 2
+  },
+  {
+    "workload_id": "4f6902c6d27175207ccc1553c559b9bae5e2ef23dd97c25a9ff3d5d907de9ee5",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 108,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 3,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "4f6902c6d27175207ccc1553c559b9bae5e2ef23dd97c25a9ff3d5d907de9ee5",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 108,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 3,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "567f5eca908e806e6069c4322e5cbc5053bd5336d4c202ef36248bd4025644f7",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 109,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "5edd5f5f9ee08a4ea0153d186841b8bf7713586fd35833d18fba9673872dfd96",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 109,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "4554845c0be9d81fd5ce647302015cf5107f5e8920cc90e94879a8c9be9af9e0",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 109,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "80c03bf2ec66c8fbb9f0812a8e462d63bd4baae9d79b697a16ff6a1093ab2c53",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 109,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "80c03bf2ec66c8fbb9f0812a8e462d63bd4baae9d79b697a16ff6a1093ab2c53",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 109,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "53dfd71b73df10a238dbe8441e2f51b2f4f686821e37921dbeddca40bbef71df",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 109,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "53dfd71b73df10a238dbe8441e2f51b2f4f686821e37921dbeddca40bbef71df",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 109,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "5aad60c2f1e089b8fec16ef99db6545b022090e69313bcc0fa5f6dfcedafcfbf",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 109,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 3
+  },
+  {
+    "workload_id": "5aad60c2f1e089b8fec16ef99db6545b022090e69313bcc0fa5f6dfcedafcfbf",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 109,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 3
+  },
+  {
+    "workload_id": "5aad60c2f1e089b8fec16ef99db6545b022090e69313bcc0fa5f6dfcedafcfbf",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 109,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "MPS-LP-EDF-structural",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "bc40c0e5341ae9f1393e978009a53946a702777bb56c80f24be00c033a69da71",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 110,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "5ff067ba97d4a23ce1891f5854d18457824f7a815ae57217e689bdd6b700d780",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 110,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "bbe4c0665e5229027342f214748d560b6ca54c68f8d07e8701bbb1efb78e26a2",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 110,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "2d24a7c3b954752a1f80366463dcfb8b0e2fb786b788ae6d127de59b255983a4",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 110,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "afe8caa9c58f277ec053043b3e58c1eb85fbe52fedb8c8a880a0aeaacb794575",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 110,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 3
+  },
+  {
+    "workload_id": "8f3b8f70df825a4afc665a2a04b81e39fca5a9bae93f171a7191fffba01713a4",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 110,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 2
+  },
+  {
+    "workload_id": "8f3b8f70df825a4afc665a2a04b81e39fca5a9bae93f171a7191fffba01713a4",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 110,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "a912e82a75bfec54f8f136306825ce3e81bfd4aee360b13b6a020197db5cf287",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 111,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "06445461f2d49000e710872d1e186608b7ffb74e2a6ea21a11f593f01b2c4022",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 111,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "06445461f2d49000e710872d1e186608b7ffb74e2a6ea21a11f593f01b2c4022",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 111,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "9c826657c889db393f8998e0ed1383c6419b651bf29c67709116da132657b6eb",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 111,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "638eddd60fb73a34fde75130412f5b9c6b4ab4de3bca8ead0cecf20cbe7d4214",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 111,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "638eddd60fb73a34fde75130412f5b9c6b4ab4de3bca8ead0cecf20cbe7d4214",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 111,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "d8ad93688d123f7a48cf4371960179df5f432870707b191e4085f676dae8fac0",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 111,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "46b31a06bdd5b27f4cb532e4e5da08725ae59e08be925416d6bd1d93c2317dfe",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 111,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "dccab35e908fe3922b12ca81a13b89263888c407d21b465ebd9b0aa8645cd9d3",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 111,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "dccab35e908fe3922b12ca81a13b89263888c407d21b465ebd9b0aa8645cd9d3",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 111,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "8807d7244ed317dc2144a1c4e986b29c810a5dfa0b5d4a3aed278e8115143937",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 112,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "bcd0e1d6dc81e0db9f0b00d5e1b636524917126cee48651a50e5b96da3108919",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 112,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "f463fa7e3d33a4b636f82e8734c762de105149fd42d74a578f0c07257ef854fd",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 112,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "2db33a496e37a4b337253df914379c84a134eee6715255a832526d4207aadc21",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 112,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "d8ebc6f938e17502fac53a841f29b7b98526306f8197a45573476fbc66bcde12",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 112,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "7205c3fdc15f7517eddd743c182c04e085367f508bc25f2fc7ab17ca559ad023",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 112,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 3
+  },
+  {
+    "workload_id": "21238e5f15a7d9bb586b6dc20ce893e68b7f73b57274cb26b1079fb11d132f0b",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 113,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "298c0259e4ae5509bc0cde5a2ee5038e47953e48fb7b5b95050b1d647f945ce5",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 113,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "d54ecdf0d4193128bf81fddc475254532ce70ee8763b30a565a644d68e2c5fc9",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 113,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "d54ecdf0d4193128bf81fddc475254532ce70ee8763b30a565a644d68e2c5fc9",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 113,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "25596049a3552201e5c425bcd50a64be20335b0ccfa81c8c4ea9e559ec8ade8b",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 113,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "8f9200411db4a8497abffe3cd7e5538d74fc54af07363dc58f4f2d7f53034f22",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 113,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "e520bec9255596676fa3a07e96e53e47b339ec99f53c7e0901ce0c82be127c96",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 113,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "e520bec9255596676fa3a07e96e53e47b339ec99f53c7e0901ce0c82be127c96",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 113,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "8bb526444376105b77327bff3c3dda8000a891bca482641591c3490e6308d71d",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 114,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "be8ea182879e36f5dcf288af21d0b7c4b3f9377fd64fc536a47d4f741f312384",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 114,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "be8ea182879e36f5dcf288af21d0b7c4b3f9377fd64fc536a47d4f741f312384",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 114,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "4351c20d0f6c76f5021d026ac2fe1a647756844dbd355748203132ad1b557a25",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 114,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "4351c20d0f6c76f5021d026ac2fe1a647756844dbd355748203132ad1b557a25",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 114,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "7b355e6878b6740b0bb5ca53303e72451f1bd42752d92e6d087b1e40e2d2bdc4",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 114,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "7b355e6878b6740b0bb5ca53303e72451f1bd42752d92e6d087b1e40e2d2bdc4",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 114,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "5bfa8d5fa5b43ed10142ea83668fffc15c7843027c1b621a809b982680cb37b3",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 114,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "f23478552f9bcb2154986e64d6af87fd0e882a9c013791ee2374ffcfaaf1c439",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 114,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "bb0810e7f4b13efd6e0173d6c293d297ba18c571e904d0b2bbb6ca47c2810459",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 114,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 3
+  },
+  {
+    "workload_id": "2af5966a9acc802bc49d0ea089589d745437efeb27f34ee46b0b57a27a3ac0be",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 115,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "5c0e02540b37630e3f10cb1b75ea367ab8c81aa7030ab61271423aca43bab510",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 115,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "5c0e02540b37630e3f10cb1b75ea367ab8c81aa7030ab61271423aca43bab510",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 115,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "a0ca3df94bea76ca86d7082252fe0f10ada2faaa3ece5c88bbad866fab912d48",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 115,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "a0ca3df94bea76ca86d7082252fe0f10ada2faaa3ece5c88bbad866fab912d48",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 115,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "5995a971e5743661074a35923922f858c002b20232c3f66366e3d0d7a88938da",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 115,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "5995a971e5743661074a35923922f858c002b20232c3f66366e3d0d7a88938da",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 115,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "c2d489423eb3bb94b428df77307e3a4f0c046e18549e3da93f0742316b43948d",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 115,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "d70016cee6995ca39529df54f1aa98482159aae2bd5a6b49be284f592a73467c",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 115,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 3
+  },
+  {
+    "workload_id": "6797758395185a827e09ab7a8f1d5bc83605730af5e95eb9b1356a2b86f1bcdf",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 115,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 3
+  },
+  {
+    "workload_id": "6797758395185a827e09ab7a8f1d5bc83605730af5e95eb9b1356a2b86f1bcdf",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 115,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 2
+  },
+  {
+    "workload_id": "2c6f3d6f08370e6606961d19ee35d6002d705847767e39315c46b575c8a0afc7",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 116,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "c0dd3ae0ded837df57713a4f2e03fc9b89a8cb6d1f2c338e8372a978a44b773e",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 116,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "c0dd3ae0ded837df57713a4f2e03fc9b89a8cb6d1f2c338e8372a978a44b773e",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 116,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "62abad126b59e1d1a2bb72ed47c8e63c414e6ecc14e6b638d16c470c5c3219a6",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 116,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "26bdd591a56f7edd1c253ec1eec85abc6ab9274fccb735a854136652c498466c",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 116,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 3
+  },
+  {
+    "workload_id": "e90c4a90a08fc839aa5a6f25694b9ca597a3a7203bdc745ed0a9e3c129919bfb",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 116,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "e90c4a90a08fc839aa5a6f25694b9ca597a3a7203bdc745ed0a9e3c129919bfb",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 116,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 4,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "4fbe82d037a86785a9091594eb9150338102571f797c2d341f879de1983c5257",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 117,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "aedf25dbcb0ae88c1fc55fda99de6bfea1f73bd10bc6b229b3eacf0533b59cbf",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 117,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "aedf25dbcb0ae88c1fc55fda99de6bfea1f73bd10bc6b229b3eacf0533b59cbf",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 117,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "f58762c3345bcc7452114e7a80f22959d49d54bcf2400febaf32423d79e2a6f3",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 117,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "27a9b919f2e25260e2c133b3cc935ac4c91e8c0c8a90b6ed7b0f0efd618be37d",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 117,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "27a9b919f2e25260e2c133b3cc935ac4c91e8c0c8a90b6ed7b0f0efd618be37d",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 117,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "4ebec9fca7e35ba46b70504f75d56cb367478ec33c3eb3c0bc2d5ec02806598b",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 117,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "6bb6f8d682ab000324b225ff698c2cdee98721d557f47355e6c696006aedc781",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 117,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "50a5af48904e00be8515c394fdc5220cfb58d69b1dacb24f327524d3167fb2e1",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 117,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 5
+  },
+  {
+    "workload_id": "50a5af48904e00be8515c394fdc5220cfb58d69b1dacb24f327524d3167fb2e1",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 117,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 6,
+    "candidate_critical": 3
+  },
+  {
+    "workload_id": "368cfe201dd654edce5ce16537aff6fda4f20ca2b5ddfdfeb63df382a82b82c2",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 118,
+      "scenario": "S1-low",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "32d16ebb22a8430a6daf1e2a9e390655714409534f7eba29ad35f915ca04e18b",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 118,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "32d16ebb22a8430a6daf1e2a9e390655714409534f7eba29ad35f915ca04e18b",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 118,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "2381f6d3990456fd006c4760e001c521a3e8b14c68b3398cafe147707aaba754",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 118,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "2381f6d3990456fd006c4760e001c521a3e8b14c68b3398cafe147707aaba754",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 118,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 2,
+    "candidate_critical": 1
+  },
+  {
+    "workload_id": "07b5b55a90a5240286ffb321ff19b780a5e7aa511d15dc9780cb94d2b065a03f",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 118,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "77e16cfe71698a056706e120e7ff5e66407c52f092680bee4991182a4de95604",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 118,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "1ff0236e80cddca741a5ac60d4ee592433ac08502e6efb9d1fc0f8f9ab2ca0c3",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 118,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "38cbe5615fd2d25a4e1e583fcea7a399cb9b3deb951d03bbcef4955fb95c5564",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 118,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 3
+  },
+  {
+    "workload_id": "38cbe5615fd2d25a4e1e583fcea7a399cb9b3deb951d03bbcef4955fb95c5564",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 118,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 2
+  },
+  {
+    "workload_id": "c8efc636a0607be1db5ed2d0053321f913d41ba31f13caa8ddab2a2ff2c54794",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 119,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "b8b976223ff53181efac917139bd2ac07c5a848e77453127858a52aa4f695c93",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 119,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "b8b976223ff53181efac917139bd2ac07c5a848e77453127858a52aa4f695c93",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 119,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "d58e3115b582e5deb0581e3a8f92d35dc4ebbd617b9505119ad2a095bb59e652",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 119,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "43de02a20994c1d797af96636d8d6c0ad6e69280e12f3fe2904e1169c4c0d0ac",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 119,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "f7f55a2fb517924b437ba96794e3741d9efbc8c15d6c18a6a52286601403eb92",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 119,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "f7f55a2fb517924b437ba96794e3741d9efbc8c15d6c18a6a52286601403eb92",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 119,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 2
+  },
+  {
+    "workload_id": "f7f55a2fb517924b437ba96794e3741d9efbc8c15d6c18a6a52286601403eb92",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 119,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "MPS-LP-EDF-structural",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "ff3e57ceed35273405e09f9c56ecafd04f174af9a545b17dc53e9b4ad79f05b9",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 120,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "6163f9797196a1feb35a0051a3ea44a73a1419bb4aae708f4b31b2d129f2c502",
+    "config": {
+      "n": 4,
+      "utilization": 0.85,
+      "seed": 120,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "9f41adc26e642029d55d8214f79229a2c110b990856acd0f2d790ce58e245b14",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 120,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "9f41adc26e642029d55d8214f79229a2c110b990856acd0f2d790ce58e245b14",
+    "config": {
+      "n": 4,
+      "utilization": 0.95,
+      "seed": 120,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 1,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "16f92d50ba43e91d8fd19a37dabae7200be5daf2807844d9ac86bfaee163e8e6",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 120,
+      "scenario": "S2-high",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 0
+  },
+  {
+    "workload_id": "e614f8ed6507cf7a9a2bfe5ca32e6b6059b5034cb7b161e154c9dc28aa0cbc17",
+    "config": {
+      "n": 12,
+      "utilization": 0.85,
+      "seed": 120,
+      "scenario": "S4-spike",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "7be27bb14170c0430e731580a0a25b054393307d17a0c2d49347590b80e52c72",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 120,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Standard-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 4
+  },
+  {
+    "workload_id": "7be27bb14170c0430e731580a0a25b054393307d17a0c2d49347590b80e52c72",
+    "config": {
+      "n": 12,
+      "utilization": 0.95,
+      "seed": 120,
+      "scenario": "S7-overload",
+      "horizon": 200
+    },
+    "algorithm": "Static-Sec-EDF",
+    "baseline_critical": 5,
+    "candidate_critical": 3
+  }
+]

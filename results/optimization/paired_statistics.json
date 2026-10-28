@@ -1,0 +1,2162 @@
+[
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "Standard-EDF",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "Standard-EDF",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "Standard-EDF",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "Standard-EDF",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": -5.7223265913541015,
+    "std": 2.5397738451054406,
+    "ci95_normal": [
+      -6.835431556519931,
+      -4.609221626188272
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "Standard-EDF",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": 0.1,
+    "std": 0.26157418189029846,
+    "ci95_normal": [
+      -0.014639939765657944,
+      0.21463993976565796
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "Standard-EDF",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": 67.1679625,
+    "std": 66.68910101095364,
+    "ci95_normal": [
+      37.94017530910692,
+      96.39574969089308
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 30.471523495660477,
+    "std": 2.680086908695131,
+    "ci95_normal": [
+      29.29692361902436,
+      31.646123372296596
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": 0.25,
+    "std": 0.44426165831931924,
+    "ci95_normal": [
+      0.05529374351143859,
+      0.44470625648856144
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": 62.420145,
+    "std": 38.72903273311386,
+    "ci95_normal": [
+      45.44639802076482,
+      79.39389197923518
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 13.63552349566106,
+    "std": 1.5432591099097641,
+    "ci95_normal": [
+      12.959160369436866,
+      14.311886621885254
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.025,
+    "std": 0.19701723141310307,
+    "ci95_normal": [
+      -0.11134660874698704,
+      0.061346608746987046
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -30.3401425,
+    "std": 12.126401528681509,
+    "ci95_normal": [
+      -35.65477229555549,
+      -25.025512704444512
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -21.9606475,
+    "std": 9.784875167149755,
+    "ci95_normal": [
+      -26.24905812091891,
+      -17.67223687908109
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": -0.011000000000001009,
+    "std": 0.013726654823066304,
+    "ci95_normal": [
+      -0.017015971724459122,
+      -0.0049840282755428955
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.275,
+    "std": 0.34316637057662985,
+    "ci95_normal": [
+      -0.4253992931114407,
+      -0.12460070688855934
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -23.75405,
+    "std": 8.9595335687306,
+    "ci95_normal": [
+      -27.68073871684909,
+      -19.82736128315091
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": -8.879326591353893,
+    "std": 2.3690204842963865,
+    "ci95_normal": [
+      -9.917595596577227,
+      -7.8410575861305585
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.275,
+    "std": 0.34316637057662985,
+    "ci95_normal": [
+      -0.4253992931114407,
+      -0.12460070688855934
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.5",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -20.5989625,
+    "std": 11.110587056341625,
+    "ci95_normal": [
+      -25.468391973870194,
+      -15.729533026129804
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": -0.4870170256977883,
+    "std": 2.505516497611328,
+    "ci95_normal": [
+      -1.5851080463493876,
+      0.6110739949538109
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": 0.05,
+    "std": 0.15389675281277312,
+    "ci95_normal": [
+      -0.01744822575794515,
+      0.11744822575794515
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": 201.6033125,
+    "std": 63.820447914548915,
+    "ci95_normal": [
+      173.63276796128244,
+      229.57385703871753
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": -0.13304182759366837,
+    "std": 0.06878313945206152,
+    "ci95_normal": [
+      -0.16318736759571717,
+      -0.10289628759161956
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": -0.425,
+    "std": 0.46665100224336475,
+    "ci95_normal": [
+      -0.6295188191057758,
+      -0.2204811808942242
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": -1.4,
+    "std": 0.7362779795416231,
+    "ci95_normal": [
+      -1.7226880520678884,
+      -1.0773119479321114
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 55.563880317970906,
+    "std": 5.126395763883422,
+    "ci95_normal": [
+      53.31713831407929,
+      57.810622321862525
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.425,
+    "std": 0.33541019662496846,
+    "ci95_normal": [
+      -0.572,
+      -0.278
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": 245.8188175,
+    "std": 70.33540285876529,
+    "ci95_normal": [
+      214.99296806466168,
+      276.6446669353383
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": -0.014523809523809522,
+    "std": 0.03263591938763433,
+    "ci95_normal": [
+      -0.02882713183856444,
+      -0.00022048720905460534
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": -0.025,
+    "std": 0.11180339887498948,
+    "ci95_normal": [
+      -0.074,
+      0.023999999999999994
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": -0.1,
+    "std": 0.20519567041703082,
+    "ci95_normal": [
+      -0.1899309676772602,
+      -0.010069032322739799
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 29.233468161322428,
+    "std": 3.0483946094705647,
+    "ci95_normal": [
+      27.897450317794487,
+      30.56948600485037
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.375,
+    "std": 0.31933318682925255,
+    "ci95_normal": [
+      -0.5149539397914824,
+      -0.23504606020851754
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -27.528425000000002,
+    "std": 13.160980125800302,
+    "ci95_normal": [
+      -33.29647885751539,
+      -21.760371142484615
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -30.0017325,
+    "std": 11.328182271363321,
+    "ci95_normal": [
+      -34.966527281574166,
+      -25.036937718425833
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": -0.021999999999992782,
+    "std": 0.015761378513043593,
+    "ci95_normal": [
+      -0.028907728699749707,
+      -0.015092271300235858
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.55,
+    "std": 0.39403446282620613,
+    "ci95_normal": [
+      -0.7226932174939742,
+      -0.37730678250602595
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -33.469145,
+    "std": 11.107900171628678,
+    "ci95_normal": [
+      -38.337396894724485,
+      -28.60089310527551
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": -6.324017025697203,
+    "std": 2.2823664358419515,
+    "ci95_normal": [
+      -7.32430821971808,
+      -5.323725831676326
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.55,
+    "std": 0.39403446282620613,
+    "ci95_normal": [
+      -0.7226932174939742,
+      -0.37730678250602595
+    ]
+  },
+  {
+    "scenario": "S1-low/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -25.41058,
+    "std": 11.880128362648275,
+    "ci95_normal": [
+      -30.617275821659742,
+      -20.203884178340257
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": -0.9854761904761905,
+    "std": 0.03263591938763431,
+    "ci95_normal": [
+      -0.9997795127909455,
+      -0.9711728681614356
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": -3.275,
+    "std": 0.44352060416150846,
+    "ci95_normal": [
+      -3.469381475184074,
+      -3.0806185248159257
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": -13.475,
+    "std": 1.129450262179279,
+    "ci95_normal": [
+      -13.970003402433814,
+      -12.979996597566185
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": -41.78579163672306,
+    "std": 1.6888777997462443,
+    "ci95_normal": [
+      -42.52597496764395,
+      -41.045608305802176
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.175,
+    "std": 0.24468024246479644,
+    "ci95_normal": [
+      -0.28223584436087346,
+      -0.06776415563912655
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -31.3653925,
+    "std": 7.717322619349602,
+    "ci95_normal": [
+      -34.74765826430784,
+      -27.98312673569216
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": -0.11851801806985884,
+    "std": 0.0625010088496127,
+    "ci95_normal": [
+      -0.14591029294206864,
+      -0.09112574319764906
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": -0.4,
+    "std": 0.41675437673324534,
+    "ci95_normal": [
+      -0.5826506587940343,
+      -0.21734934120596575
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": -1.3,
+    "std": 0.6569466853317864,
+    "ci95_normal": [
+      -1.5879195794150276,
+      -1.0120804205849725
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 26.330412156648478,
+    "std": 2.5246940533244286,
+    "ci95_normal": [
+      25.22391620162639,
+      27.436908111670565
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.05,
+    "std": 0.22360679774997896,
+    "ci95_normal": [
+      -0.148,
+      0.04799999999999999
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": 266.0998425,
+    "std": 63.63239704505724,
+    "ci95_normal": [
+      238.21171488865508,
+      293.98797011134496
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": 7.600965,
+    "std": 8.672159264021426,
+    "ci95_normal": [
+      3.8002236252929356,
+      11.401706374707064
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0011904761904761919,
+    "std": 0.005323971374999505,
+    "ci95_normal": [
+      -0.0011428571428571438,
+      0.0035238095238095276
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.025,
+    "std": 0.11180339887498948,
+    "ci95_normal": [
+      -0.023999999999999994,
+      0.074
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.025,
+    "std": 0.11180339887498948,
+    "ci95_normal": [
+      -0.023999999999999994,
+      0.074
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 0.046653125459612,
+    "std": 0.2086391197810371,
+    "ci95_normal": [
+      -0.04478700044122751,
+      0.1380932513604515
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": 0.05,
+    "std": 0.22360679774997896,
+    "ci95_normal": [
+      -0.04799999999999999,
+      0.148
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -5.816585,
+    "std": 5.871026102957239,
+    "ci95_normal": [
+      -8.38967563892206,
+      -3.243494361077939
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": -0.0070000000000003835,
+    "std": 0.009787209698592394,
+    "ci95_normal": [
+      -0.011289433774435555,
+      -0.002710566225565211
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.175,
+    "std": 0.24468024246479644,
+    "ci95_normal": [
+      -0.28223584436087346,
+      -0.06776415563912655
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -10.09746,
+    "std": 6.76013382977539,
+    "ci95_normal": [
+      -13.060219280953257,
+      -7.134700719046743
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0011904761904761919,
+    "std": 0.005323971374999505,
+    "ci95_normal": [
+      -0.0011428571428571438,
+      0.0035238095238095276
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.025,
+    "std": 0.11180339887498948,
+    "ci95_normal": [
+      -0.023999999999999994,
+      0.074
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.025,
+    "std": 0.11180339887498948,
+    "ci95_normal": [
+      -0.023999999999999994,
+      0.074
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 0.03865312545961217,
+    "std": 0.20604060196916726,
+    "ci95_normal": [
+      -0.05164814979748269,
+      0.12895440071670702
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.15,
+    "std": 0.2856202852887397,
+    "ci95_normal": [
+      -0.27517860923706694,
+      -0.02482139076293302
+    ]
+  },
+  {
+    "scenario": "S2-high/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": 4.4415949999999995,
+    "std": 9.46495850172875,
+    "ci95_normal": [
+      0.29339403964031074,
+      8.589795960359687
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": -0.09458098911154504,
+    "std": 0.03518766642548075,
+    "ci95_normal": [
+      -0.11000266387454959,
+      -0.0791593143485405
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": -0.975,
+    "std": 0.2552088927670202,
+    "ci95_normal": [
+      -1.0868502288071442,
+      -0.8631497711928557
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": -0.975,
+    "std": 0.2552088927670202,
+    "ci95_normal": [
+      -1.0868502288071442,
+      -0.8631497711928557
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": -4.945413287321393,
+    "std": 2.7755774461419978,
+    "ci95_normal": [
+      -6.161863737213591,
+      -3.7289628374291945
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": 0.05,
+    "std": 0.27625312572654126,
+    "ci95_normal": [
+      -0.07107327055178307,
+      0.17107327055178306
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "Standard-EDF",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": 184.9248175,
+    "std": 60.10844407585841,
+    "ci95_normal": [
+      158.58113037282865,
+      211.26850462717132
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": -0.10119658949843026,
+    "std": 0.0852929029420011,
+    "ci95_normal": [
+      -0.1385778523778451,
+      -0.06381532661901543
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": -0.2,
+    "std": 0.6155870112510925,
+    "ci95_normal": [
+      -0.4697929030317806,
+      0.0697929030317806
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": -1.175,
+    "std": 0.8155559937535671,
+    "ci95_normal": [
+      -1.5324331737321124,
+      -0.8175668262678876
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 52.59319618038684,
+    "std": 5.315467333506318,
+    "ci95_normal": [
+      50.263589907566505,
+      54.922802453207176
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.4,
+    "std": 0.34792618696922967,
+    "ci95_normal": [
+      -0.5524853746222378,
+      -0.24751462537776223
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": 260.5406575,
+    "std": 60.866936910784226,
+    "ci95_normal": [
+      233.8645462311179,
+      287.2167687688821
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.017321428571428578,
+    "std": 0.051265790897890226,
+    "ci95_normal": [
+      -0.0051467949286940345,
+      0.03978965207155119
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.2,
+    "std": 0.2991215208080594,
+    "ci95_normal": [
+      0.06890421340425204,
+      0.331095786595748
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.125,
+    "std": 0.35817519970568945,
+    "ci95_normal": [
+      -0.031977202501710905,
+      0.2819772025017109
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 26.262784023738366,
+    "std": 3.347752293420904,
+    "ci95_normal": [
+      24.795566890554053,
+      27.73000115692268
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.35,
+    "std": 0.2856202852887397,
+    "ci95_normal": [
+      -0.47517860923706695,
+      -0.224821390762933
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -22.70114,
+    "std": 21.47799938714277,
+    "ci95_normal": [
+      -32.11428826346861,
+      -13.287991736531389
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -26.9399725,
+    "std": 12.900318934730125,
+    "ci95_normal": [
+      -32.59378655361891,
+      -21.28615844638109
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": -0.0209999999999944,
+    "std": 0.01518309309031958,
+    "ci95_normal": [
+      -0.02765428393869214,
+      -0.014345716061296664
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.525,
+    "std": 0.3795773272581241,
+    "ci95_normal": [
+      -0.6913570984675025,
+      -0.35864290153249756
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -33.58645,
+    "std": 14.493590859020555,
+    "ci95_normal": [
+      -39.93854626217255,
+      -27.23435373782745
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": -5.917728819990945,
+    "std": 2.1352505085481486,
+    "ci95_normal": [
+      -6.853543616067458,
+      -4.981914023914432
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.525,
+    "std": 0.3795773272581241,
+    "ci95_normal": [
+      -0.6913570984675025,
+      -0.35864290153249756
+    ]
+  },
+  {
+    "scenario": "S4-spike/U=0.85",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -25.991295,
+    "std": 14.820368186996285,
+    "ci95_normal": [
+      -32.48660774066901,
+      -19.495982259330994
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "Standard-EDF",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": -0.14904726407586819,
+    "std": 0.08321856446297585,
+    "ci95_normal": [
+      -0.18551940803318398,
+      -0.11257512011855239
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "Standard-EDF",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": -0.9,
+    "std": 0.4472135954999579,
+    "ci95_normal": [
+      -1.096,
+      -0.7040000000000001
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "Standard-EDF",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": -1.7,
+    "std": 1.0052493799000692,
+    "ci95_normal": [
+      -2.140569965768029,
+      -1.259430034231971
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "Standard-EDF",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 5.189654707859792,
+    "std": 1.5216599070385437,
+    "ci95_normal": [
+      4.52275784966805,
+      5.856551566051534
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "Standard-EDF",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.1,
+    "std": 0.30779350562554625,
+    "ci95_normal": [
+      -0.2348964515158903,
+      0.0348964515158903
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "Standard-EDF",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": 584.43539,
+    "std": 108.62145311886162,
+    "ci95_normal": [
+      536.829939214238,
+      632.0408407857619
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": -0.33156822707586603,
+    "std": 0.0781619811945274,
+    "ci95_normal": [
+      -0.3658242257044426,
+      -0.29731222844728944
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": -1.575,
+    "std": 0.4940434670840422,
+    "ci95_normal": [
+      -1.791524096142961,
+      -1.3584759038570389
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": -4.275,
+    "std": 1.0818478344213225,
+    "ci95_normal": [
+      -4.7491407186190955,
+      -3.8008592813809057
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 59.068964117836046,
+    "std": 4.399238220280187,
+    "ci95_normal": [
+      57.14091295872275,
+      60.99701527694934
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.1,
+    "std": 0.30779350562554625,
+    "ci95_normal": [
+      -0.2348964515158903,
+      0.0348964515158903
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "Static-Sec-EDF",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": 422.51817,
+    "std": 124.06961188303185,
+    "ci95_normal": [
+      368.1422651219549,
+      476.8940748780451
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": -0.08874146453186364,
+    "std": 0.05213621679298911,
+    "ci95_normal": [
+      -0.11159116900026643,
+      -0.06589176006346086
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.125,
+    "std": 0.31933318682925255,
+    "ci95_normal": [
+      -0.014953939791482462,
+      0.26495393979148246
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": -1.325,
+    "std": 0.5199949392466289,
+    "ci95_normal": [
+      -1.5528978302938217,
+      -1.0971021697061782
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 31.480996941848076,
+    "std": 2.6657770569589654,
+    "ci95_normal": [
+      30.31266863425304,
+      32.649325249443116
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.1,
+    "std": 0.30779350562554625,
+    "ci95_normal": [
+      -0.2348964515158903,
+      0.0348964515158903
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "MPS-LP-EDF-structural",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -58.7071375,
+    "std": 23.834771328349344,
+    "ci95_normal": [
+      -69.15318660799701,
+      -48.26108839200299
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.03512250677262792,
+    "std": 0.03515647739669105,
+    "ci95_normal": [
+      0.019714501204174457,
+      0.05053051234108138
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.4,
+    "std": 0.41675437673324534,
+    "ci95_normal": [
+      0.21734934120596575,
+      0.5826506587940343
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.55,
+    "std": 0.42612081311339517,
+    "ci95_normal": [
+      0.3632443194691891,
+      0.736755680530811
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": 0.6271837198615053,
+    "std": 0.6955286693918667,
+    "ci95_normal": [
+      0.32235484038970785,
+      0.9320125993333028
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": 0.125,
+    "std": 0.42534815461170034,
+    "ci95_normal": [
+      -0.06141704801190709,
+      0.31141704801190706
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Admission",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -44.674167499999996,
+    "std": 18.38268218843825,
+    "ci95_normal": [
+      -52.73073318849601,
+      -36.61760181150398
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_normal": [
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": -0.0029999999999986925,
+    "std": 0.007326950970647271,
+    "ci95_normal": [
+      -0.006211177845881064,
+      0.00021117784588367897
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.075,
+    "std": 0.18317377426626164,
+    "ci95_normal": [
+      -0.15527944614709427,
+      0.005279446147094288
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Preemption",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -70.7573675,
+    "std": 17.946185659451245,
+    "ci95_normal": [
+      -78.62263014998751,
+      -62.89210485001249
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "released_on_time_ratio",
+    "n": 20,
+    "mean": 0.05753124200585164,
+    "std": 0.039219177625607796,
+    "ci95_normal": [
+      0.04034267955612207,
+      0.07471980445558121
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "critical_completed_jobs",
+    "n": 20,
+    "mean": 0.4,
+    "std": 0.41675437673324534,
+    "ci95_normal": [
+      0.21734934120596575,
+      0.5826506587940343
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "completed_jobs",
+    "n": 20,
+    "mean": 0.825,
+    "std": 0.4063638504436245,
+    "ci95_normal": [
+      0.6469031901346615,
+      1.0030968098653383
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "security_overhead",
+    "n": 20,
+    "mean": -2.561024394987367,
+    "std": 1.1437158865943706,
+    "ci95_normal": [
+      -3.0622799829841716,
+      -2.0597688069905624
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "preemptions",
+    "n": 20,
+    "mean": -0.075,
+    "std": 0.33541019662496846,
+    "ci95_normal": [
+      -0.22199999999999998,
+      0.072
+    ]
+  },
+  {
+    "scenario": "S7-overload/U=0.95",
+    "algorithm": "RA-LP-EDF-Optimized",
+    "metric": "scheduler_wall_ms",
+    "n": 20,
+    "mean": -46.323485,
+    "std": 22.409802693089116,
+    "ci95_normal": [
+      -56.1450140680846,
+      -36.5019559319154
+    ]
+  }
+]

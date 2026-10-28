@@ -1,0 +1,831 @@
+{
+  "ambiguous_unique_samples": 235,
+  "component_count": 30,
+  "conflicting_duplicate_labels": 235,
+  "duplicate_samples": 1290,
+  "features": [
+    "Accelerometer1RMS",
+    "Accelerometer2RMS",
+    "Current",
+    "Pressure",
+    "Temperature",
+    "Thermocouple",
+    "Voltage",
+    "Volume Flow RateRMS"
+  ],
+  "missing_or_nonfinite_values": 0,
+  "numpy_version": "2.5.3",
+  "overlap_components": [
+    [
+      "data/anomaly-free/anomaly-free.csv",
+      "data/other/5.csv"
+    ],
+    [
+      "data/other/1.csv"
+    ],
+    [
+      "data/other/10.csv",
+      "data/other/11.csv"
+    ],
+    [
+      "data/other/12.csv",
+      "data/other/13.csv"
+    ],
+    [
+      "data/other/14.csv"
+    ],
+    [
+      "data/other/2.csv",
+      "data/other/3.csv",
+      "data/other/4.csv"
+    ],
+    [
+      "data/other/6.csv"
+    ],
+    [
+      "data/other/7.csv"
+    ],
+    [
+      "data/other/8.csv"
+    ],
+    [
+      "data/other/9.csv"
+    ],
+    [
+      "data/valve1/0.csv"
+    ],
+    [
+      "data/valve1/1.csv"
+    ],
+    [
+      "data/valve1/10.csv"
+    ],
+    [
+      "data/valve1/11.csv"
+    ],
+    [
+      "data/valve1/12.csv"
+    ],
+    [
+      "data/valve1/13.csv"
+    ],
+    [
+      "data/valve1/14.csv"
+    ],
+    [
+      "data/valve1/15.csv"
+    ],
+    [
+      "data/valve1/2.csv"
+    ],
+    [
+      "data/valve1/3.csv"
+    ],
+    [
+      "data/valve1/4.csv"
+    ],
+    [
+      "data/valve1/5.csv"
+    ],
+    [
+      "data/valve1/6.csv"
+    ],
+    [
+      "data/valve1/7.csv"
+    ],
+    [
+      "data/valve1/8.csv"
+    ],
+    [
+      "data/valve1/9.csv"
+    ],
+    [
+      "data/valve2/0.csv"
+    ],
+    [
+      "data/valve2/1.csv"
+    ],
+    [
+      "data/valve2/2.csv"
+    ],
+    [
+      "data/valve2/3.csv"
+    ]
+  ],
+  "pandas_version": "3.0.6",
+  "recordings": {
+    "data/anomaly-free/anomaly-free.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 0,
+      "anomalous_windows": 0,
+      "end": "2020-02-08T16:16:47",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "documented nominal recording",
+      "normal": 9405,
+      "normal_windows": 9342,
+      "rows": 9405,
+      "split": "train",
+      "start": "2020-02-08T13:30:47",
+      "step_seconds_counts": {
+        "1": 8848,
+        "2": 556
+      },
+      "windows": 9342
+    },
+    "data/other/1.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 188,
+      "anomalous_windows": 188,
+      "end": "2020-03-01T15:57:06",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 557,
+      "normal_windows": 494,
+      "rows": 745,
+      "split": "validation",
+      "start": "2020-03-01T15:44:06",
+      "step_seconds_counts": {
+        "1": 708,
+        "2": 36
+      },
+      "windows": 682
+    },
+    "data/other/10.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 586,
+      "anomalous_windows": 586,
+      "end": "2020-02-08T18:11:02",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 741,
+      "normal_windows": 678,
+      "rows": 1327,
+      "split": "train",
+      "start": "2020-02-08T17:47:44",
+      "step_seconds_counts": {
+        "1": 1254,
+        "2": 72
+      },
+      "windows": 1264
+    },
+    "data/other/11.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 451,
+      "anomalous_windows": 451,
+      "end": "2020-02-08T18:31:36",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 739,
+      "normal_windows": 676,
+      "rows": 1190,
+      "split": "train",
+      "start": "2020-02-08T18:10:42",
+      "step_seconds_counts": {
+        "1": 1124,
+        "2": 65
+      },
+      "windows": 1127
+    },
+    "data/other/12.csv": {
+      "ambiguous_target_rows": 178,
+      "anomalous": 309,
+      "anomalous_windows": 84,
+      "end": "2020-02-08T18:54:54",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 34,
+      "label_origin": "original anomaly column",
+      "normal": 739,
+      "normal_windows": 626,
+      "rows": 1048,
+      "split": "train",
+      "start": "2020-02-08T18:34:51",
+      "step_seconds_counts": {
+        "1": 945,
+        "2": 68,
+        "3": 17,
+        "4": 14,
+        "5": 3
+      },
+      "windows": 710
+    },
+    "data/other/13.csv": {
+      "ambiguous_target_rows": 178,
+      "anomalous": 265,
+      "anomalous_windows": 178,
+      "end": "2020-02-08T19:06:26",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 31,
+      "label_origin": "original anomaly column",
+      "normal": 658,
+      "normal_windows": 367,
+      "rows": 923,
+      "split": "train",
+      "start": "2020-02-08T18:47:32",
+      "step_seconds_counts": {
+        "1": 834,
+        "16": 1,
+        "19": 1,
+        "2": 57,
+        "21": 1,
+        "3": 13,
+        "33": 1,
+        "4": 12,
+        "5": 2
+      },
+      "windows": 545
+    },
+    "data/other/14.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 302,
+      "anomalous_windows": 302,
+      "end": "2020-02-08T19:32:19",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 603,
+      "normal_windows": 540,
+      "rows": 905,
+      "split": "test",
+      "start": "2020-02-08T19:16:28",
+      "step_seconds_counts": {
+        "1": 857,
+        "2": 47
+      },
+      "windows": 842
+    },
+    "data/other/2.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 384,
+      "anomalous_windows": 321,
+      "end": "2020-03-01T16:45:59",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 1,
+      "label_origin": "original anomaly column",
+      "normal": 396,
+      "normal_windows": 333,
+      "rows": 780,
+      "split": "train",
+      "start": "2020-03-01T16:28:16",
+      "step_seconds_counts": {
+        "1": 740,
+        "2": 38,
+        "247": 1
+      },
+      "windows": 654
+    },
+    "data/other/3.csv": {
+      "ambiguous_target_rows": 57,
+      "anomalous": 398,
+      "anomalous_windows": 341,
+      "end": "2020-03-01T17:03:52",
+      "excluded_ambiguous_windows": 57,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 739,
+      "normal_windows": 676,
+      "rows": 1137,
+      "split": "train",
+      "start": "2020-03-01T16:43:54",
+      "step_seconds_counts": {
+        "1": 1074,
+        "2": 62
+      },
+      "windows": 1017
+    },
+    "data/other/4.csv": {
+      "ambiguous_target_rows": 57,
+      "anomalous": 395,
+      "anomalous_windows": 395,
+      "end": "2020-03-01T17:20:49",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 796,
+      "normal_windows": 733,
+      "rows": 1191,
+      "split": "train",
+      "start": "2020-03-01T16:59:53",
+      "step_seconds_counts": {
+        "1": 1124,
+        "2": 66
+      },
+      "windows": 1128
+    },
+    "data/other/5.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 410,
+      "anomalous_windows": 410,
+      "end": "2020-02-08T16:26:56",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 745,
+      "normal_windows": 682,
+      "rows": 1155,
+      "split": "train",
+      "start": "2020-02-08T16:06:48",
+      "step_seconds_counts": {
+        "1": 1100,
+        "2": 54
+      },
+      "windows": 1092
+    },
+    "data/other/6.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 402,
+      "anomalous_windows": 402,
+      "end": "2020-02-08T16:47:09",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 745,
+      "normal_windows": 682,
+      "rows": 1147,
+      "split": "train",
+      "start": "2020-02-08T16:27:09",
+      "step_seconds_counts": {
+        "1": 1092,
+        "2": 54
+      },
+      "windows": 1084
+    },
+    "data/other/7.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 347,
+      "anomalous_windows": 347,
+      "end": "2020-02-08T17:06:12",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 743,
+      "normal_windows": 680,
+      "rows": 1090,
+      "split": "train",
+      "start": "2020-02-08T16:47:11",
+      "step_seconds_counts": {
+        "1": 1037,
+        "2": 52
+      },
+      "windows": 1027
+    },
+    "data/other/8.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 403,
+      "anomalous_windows": 403,
+      "end": "2020-02-08T17:27:13",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 744,
+      "normal_windows": 681,
+      "rows": 1147,
+      "split": "train",
+      "start": "2020-02-08T17:07:11",
+      "step_seconds_counts": {
+        "1": 1090,
+        "2": 56
+      },
+      "windows": 1084
+    },
+    "data/other/9.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 401,
+      "anomalous_windows": 401,
+      "end": "2020-02-08T17:47:18",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 743,
+      "normal_windows": 680,
+      "rows": 1144,
+      "split": "train",
+      "start": "2020-02-08T17:27:19",
+      "step_seconds_counts": {
+        "1": 1087,
+        "2": 56
+      },
+      "windows": 1081
+    },
+    "data/valve1/0.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 401,
+      "anomalous_windows": 401,
+      "end": "2020-03-09T10:34:32",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 746,
+      "normal_windows": 683,
+      "rows": 1147,
+      "split": "train",
+      "start": "2020-03-09T10:14:33",
+      "step_seconds_counts": {
+        "1": 1093,
+        "2": 53
+      },
+      "windows": 1084
+    },
+    "data/valve1/1.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 402,
+      "anomalous_windows": 402,
+      "end": "2020-03-09T10:54:33",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 743,
+      "normal_windows": 680,
+      "rows": 1145,
+      "split": "train",
+      "start": "2020-03-09T10:34:33",
+      "step_seconds_counts": {
+        "1": 1088,
+        "2": 56
+      },
+      "windows": 1082
+    },
+    "data/valve1/10.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 401,
+      "anomalous_windows": 401,
+      "end": "2020-03-09T13:54:38",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 745,
+      "normal_windows": 682,
+      "rows": 1146,
+      "split": "test",
+      "start": "2020-03-09T13:34:39",
+      "step_seconds_counts": {
+        "1": 1091,
+        "2": 54
+      },
+      "windows": 1083
+    },
+    "data/valve1/11.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 399,
+      "anomalous_windows": 399,
+      "end": "2020-03-09T14:14:39",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 742,
+      "normal_windows": 679,
+      "rows": 1141,
+      "split": "train",
+      "start": "2020-03-09T13:54:39",
+      "step_seconds_counts": {
+        "1": 1080,
+        "2": 60
+      },
+      "windows": 1078
+    },
+    "data/valve1/12.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 399,
+      "anomalous_windows": 399,
+      "end": "2020-03-09T14:34:40",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 741,
+      "normal_windows": 678,
+      "rows": 1140,
+      "split": "validation",
+      "start": "2020-03-09T14:14:40",
+      "step_seconds_counts": {
+        "1": 1078,
+        "2": 61
+      },
+      "windows": 1077
+    },
+    "data/valve1/13.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 399,
+      "anomalous_windows": 399,
+      "end": "2020-03-09T14:54:40",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 741,
+      "normal_windows": 678,
+      "rows": 1140,
+      "split": "train",
+      "start": "2020-03-09T14:34:41",
+      "step_seconds_counts": {
+        "1": 1079,
+        "2": 60
+      },
+      "windows": 1077
+    },
+    "data/valve1/14.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 399,
+      "anomalous_windows": 399,
+      "end": "2020-03-09T15:14:40",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 740,
+      "normal_windows": 677,
+      "rows": 1139,
+      "split": "train",
+      "start": "2020-03-09T14:54:41",
+      "step_seconds_counts": {
+        "1": 1077,
+        "2": 61
+      },
+      "windows": 1076
+    },
+    "data/valve1/15.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 404,
+      "anomalous_windows": 404,
+      "end": "2020-03-09T15:34:41",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 746,
+      "normal_windows": 683,
+      "rows": 1150,
+      "split": "validation",
+      "start": "2020-03-09T15:14:41",
+      "step_seconds_counts": {
+        "1": 1098,
+        "2": 51
+      },
+      "windows": 1087
+    },
+    "data/valve1/2.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 337,
+      "anomalous_windows": 274,
+      "end": "2020-03-09T11:14:33",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 1,
+      "label_origin": "original anomaly column",
+      "normal": 738,
+      "normal_windows": 675,
+      "rows": 1075,
+      "split": "train",
+      "start": "2020-03-09T10:54:34",
+      "step_seconds_counts": {
+        "1": 1023,
+        "2": 50,
+        "76": 1
+      },
+      "windows": 949
+    },
+    "data/valve1/3.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 404,
+      "anomalous_windows": 404,
+      "end": "2020-03-09T11:34:35",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 744,
+      "normal_windows": 681,
+      "rows": 1148,
+      "split": "validation",
+      "start": "2020-03-09T11:14:34",
+      "step_seconds_counts": {
+        "1": 1093,
+        "2": 54
+      },
+      "windows": 1085
+    },
+    "data/valve1/4.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 349,
+      "anomalous_windows": 286,
+      "end": "2020-03-09T11:54:35",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 1,
+      "label_origin": "original anomaly column",
+      "normal": 746,
+      "normal_windows": 683,
+      "rows": 1095,
+      "split": "train",
+      "start": "2020-03-09T11:34:36",
+      "step_seconds_counts": {
+        "1": 1041,
+        "2": 52,
+        "54": 1
+      },
+      "windows": 969
+    },
+    "data/valve1/5.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 403,
+      "anomalous_windows": 403,
+      "end": "2020-03-09T12:14:35",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 751,
+      "normal_windows": 688,
+      "rows": 1154,
+      "split": "train",
+      "start": "2020-03-09T11:54:36",
+      "step_seconds_counts": {
+        "1": 1107,
+        "2": 46
+      },
+      "windows": 1091
+    },
+    "data/valve1/6.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 405,
+      "anomalous_windows": 405,
+      "end": "2020-03-09T12:34:35",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 749,
+      "normal_windows": 686,
+      "rows": 1154,
+      "split": "train",
+      "start": "2020-03-09T12:14:36",
+      "step_seconds_counts": {
+        "1": 1107,
+        "2": 46
+      },
+      "windows": 1091
+    },
+    "data/valve1/7.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 405,
+      "anomalous_windows": 405,
+      "end": "2020-03-09T12:54:37",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 1,
+      "label_origin": "original anomaly column",
+      "normal": 689,
+      "normal_windows": 563,
+      "rows": 1094,
+      "split": "train",
+      "start": "2020-03-09T12:34:37",
+      "step_seconds_counts": {
+        "1": 1049,
+        "2": 43,
+        "65": 1
+      },
+      "windows": 968
+    },
+    "data/valve1/8.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 400,
+      "anomalous_windows": 400,
+      "end": "2020-03-09T13:14:37",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 744,
+      "normal_windows": 681,
+      "rows": 1144,
+      "split": "test",
+      "start": "2020-03-09T12:54:39",
+      "step_seconds_counts": {
+        "1": 1088,
+        "2": 55
+      },
+      "windows": 1081
+    },
+    "data/valve1/9.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 402,
+      "anomalous_windows": 402,
+      "end": "2020-03-09T13:34:38",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 746,
+      "normal_windows": 683,
+      "rows": 1148,
+      "split": "test",
+      "start": "2020-03-09T13:14:38",
+      "step_seconds_counts": {
+        "1": 1094,
+        "2": 53
+      },
+      "windows": 1085
+    },
+    "data/valve2/0.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 394,
+      "anomalous_windows": 394,
+      "end": "2020-03-09T16:16:29",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 731,
+      "normal_windows": 668,
+      "rows": 1125,
+      "split": "test",
+      "start": "2020-03-09T15:56:30",
+      "step_seconds_counts": {
+        "1": 1049,
+        "2": 75
+      },
+      "windows": 1062
+    },
+    "data/valve2/1.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 333,
+      "anomalous_windows": 278,
+      "end": "2020-03-09T16:36:30",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 1,
+      "label_origin": "original anomaly column",
+      "normal": 730,
+      "normal_windows": 659,
+      "rows": 1063,
+      "split": "train",
+      "start": "2020-03-09T16:16:30",
+      "step_seconds_counts": {
+        "1": 986,
+        "2": 75,
+        "64": 1
+      },
+      "windows": 937
+    },
+    "data/valve2/2.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 395,
+      "anomalous_windows": 395,
+      "end": "2020-03-09T16:56:30",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 734,
+      "normal_windows": 671,
+      "rows": 1129,
+      "split": "train",
+      "start": "2020-03-09T16:36:31",
+      "step_seconds_counts": {
+        "1": 1057,
+        "2": 71
+      },
+      "windows": 1066
+    },
+    "data/valve2/3.csv": {
+      "ambiguous_target_rows": 0,
+      "anomalous": 395,
+      "anomalous_windows": 395,
+      "end": "2020-03-09T17:14:09",
+      "excluded_ambiguous_windows": 0,
+      "gaps_over_2_seconds": 0,
+      "label_origin": "original anomaly column",
+      "normal": 600,
+      "normal_windows": 537,
+      "rows": 995,
+      "split": "validation",
+      "start": "2020-03-09T16:56:31",
+      "step_seconds_counts": {
+        "1": 930,
+        "2": 64
+      },
+      "windows": 932
+    }
+  },
+  "splits": {
+    "test": {
+      "anomalous": 1899,
+      "anomalous_windows": 1899,
+      "components": 5,
+      "groups": 5,
+      "normal": 3569,
+      "normal_windows": 3254,
+      "rows": 5468,
+      "windows": 5153
+    },
+    "train": {
+      "anomalous": 9378,
+      "anomalous_windows": 8765,
+      "components": 20,
+      "groups": 25,
+      "normal": 26782,
+      "normal_windows": 24858,
+      "rows": 36160,
+      "windows": 33623
+    },
+    "validation": {
+      "anomalous": 1790,
+      "anomalous_windows": 1790,
+      "components": 5,
+      "groups": 5,
+      "normal": 3388,
+      "normal_windows": 3073,
+      "rows": 5178,
+      "windows": 4863
+    }
+  },
+  "unique_timestamp_measurement_samples": 45516
+}

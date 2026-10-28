@@ -1,0 +1,171 @@
+{
+  "ambiguous_labels": "exclude targets with conflicting duplicate labels; retain context measurements",
+  "commit": "b2c0d46c2971dcbfe71e26087b6d231998bb91c2",
+  "dataset": "SKAB",
+  "features": [
+    "Accelerometer1RMS",
+    "Accelerometer2RMS",
+    "Current",
+    "Pressure",
+    "Temperature",
+    "Thermocouple",
+    "Voltage",
+    "Volume Flow RateRMS"
+  ],
+  "label_mapping": {
+    "0": "normal",
+    "1": "anomalous"
+  },
+  "maximum_step_seconds": 2,
+  "mean": [
+    0.15265387636891592,
+    0.19075239951050885,
+    1.8055461934457964,
+    0.08523650392699113,
+    81.46793173396017,
+    26.99481689712389,
+    229.36648357300885,
+    85.2604173395188
+  ],
+  "missing_values": "reject",
+  "overlap_components": [
+    [
+      "data/anomaly-free/anomaly-free.csv",
+      "data/other/5.csv"
+    ],
+    [
+      "data/other/1.csv"
+    ],
+    [
+      "data/other/10.csv",
+      "data/other/11.csv"
+    ],
+    [
+      "data/other/12.csv",
+      "data/other/13.csv"
+    ],
+    [
+      "data/other/14.csv"
+    ],
+    [
+      "data/other/2.csv",
+      "data/other/3.csv",
+      "data/other/4.csv"
+    ],
+    [
+      "data/other/6.csv"
+    ],
+    [
+      "data/other/7.csv"
+    ],
+    [
+      "data/other/8.csv"
+    ],
+    [
+      "data/other/9.csv"
+    ],
+    [
+      "data/valve1/0.csv"
+    ],
+    [
+      "data/valve1/1.csv"
+    ],
+    [
+      "data/valve1/10.csv"
+    ],
+    [
+      "data/valve1/11.csv"
+    ],
+    [
+      "data/valve1/12.csv"
+    ],
+    [
+      "data/valve1/13.csv"
+    ],
+    [
+      "data/valve1/14.csv"
+    ],
+    [
+      "data/valve1/15.csv"
+    ],
+    [
+      "data/valve1/2.csv"
+    ],
+    [
+      "data/valve1/3.csv"
+    ],
+    [
+      "data/valve1/4.csv"
+    ],
+    [
+      "data/valve1/5.csv"
+    ],
+    [
+      "data/valve1/6.csv"
+    ],
+    [
+      "data/valve1/7.csv"
+    ],
+    [
+      "data/valve1/8.csv"
+    ],
+    [
+      "data/valve1/9.csv"
+    ],
+    [
+      "data/valve2/0.csv"
+    ],
+    [
+      "data/valve2/1.csv"
+    ],
+    [
+      "data/valve2/2.csv"
+    ],
+    [
+      "data/valve2/3.csv"
+    ]
+  ],
+  "resampling": "none; windows count observations, not seconds",
+  "scale": [
+    0.13135947164195008,
+    0.14884475215830173,
+    0.7946898431793004,
+    0.2588625974244065,
+    8.821358353416805,
+    2.5799133160238816,
+    10.952848415541691,
+    44.96837438369807
+  ],
+  "scaler_fit_groups": [
+    "data/anomaly-free/anomaly-free.csv",
+    "data/other/10.csv",
+    "data/other/11.csv",
+    "data/other/12.csv",
+    "data/other/13.csv",
+    "data/other/2.csv",
+    "data/other/3.csv",
+    "data/other/4.csv",
+    "data/other/5.csv",
+    "data/other/6.csv",
+    "data/other/7.csv",
+    "data/other/8.csv",
+    "data/other/9.csv",
+    "data/valve1/0.csv",
+    "data/valve1/1.csv",
+    "data/valve1/11.csv",
+    "data/valve1/13.csv",
+    "data/valve1/14.csv",
+    "data/valve1/2.csv",
+    "data/valve1/4.csv",
+    "data/valve1/5.csv",
+    "data/valve1/6.csv",
+    "data/valve1/7.csv",
+    "data/valve2/1.csv",
+    "data/valve2/2.csv"
+  ],
+  "seed": 42,
+  "stride": 1,
+  "synthetic_augmentation": false,
+  "target": "original anomaly label at window endpoint",
+  "window_length": 64
+}

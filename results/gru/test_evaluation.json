@@ -1,0 +1,637 @@
+{
+  "gru_training_seconds": 20.722054700000058,
+  "hardware": {
+    "cpu": "Intel Core i5-10300H (4 cores / 8 threads)",
+    "gpu": "NVIDIA GeForce GTX 1650 4GB",
+    "inference_device": "cpu",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.6",
+    "torch": "2.7.1+cu126",
+    "torch_threads": 2
+  },
+  "limitations": [
+    "Original vehicle RF cannot consume SKAB; refitted same classifier settings.",
+    "No faulty class or malicious-attack attribution supported.",
+    "Five held-out components on one rig, correlated windows.",
+    "Inference latency is measured wall time, not calibrated EDF cost."
+  ],
+  "models": {
+    "GRU": {
+      "accuracy": 0.831748496021735,
+      "artifact_bytes": 29606,
+      "average_precision": 0.8806576690519906,
+      "classification_report": {
+        "accuracy": 0.831748496021735,
+        "anomalous": {
+          "f1-score": 0.7573467674223342,
+          "precision": 0.8082437275985663,
+          "recall": 0.7124802527646129,
+          "support": 1899.0
+        },
+        "macro avg": {
+          "f1-score": 0.8142890082470352,
+          "precision": 0.825651038849585,
+          "recall": 0.8069162173472726,
+          "support": 5153.0
+        },
+        "normal": {
+          "f1-score": 0.8712312490717362,
+          "precision": 0.8430583501006036,
+          "recall": 0.9013521819299324,
+          "support": 3254.0
+        },
+        "weighted avg": {
+          "f1-score": 0.8292621765601479,
+          "precision": 0.8302283543444676,
+          "recall": 0.831748496021735,
+          "support": 5153.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          2933,
+          321
+        ],
+        [
+          546,
+          1353
+        ]
+      ],
+      "cpu_inference": {
+        "batch_size": 1,
+        "max_ms": 1.0787,
+        "mean_ms": 0.6869514999999999,
+        "median_ms": 0.64915,
+        "p95_ms": 1.0359699999999998,
+        "repetitions": 200,
+        "warmup": 20
+      },
+      "cpu_network_only": {
+        "batch_size": 1,
+        "max_ms": 1.3091,
+        "mean_ms": 0.7013075,
+        "median_ms": 0.6229,
+        "p95_ms": 1.1226649999999996,
+        "repetitions": 200,
+        "warmup": 20
+      },
+      "false_negative_rate": 0.28751974723538704,
+      "false_positive_rate": 0.0986478180700676,
+      "macro_f1": 0.8142890082470352,
+      "per_group": {
+        "data/other/14.csv": {
+          "accuracy": 0.6876484560570071,
+          "average_precision": 0.8525133906276889,
+          "classification_report": {
+            "accuracy": 0.6876484560570071,
+            "anomalous": {
+              "f1-score": 0.24641833810888253,
+              "precision": 0.9148936170212766,
+              "recall": 0.1423841059602649,
+              "support": 302.0
+            },
+            "macro avg": {
+              "f1-score": 0.5247072963952653,
+              "precision": 0.794553726749632,
+              "recall": 0.5674883492764288,
+              "support": 842.0
+            },
+            "normal": {
+              "f1-score": 0.8029962546816479,
+              "precision": 0.6742138364779874,
+              "recall": 0.9925925925925926,
+              "support": 540.0
+            },
+            "weighted avg": {
+              "f1-score": 0.6033685458871406,
+              "precision": 0.7605384133474332,
+              "recall": 0.6876484560570071,
+              "support": 842.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              536,
+              4
+            ],
+            [
+              259,
+              43
+            ]
+          ],
+          "false_negative_rate": 0.8576158940397351,
+          "false_positive_rate": 0.007407407407407408,
+          "macro_f1": 0.5247072963952653,
+          "pr_auc_trapezoidal": 0.8521052147937883,
+          "roc_auc": 0.8935737061564877,
+          "threshold": 0.84,
+          "weighted_f1": 0.6033685458871406
+        },
+        "data/valve1/10.csv": {
+          "accuracy": 0.8578024007386889,
+          "average_precision": 0.8973597076724253,
+          "classification_report": {
+            "accuracy": 0.8578024007386889,
+            "anomalous": {
+              "f1-score": 0.8084577114427861,
+              "precision": 0.8064516129032258,
+              "recall": 0.8104738154613467,
+              "support": 401.0
+            },
+            "macro avg": {
+              "f1-score": 0.8476943476450347,
+              "precision": 0.8473434535104364,
+              "recall": 0.8480521569975354,
+              "support": 1083.0
+            },
+            "normal": {
+              "f1-score": 0.8869309838472834,
+              "precision": 0.888235294117647,
+              "recall": 0.8856304985337243,
+              "support": 682.0
+            },
+            "weighted avg": {
+              "f1-score": 0.8578748599006505,
+              "precision": 0.8579534324676166,
+              "recall": 0.8578024007386889,
+              "support": 1083.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              604,
+              78
+            ],
+            [
+              76,
+              325
+            ]
+          ],
+          "false_negative_rate": 0.18952618453865336,
+          "false_positive_rate": 0.11436950146627566,
+          "macro_f1": 0.8476943476450347,
+          "pr_auc_trapezoidal": 0.8972954477494007,
+          "roc_auc": 0.8698854037925714,
+          "threshold": 0.84,
+          "weighted_f1": 0.8578748599006505
+        },
+        "data/valve1/8.csv": {
+          "accuracy": 0.8788159111933395,
+          "average_precision": 0.9649504859508722,
+          "classification_report": {
+            "accuracy": 0.8788159111933395,
+            "anomalous": {
+              "f1-score": 0.8552486187845304,
+              "precision": 0.7663366336633664,
+              "recall": 0.9675,
+              "support": 400.0
+            },
+            "macro avg": {
+              "f1-score": 0.8755161152792978,
+              "precision": 0.871883594609461,
+              "recall": 0.8971127019089574,
+              "support": 1081.0
+            },
+            "normal": {
+              "f1-score": 0.8957836117740652,
+              "precision": 0.9774305555555556,
+              "recall": 0.8267254038179148,
+              "support": 681.0
+            },
+            "weighted avg": {
+              "f1-score": 0.8807845394375121,
+              "precision": 0.8993199461597409,
+              "recall": 0.8788159111933395,
+              "support": 1081.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              563,
+              118
+            ],
+            [
+              13,
+              387
+            ]
+          ],
+          "false_negative_rate": 0.0325,
+          "false_positive_rate": 0.17327459618208516,
+          "macro_f1": 0.8755161152792978,
+          "pr_auc_trapezoidal": 0.9648996985465771,
+          "roc_auc": 0.9777276064610867,
+          "threshold": 0.84,
+          "weighted_f1": 0.8807845394375121
+        },
+        "data/valve1/9.csv": {
+          "accuracy": 0.8599078341013825,
+          "average_precision": 0.9529527428091453,
+          "classification_report": {
+            "accuracy": 0.8599078341013825,
+            "anomalous": {
+              "f1-score": 0.8280542986425339,
+              "precision": 0.7593360995850622,
+              "recall": 0.9104477611940298,
+              "support": 402.0
+            },
+            "macro avg": {
+              "f1-score": 0.8549291710942063,
+              "precision": 0.8498173035238744,
+              "recall": 0.8703044076833986,
+              "support": 1085.0
+            },
+            "normal": {
+              "f1-score": 0.8818040435458787,
+              "precision": 0.9402985074626866,
+              "recall": 0.8301610541727672,
+              "support": 683.0
+            },
+            "weighted avg": {
+              "f1-score": 0.8618893915171739,
+              "precision": 0.8732506844518063,
+              "recall": 0.8599078341013825,
+              "support": 1085.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              567,
+              116
+            ],
+            [
+              36,
+              366
+            ]
+          ],
+          "false_negative_rate": 0.08955223880597014,
+          "false_positive_rate": 0.1698389458272328,
+          "macro_f1": 0.8549291710942063,
+          "pr_auc_trapezoidal": 0.9529161175391141,
+          "roc_auc": 0.9514360845843985,
+          "threshold": 0.84,
+          "weighted_f1": 0.8618893915171739
+        },
+        "data/valve2/0.csv": {
+          "accuracy": 0.8427495291902072,
+          "average_precision": 0.9053175963632522,
+          "classification_report": {
+            "accuracy": 0.8427495291902072,
+            "anomalous": {
+              "f1-score": 0.7353407290015848,
+              "precision": 0.9789029535864979,
+              "recall": 0.5888324873096447,
+              "support": 394.0
+            },
+            "macro avg": {
+              "f1-score": 0.8117427020761441,
+              "precision": 0.8912696586114308,
+              "recall": 0.7906737286847625,
+              "support": 1062.0
+            },
+            "normal": {
+              "f1-score": 0.8881446751507033,
+              "precision": 0.8036363636363636,
+              "recall": 0.9925149700598802,
+              "support": 668.0
+            },
+            "weighted avg": {
+              "f1-score": 0.8314546988957573,
+              "precision": 0.8686599384389557,
+              "recall": 0.8427495291902072,
+              "support": 1062.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              663,
+              5
+            ],
+            [
+              162,
+              232
+            ]
+          ],
+          "false_negative_rate": 0.41116751269035534,
+          "false_positive_rate": 0.0074850299401197605,
+          "macro_f1": 0.8117427020761441,
+          "pr_auc_trapezoidal": 0.905214065426734,
+          "roc_auc": 0.92806392291559,
+          "threshold": 0.84,
+          "weighted_f1": 0.8314546988957573
+        }
+      },
+      "pr_auc_trapezoidal": 0.880634146147112,
+      "roc_auc": 0.8906258040899474,
+      "threshold": 0.84,
+      "weighted_f1": 0.8292621765601479
+    },
+    "RF_refit_SKAB": {
+      "accuracy": 0.8412575198913255,
+      "artifact_bytes": 62893385,
+      "average_precision": 0.8653349364976726,
+      "classification_report": {
+        "accuracy": 0.8412575198913255,
+        "anomalous": {
+          "f1-score": 0.7711247901510913,
+          "precision": 0.8226865671641791,
+          "recall": 0.7256450763559769,
+          "support": 1899.0
+        },
+        "macro avg": {
+          "f1-score": 0.8248077902032938,
+          "precision": 0.8364439161295306,
+          "recall": 0.8171863980427703,
+          "support": 5153.0
+        },
+        "normal": {
+          "f1-score": 0.8784907902554961,
+          "precision": 0.8502012650948821,
+          "recall": 0.9087277197295636,
+          "support": 3254.0
+        },
+        "weighted avg": {
+          "f1-score": 0.8389239293592679,
+          "precision": 0.8400614608312676,
+          "recall": 0.8412575198913255,
+          "support": 5153.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          2957,
+          297
+        ],
+        [
+          521,
+          1378
+        ]
+      ],
+      "cpu_inference": {
+        "batch_size": 1,
+        "max_ms": 43.3616,
+        "mean_ms": 22.730552000000003,
+        "median_ms": 19.63375,
+        "p95_ms": 38.15808,
+        "repetitions": 200,
+        "warmup": 20
+      },
+      "false_negative_rate": 0.2743549236440232,
+      "false_positive_rate": 0.09127228027043639,
+      "macro_f1": 0.8248077902032938,
+      "per_group": {
+        "data/other/14.csv": {
+          "accuracy": 0.7885985748218527,
+          "average_precision": 0.8347757186007463,
+          "classification_report": {
+            "accuracy": 0.7885985748218527,
+            "anomalous": {
+              "f1-score": 0.7568306010928961,
+              "precision": 0.6441860465116279,
+              "recall": 0.9172185430463576,
+              "support": 302.0
+            },
+            "macro avg": {
+              "f1-score": 0.7849279055884648,
+              "precision": 0.7917532174305713,
+              "recall": 0.8169426048565122,
+              "support": 842.0
+            },
+            "normal": {
+              "f1-score": 0.8130252100840336,
+              "precision": 0.9393203883495146,
+              "recall": 0.7166666666666667,
+              "support": 540.0
+            },
+            "weighted avg": {
+              "f1-score": 0.792869899020704,
+              "precision": 0.8334646030347381,
+              "recall": 0.7885985748218527,
+              "support": 842.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              387,
+              153
+            ],
+            [
+              25,
+              277
+            ]
+          ],
+          "false_negative_rate": 0.08278145695364239,
+          "false_positive_rate": 0.2833333333333333,
+          "macro_f1": 0.7849279055884648,
+          "pr_auc_trapezoidal": 0.8337007564078684,
+          "roc_auc": 0.9174239636987982,
+          "threshold": 0.57,
+          "weighted_f1": 0.792869899020704
+        },
+        "data/valve1/10.csv": {
+          "accuracy": 0.9122807017543859,
+          "average_precision": 0.8918062931432748,
+          "classification_report": {
+            "accuracy": 0.9122807017543859,
+            "anomalous": {
+              "f1-score": 0.8689655172413793,
+              "precision": 0.9722222222222222,
+              "recall": 0.7855361596009975,
+              "support": 401.0
+            },
+            "macro avg": {
+              "f1-score": 0.9015195386345689,
+              "precision": 0.929457619675011,
+              "recall": 0.8861698393312906,
+              "support": 1083.0
+            },
+            "normal": {
+              "f1-score": 0.9340735600277585,
+              "precision": 0.8866930171277997,
+              "recall": 0.9868035190615836,
+              "support": 682.0
+            },
+            "weighted avg": {
+              "f1-score": 0.9099661499101795,
+              "precision": 0.9183617255699635,
+              "recall": 0.9122807017543859,
+              "support": 1083.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              673,
+              9
+            ],
+            [
+              86,
+              315
+            ]
+          ],
+          "false_negative_rate": 0.2144638403990025,
+          "false_positive_rate": 0.013196480938416423,
+          "macro_f1": 0.9015195386345689,
+          "pr_auc_trapezoidal": 0.8919129875329517,
+          "roc_auc": 0.8521785711673894,
+          "threshold": 0.57,
+          "weighted_f1": 0.9099661499101795
+        },
+        "data/valve1/8.csv": {
+          "accuracy": 0.9333950046253469,
+          "average_precision": 0.9970432670513069,
+          "classification_report": {
+            "accuracy": 0.9333950046253469,
+            "anomalous": {
+              "f1-score": 0.9170506912442397,
+              "precision": 0.8504273504273504,
+              "recall": 0.995,
+              "support": 400.0
+            },
+            "macro avg": {
+              "f1-score": 0.9307046346483949,
+              "precision": 0.9235823538433652,
+              "recall": 0.9461049926578561,
+              "support": 1081.0
+            },
+            "normal": {
+              "f1-score": 0.9443585780525502,
+              "precision": 0.9967373572593801,
+              "recall": 0.8972099853157122,
+              "support": 681.0
+            },
+            "weighted avg": {
+              "f1-score": 0.9342539020827776,
+              "precision": 0.942598594324309,
+              "recall": 0.9333950046253469,
+              "support": 1081.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              611,
+              70
+            ],
+            [
+              2,
+              398
+            ]
+          ],
+          "false_negative_rate": 0.005,
+          "false_positive_rate": 0.1027900146842878,
+          "macro_f1": 0.9307046346483949,
+          "pr_auc_trapezoidal": 0.9970547725901387,
+          "roc_auc": 0.9962756975036711,
+          "threshold": 0.57,
+          "weighted_f1": 0.9342539020827776
+        },
+        "data/valve1/9.csv": {
+          "accuracy": 0.8820276497695853,
+          "average_precision": 0.928741224426204,
+          "classification_report": {
+            "accuracy": 0.8820276497695853,
+            "anomalous": {
+              "f1-score": 0.8411910669975186,
+              "precision": 0.8391089108910891,
+              "recall": 0.8432835820895522,
+              "support": 402.0
+            },
+            "macro avg": {
+              "f1-score": 0.8736747123843898,
+              "precision": 0.873298948837615,
+              "recall": 0.8740576036362842,
+              "support": 1085.0
+            },
+            "normal": {
+              "f1-score": 0.906158357771261,
+              "precision": 0.9074889867841409,
+              "recall": 0.9048316251830161,
+              "support": 683.0
+            },
+            "weighted avg": {
+              "f1-score": 0.8820875274569343,
+              "precision": 0.8821536959924297,
+              "recall": 0.8820276497695853,
+              "support": 1085.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              618,
+              65
+            ],
+            [
+              63,
+              339
+            ]
+          ],
+          "false_negative_rate": 0.15671641791044777,
+          "false_positive_rate": 0.0951683748169839,
+          "macro_f1": 0.8736747123843898,
+          "pr_auc_trapezoidal": 0.929016518941419,
+          "roc_auc": 0.9270703583109343,
+          "threshold": 0.57,
+          "weighted_f1": 0.8820875274569343
+        },
+        "data/valve2/0.csv": {
+          "accuracy": 0.6751412429378532,
+          "average_precision": 0.8590262818233495,
+          "classification_report": {
+            "accuracy": 0.6751412429378532,
+            "anomalous": {
+              "f1-score": 0.22121896162528218,
+              "precision": 1.0,
+              "recall": 0.12436548223350254,
+              "support": 394.0
+            },
+            "macro avg": {
+              "f1-score": 0.507991991223111,
+              "precision": 0.8297137216189536,
+              "recall": 0.5621827411167513,
+              "support": 1062.0
+            },
+            "normal": {
+              "f1-score": 0.7947650208209399,
+              "precision": 0.6594274432379073,
+              "recall": 1.0,
+              "support": 668.0
+            },
+            "weighted avg": {
+              "f1-score": 0.5819805129837562,
+              "precision": 0.785779220417064,
+              "recall": 0.6751412429378532,
+              "support": 1062.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              668,
+              0
+            ],
+            [
+              345,
+              49
+            ]
+          ],
+          "false_negative_rate": 0.8756345177664975,
+          "false_positive_rate": 0.0,
+          "macro_f1": 0.507991991223111,
+          "pr_auc_trapezoidal": 0.860573609236601,
+          "roc_auc": 0.8926202164199519,
+          "threshold": 0.57,
+          "weighted_f1": 0.5819805129837562
+        }
+      },
+      "pr_auc_trapezoidal": 0.8656616053604189,
+      "roc_auc": 0.8691008724871532,
+      "threshold": 0.57,
+      "weighted_f1": 0.8389239293592679
+    }
+  },
+  "rf_training_seconds": 7.491331700000046,
+  "synthetic_examples": 0,
+  "test_class_counts": [
+    3254,
+    1899
+  ],
+  "test_groups": 5,
+  "test_windows": 5153
+}

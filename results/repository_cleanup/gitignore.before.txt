@@ -1,0 +1,22 @@
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Generated datasets
+data/processed/
+data/raw/skab/
+
+# Trained models
+models/*.pkl
+models/gru_sensor_health.pt
+models/skab_random_forest.joblib
+results/gru/*checkpoint*.pt
+
+# Environment variables and secrets
+.env
+
+# Streamlit configuration
+.streamlit/secrets.toml

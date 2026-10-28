@@ -1,0 +1,6 @@
+{
+  "current_head_checkout_bytes": 62256429,
+  "git_directory_bytes": 72910219,
+  "current_clone_conservative_bytes": 135166648,
+  "note": "Existing HEAD only excludes uncommitted/untracked work. Prepared-project clone estimate is in after.json."
+}

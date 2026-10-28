@@ -1,11 +1,13 @@
 
 import math
+import time
 from dataclasses import asdict
 
 from src.security.message_monitor import MessageMonitor
 from src.security.source_sessions import authenticate_sender
 from src.security.sensor_features import SensorFeatureTracker
 from src.security.sensor_health import SensorHealthMonitor
+from src.security.gru_health import GRUHealthMonitor
 from src.scheduler.scheduler import schedule_message_tasks
 from src.security.risk_policy import assess_sensor_risk
 from src.security.additional_validation import validate_additional_checks
@@ -16,11 +18,14 @@ SENSOR_KEYS = {
     "LIDAR_01": "demo_lidar_key",
     "RADAR_01": "demo_radar_key",
     "CAMERA_01": "demo_camera_key",
+    "SKAB_01": "demo_skab_key",
 }
 
 CRITICAL_SENSORS = {"LIDAR_01", "RADAR_01"}
 
 SENSOR_METADATA = {
+    "SKAB_01": {"sensor_type": "water_testbed", "sensor_criticality": 1,
+                "reading_unit": "m"},  # Distance remains separate simulator evidence.
     "LIDAR_01": {
         "sensor_type": "lidar",
         "sensor_criticality": 3,
@@ -39,14 +44,26 @@ SENSOR_METADATA = {
 }
 
 message_monitor = MessageMonitor(SENSOR_KEYS)
-health_monitor = SensorHealthMonitor(max_distance_change=MAX_READING_DELTA)
+health_monitor = GRUHealthMonitor()
 feature_tracker = SensorFeatureTracker()
 
 
-def process_messages(messages):
+def process_messages(messages, *, scheduling_algorithm="legacy", context=None, prepare_only=False):
+    # Explicit run-local dependencies prevent laboratory sessions from mutating
+    # the existing dashboard's receiver or trusted histories.
+    monitor = context.message_monitor if context else message_monitor
+    health_backend = context.health_monitor if context else health_monitor
+    tracker = context.feature_tracker if context else feature_tracker
+    metadata_map = context.metadata if context else SENSOR_METADATA
+    critical_sources = context.critical_sources if context else CRITICAL_SENSORS
+    if scheduling_algorithm not in {"legacy", "RA-LP-EDF"}:
+        raise ValueError("Unknown scheduling algorithm")
+    started = time.perf_counter_ns()
     verified_tasks = []
     message_results = []
     accepted_candidates = {}
+    batch_times = {}
+    batch_scopes = {}
 
     for item in messages:
         item = item if isinstance(item, dict) else {}
@@ -55,7 +72,7 @@ def process_messages(messages):
         sensor_id = message.get("sensor_id") if isinstance(message, dict) else None
 
         # 1. Authenticate and check sequence/replay protection first.
-        authentication = message_monitor.verify(message, received_mac)
+        authentication = monitor.verify(message, received_mac)
         audit = {"authentication": authentication["authentication"],
                  "source_authentication": authentication["source_authentication"],
                  "session_reused": authentication["session_reused"],
@@ -93,7 +110,7 @@ def process_messages(messages):
             })
             continue
 
-        metadata = SENSOR_METADATA.get(sensor_id)
+        metadata = metadata_map.get(sensor_id)
 
         if metadata is None:
             message_results.append({
@@ -137,7 +154,27 @@ def process_messages(messages):
             continue
 
         # 3. Derive features from previously accepted history.
-        features = feature_tracker.build_features(
+        if hasattr(health_backend, "bind_session"):
+            scope = (sensor_id, message.get("session_id"), message.get("recording_id"))
+            if sensor_id in batch_scopes and batch_scopes[sensor_id] != scope:
+                message_results.append({**audit, "sensor": sensor_id, "status": "INVALID_INPUT",
+                                        "accepted": False, "reason": "Run/session changed within batch"})
+                continue
+            batch_scopes[sensor_id] = scope
+            if health_backend.bind_session(message):
+                tracker.reset(sensor_id)
+            # A batch is assessed before scheduling commits. Reject temporal reversal
+            # within it as well as against the prior accepted GRU context.
+            timestamp = message.get("timestamp")
+            if (isinstance(message.get("recording_id"), str) and isinstance(timestamp, (int, float))
+                    and not isinstance(timestamp, bool) and math.isfinite(timestamp)):
+                if scope in batch_times and timestamp <= batch_times[scope]:
+                    message_results.append({**audit, "sensor": sensor_id,
+                                            "status": "INVALID_INPUT", "accepted": False,
+                                            "reason": "Non-increasing timestamp within batch"})
+                    continue
+                batch_times[scope] = timestamp
+        features = tracker.build_features(
             message=message,
             sensor_type=metadata["sensor_type"],
             sensor_criticality=metadata["sensor_criticality"],
@@ -148,7 +185,7 @@ def process_messages(messages):
 
         # 4. Apply rule-based checks and ML sensor-health prediction.
         try:
-            health = health_monitor.check(message, features=features)
+            health = health_backend.check(message, features=features)
         except (KeyError, TypeError, ValueError, RuntimeError):
             health = {"healthy": False, "prediction": "not_evaluated",
                       "risk_level": "unknown", "issues": ["Health evaluation unavailable"]}
@@ -191,7 +228,7 @@ def process_messages(messages):
         verified_tasks.append({
             "task_id": task_id,
             "sensor": sensor_id,
-            "critical": sensor_id in CRITICAL_SENSORS,
+            "critical": sensor_id in critical_sources,
             "arrival_time": item["arrival_time"],
             "execution_time": item["execution_time"],
             "security_overhead": (item["security_overhead"] + decision.simulated_extra_cost
@@ -213,8 +250,17 @@ def process_messages(messages):
             "risk_level": health.get("risk_level", "unknown"),
         })
 
+    if prepare_only:
+        return {"verified_tasks": verified_tasks, "messages": message_results,
+                "candidates": accepted_candidates,
+                "authentication_metrics": dict(monitor.sessions.metrics)}
+
     if verified_tasks:
-        schedule = schedule_message_tasks(verified_tasks)
+        if scheduling_algorithm == "RA-LP-EDF":
+            from src.scheduler.sensor_adapter import schedule_sensor_tasks
+            schedule = schedule_sensor_tasks(verified_tasks)
+        else:
+            schedule = schedule_message_tasks(verified_tasks)
     else:
         schedule = {
             "mode": "NO_VALID_TASKS",
@@ -247,8 +293,8 @@ def process_messages(messages):
             accepted_message = accepted_candidates[task_id]
 
             if accepted_message is not None:
-                feature_tracker.commit_reading(accepted_message)
-                health_monitor.commit_reading(accepted_message)
+                tracker.commit_reading(accepted_message)
+                health_backend.commit_reading(accepted_message)
         elif scheduled:
             result["status"] = "DEADLINE_MISSED"
             result["reason"] = "Message missed its deadline"
@@ -293,7 +339,8 @@ def process_messages(messages):
         "messages": message_results,
         "schedule": schedule,
         "safety_response": safety_response,
-        "authentication_metrics": dict(message_monitor.sessions.metrics),
+        "authentication_metrics": dict(monitor.sessions.metrics),
+        "application_processing_ms": (time.perf_counter_ns() - started) / 1e6,
     }
 
 

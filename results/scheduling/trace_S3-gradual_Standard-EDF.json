@@ -1,0 +1,3665 @@
+{
+  "algorithm": "Standard-EDF",
+  "jobs": [
+    {
+      "job_id": "0:0",
+      "task_id": "0",
+      "release": 0,
+      "deadline": 200,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 8.654037517928415,
+      "state": "completed",
+      "admitted": true,
+      "critical": true,
+      "start": 21.96368457899697,
+      "finish": 31.282802847283953,
+      "remaining_base": 0,
+      "costs": {
+        "scheduler": 0.012000000000014666,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.23999999999999488,
+        "mandatory_validation": 0.0,
+        "base": 8.654037517928423,
+        "security_execution": 0.17308075035856874,
+        "teardown": 0.23999999999998423
+      },
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 0.0,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 0.0,
+          "from": "pending",
+          "to": "ready",
+          "reason": "Released-job conservative EDF envelope holds"
+        },
+        {
+          "time": 21.96368457899697,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 22.643073707233224,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 22.643073707233224,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 23.32246283546948,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 23.32246283546948,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 24.167824175844693,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 24.167824175844693,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 25.013185516219906,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 25.013185516219906,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 25.85854685659512,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 25.85854685659512,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 26.802452796077482,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 26.802452796077482,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 27.746358735559845,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 27.746358735559845,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 28.474547328234486,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 28.474547328234486,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 29.202735920909127,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 29.202735920909127,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 29.93092451358377,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 29.93092451358377,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 30.60686368043386,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 30.60686368043386,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 31.282802847283953,
+          "from": "running",
+          "to": "completed",
+          "reason": "All phases complete"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "1:0",
+      "task_id": "1",
+      "release": 0,
+      "deadline": 171.15642257593598,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 9.629889633608748,
+      "state": "completed",
+      "admitted": true,
+      "critical": false,
+      "start": 11.64919715271605,
+      "finish": 21.96368457899697,
+      "remaining_base": 0,
+      "costs": {
+        "scheduler": 0.012000000000004007,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.23999999999999488,
+        "mandatory_validation": 0.0,
+        "base": 9.62988963360875,
+        "security_execution": 0.19259779267217603,
+        "teardown": 0.23999999999998778
+      },
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 0.0,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 0.0,
+          "from": "pending",
+          "to": "ready",
+          "reason": "Released-job conservative EDF envelope holds"
+        },
+        {
+          "time": 11.64919715271605,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 12.551599040070759,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 12.551599040070759,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 13.454000927425467,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 13.454000927425467,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 14.326777346722617,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 14.326777346722617,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 15.199553766019767,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 15.199553766019767,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 15.921017428095556,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 15.921017428095556,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 16.642481090171344,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 16.642481090171344,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 17.407100079199882,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 17.407100079199882,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 18.17171906822842,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 18.17171906822842,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 19.153440880126325,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 19.153440880126325,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 20.13516269202423,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 20.13516269202423,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 21.0494236355106,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 21.0494236355106,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 21.96368457899697,
+          "from": "running",
+          "to": "completed",
+          "reason": "All phases complete"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "2:0",
+      "task_id": "2",
+      "release": 0,
+      "deadline": 100,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 6.470724713770865,
+      "state": "completed",
+      "admitted": true,
+      "critical": false,
+      "start": 4.762057944669765,
+      "finish": 11.64919715271605,
+      "remaining_base": 0,
+      "costs": {
+        "scheduler": 0.006999999999999673,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.13999999999999702,
+        "mandatory_validation": 0.0,
+        "base": 6.470724713770864,
+        "security_execution": 0.12941449427541762,
+        "teardown": 0.13999999999999702
+      },
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 0.0,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 0.0,
+          "from": "pending",
+          "to": "ready",
+          "reason": "Released-job conservative EDF envelope holds"
+        },
+        {
+          "time": 4.762057944669765,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 5.7212354908752525,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 5.7212354908752525,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 6.68041303708074,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 6.68041303708074,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 7.639590583286227,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 7.639590583286227,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 8.598768129491715,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 8.598768129491715,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 9.615577803899827,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 9.615577803899827,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 10.632387478307939,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 10.632387478307939,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 11.64919715271605,
+          "from": "running",
+          "to": "completed",
+          "reason": "All phases complete"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "3:0",
+      "task_id": "3",
+      "release": 0,
+      "deadline": 93.29213057462415,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 4.387311710460554,
+      "state": "completed",
+      "admitted": true,
+      "critical": false,
+      "start": 0.0,
+      "finish": 4.762057944669765,
+      "remaining_base": 0,
+      "costs": {
+        "scheduler": 0.00699999999999945,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.14000000000000012,
+        "mandatory_validation": 0.0,
+        "base": 4.387311710460555,
+        "security_execution": 0.0877462342092108,
+        "teardown": 0.13999999999999924
+      },
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 0.0,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 0.0,
+          "from": "pending",
+          "to": "ready",
+          "reason": "Released-job conservative EDF envelope holds"
+        },
+        {
+          "time": 0.0,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 0.752261046323312,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 0.752261046323312,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 1.245187237269032,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 1.245187237269032,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 1.810117093838594,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 1.810117093838594,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 2.3682510090856606,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 2.3682510090856606,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 2.9263849243327273,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 2.9263849243327273,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 3.779517541998007,
+          "from": "running",
+          "to": "ready",
+          "reason": "Fixed point: teardown complete"
+        },
+        {
+          "time": 3.779517541998007,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 4.762057944669765,
+          "from": "running",
+          "to": "completed",
+          "reason": "All phases complete"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "2:1",
+      "task_id": "2",
+      "release": 100,
+      "deadline": 200,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 6.470724713770865,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 6.470724713770865,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 100,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 100,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 100,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "3:1",
+      "task_id": "3",
+      "release": 102.08008693676621,
+      "deadline": 195.37221751139037,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 4.387311710460554,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 4.387311710460554,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 102.08008693676621,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 102.08008693676621,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 102.08008693676621,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "1:1",
+      "task_id": "1",
+      "release": 200,
+      "deadline": 371.15642257593595,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 9.629889633608748,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 9.629889633608748,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 200,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 200,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 200,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "2:2",
+      "task_id": "2",
+      "release": 200,
+      "deadline": 300,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 6.470724713770865,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 6.470724713770865,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 200,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 200,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 200,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "3:2",
+      "task_id": "3",
+      "release": 208.4299555091349,
+      "deadline": 301.72208608375905,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 4.387311710460554,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 4.387311710460554,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 208.4299555091349,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 208.4299555091349,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 208.4299555091349,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "0:1",
+      "task_id": "0",
+      "release": 222.32965763784992,
+      "deadline": 422.3296576378499,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 8.654037517928415,
+      "state": "failed",
+      "admitted": true,
+      "critical": true,
+      "start": null,
+      "finish": null,
+      "remaining_base": 8.654037517928415,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 222.32965763784992,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 222.32965763784992,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 222.32965763784992,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "2:3",
+      "task_id": "2",
+      "release": 300,
+      "deadline": 400,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 6.470724713770865,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 6.470724713770865,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 300,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 300,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 300,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "3:3",
+      "task_id": "3",
+      "release": 327.3797067353041,
+      "deadline": 420.67183730992826,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 4.387311710460554,
+      "state": "failed",
+      "admitted": true,
+      "critical": false,
+      "start": null,
+      "finish": null,
+      "remaining_base": 4.387311710460554,
+      "costs": {},
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 327.3797067353041,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 327.3797067353041,
+          "from": "pending",
+          "to": "ready",
+          "reason": "No compliant bounded mechanism"
+        },
+        {
+          "time": 327.3797067353041,
+          "from": "ready",
+          "to": "failed",
+          "reason": "No feasible compliant mechanism"
+        }
+      ],
+      "reservation_peak": 0
+    }
+  ],
+  "events": [
+    {
+      "time": 0.0,
+      "event": "release",
+      "job": "0:0",
+      "deadline": 200
+    },
+    {
+      "time": 0.0,
+      "event": "release",
+      "job": "1:0",
+      "deadline": 171.15642257593598
+    },
+    {
+      "time": 0.0,
+      "event": "release",
+      "job": "2:0",
+      "deadline": 100
+    },
+    {
+      "time": 0.0,
+      "event": "release",
+      "job": "3:0",
+      "deadline": 93.29213057462415
+    },
+    {
+      "time": 0.0,
+      "event": "admitted",
+      "job": "0:0",
+      "feasibility": {
+        "feasible": true,
+        "reason": "Released-job conservative EDF envelope holds",
+        "checks": [
+          {
+            "job": "0:0",
+            "finish_bound": 10.039118268286984,
+            "deadline": 200,
+            "slack": 189.96088173171302
+          }
+        ]
+      }
+    },
+    {
+      "time": 0.0,
+      "event": "admitted",
+      "job": "3:0",
+      "feasibility": {
+        "feasible": true,
+        "reason": "Released-job conservative EDF envelope holds",
+        "checks": [
+          {
+            "job": "3:0",
+            "finish_bound": 5.182057944669765,
+            "deadline": 93.29213057462415,
+            "slack": 88.11007262995439
+          },
+          {
+            "job": "0:0",
+            "finish_bound": 15.221176212956749,
+            "deadline": 200,
+            "slack": 184.77882378704325
+          }
+        ]
+      }
+    },
+    {
+      "time": 0.0,
+      "event": "admitted",
+      "job": "2:0",
+      "feasibility": {
+        "feasible": true,
+        "reason": "Released-job conservative EDF envelope holds",
+        "checks": [
+          {
+            "job": "3:0",
+            "finish_bound": 5.182057944669765,
+            "deadline": 93.29213057462415,
+            "slack": 88.11007262995439
+          },
+          {
+            "job": "2:0",
+            "finish_bound": 12.489197152716049,
+            "deadline": 100,
+            "slack": 87.51080284728395
+          },
+          {
+            "job": "0:0",
+            "finish_bound": 22.528315421003033,
+            "deadline": 200,
+            "slack": 177.47168457899696
+          }
+        ]
+      }
+    },
+    {
+      "time": 0.0,
+      "event": "admitted",
+      "job": "1:0",
+      "feasibility": {
+        "feasible": true,
+        "reason": "Released-job conservative EDF envelope holds",
+        "checks": [
+          {
+            "job": "3:0",
+            "finish_bound": 5.182057944669765,
+            "deadline": 93.29213057462415,
+            "slack": 88.11007262995439
+          },
+          {
+            "job": "2:0",
+            "finish_bound": 12.489197152716049,
+            "deadline": 100,
+            "slack": 87.51080284728395
+          },
+          {
+            "job": "1:0",
+            "finish_bound": 23.52368457899697,
+            "deadline": 171.15642257593598,
+            "slack": 147.632737996939
+          },
+          {
+            "job": "0:0",
+            "finish_bound": 33.562802847283955,
+            "deadline": 200,
+            "slack": 166.43719715271604
+          }
+        ]
+      }
+    },
+    {
+      "time": 0.0,
+      "event": "dispatch",
+      "job": "3:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 4.387311710460554,
+      "costs": {
+        "base": 0.6973147512973648,
+        "security_execution": 0.013946295025947296,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.0832419442538921,
+            "interval_cost": 0.752261046323312
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 0.752261046323312,
+      "event": "dispatch",
+      "job": "3:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 3.689996959163189,
+      "costs": {
+        "base": 0.44306489308403907,
+        "security_execution": 0.008861297861680781,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08247919467925213,
+            "interval_cost": 0.4929261909457199
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 1.245187237269032,
+      "event": "dispatch",
+      "job": "3:0",
+      "phase": "2",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 3.2469320660791503,
+      "costs": {
+        "base": 0.5136567221270215,
+        "security_execution": 0.010273134442540431,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08269097016638108,
+            "interval_cost": 0.564929856569562
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 1.810117093838594,
+      "event": "dispatch",
+      "job": "3:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 2.733275343952129,
+      "costs": {
+        "base": 0.5069940345559476,
+        "security_execution": 0.010139880691118952,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08267098210366786,
+            "interval_cost": 0.5581339152470666
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 2.3682510090856606,
+      "event": "dispatch",
+      "job": "3:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 2.226281309396181,
+      "costs": {
+        "base": 0.5069940345559476,
+        "security_execution": 0.010139880691118952,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08267098210366786,
+            "interval_cost": 0.5581339152470666
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 2.9263849243327273,
+      "event": "dispatch",
+      "job": "3:0",
+      "phase": "4",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 1.7192872748402335,
+      "costs": {
+        "base": 0.7962084486914509,
+        "security_execution": 0.01592416897382902,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08353862534607437,
+            "interval_cost": 0.8531326176652799
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 3.779517541998007,
+      "event": "dispatch",
+      "job": "3:0",
+      "phase": "5",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 0.9230788261487826,
+      "costs": {
+        "base": 0.9230788261487826,
+        "security_execution": 0.018461576522975653,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08391923647844636,
+            "interval_cost": 0.9825404026717582
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 4.762057944669765,
+      "event": "completed",
+      "job": "3:0"
+    },
+    {
+      "time": 4.762057944669765,
+      "event": "dispatch",
+      "job": "2:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 6.470724713770865,
+      "costs": {
+        "base": 0.9001740649073403,
+        "security_execution": 0.018003481298146808,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08385052219472203,
+            "interval_cost": 0.9591775462054871
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 5.7212354908752525,
+      "event": "dispatch",
+      "job": "2:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 5.5705506488635255,
+      "costs": {
+        "base": 0.9001740649073403,
+        "security_execution": 0.018003481298146808,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08385052219472203,
+            "interval_cost": 0.9591775462054871
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 6.68041303708074,
+      "event": "dispatch",
+      "job": "2:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 4.670376583956185,
+      "costs": {
+        "base": 0.9001740649073403,
+        "security_execution": 0.018003481298146808,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08385052219472203,
+            "interval_cost": 0.9591775462054871
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 7.639590583286227,
+      "event": "dispatch",
+      "job": "2:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 3.7702025190488446,
+      "costs": {
+        "base": 0.9001740649073403,
+        "security_execution": 0.018003481298146808,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08385052219472203,
+            "interval_cost": 0.9591775462054871
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 8.598768129491715,
+      "event": "dispatch",
+      "job": "2:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 2.8700284541415044,
+      "costs": {
+        "base": 0.9566761513805014,
+        "security_execution": 0.01913352302761003,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08402002845414151,
+            "interval_cost": 1.0168096744081114
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 9.615577803899827,
+      "event": "dispatch",
+      "job": "2:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 1.9133523027610029,
+      "costs": {
+        "base": 0.9566761513805014,
+        "security_execution": 0.01913352302761003,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08402002845414151,
+            "interval_cost": 1.0168096744081114
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 10.632387478307939,
+      "event": "dispatch",
+      "job": "2:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 0.9566761513805014,
+      "costs": {
+        "base": 0.9566761513805014,
+        "security_execution": 0.01913352302761003,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08402002845414151,
+            "interval_cost": 1.0168096744081114
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 11.64919715271605,
+      "event": "completed",
+      "job": "2:0"
+    },
+    {
+      "time": 11.64919715271605,
+      "event": "dispatch",
+      "job": "1:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 9.629889633608748,
+      "costs": {
+        "base": 0.8445116542693213,
+        "security_execution": 0.016890233085386425,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08368353496280798,
+            "interval_cost": 0.9024018873547077
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 12.551599040070759,
+      "event": "dispatch",
+      "job": "1:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 8.785377979339426,
+      "costs": {
+        "base": 0.8445116542693213,
+        "security_execution": 0.016890233085386425,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08368353496280798,
+            "interval_cost": 0.9024018873547077
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 13.454000927425467,
+      "event": "dispatch",
+      "job": "1:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 7.940866325070105,
+      "costs": {
+        "base": 0.8154670777423044,
+        "security_execution": 0.016309341554846087,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08359640123322692,
+            "interval_cost": 0.8727764192971506
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 14.326777346722617,
+      "event": "dispatch",
+      "job": "1:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 7.125399247327801,
+      "costs": {
+        "base": 0.8154670777423044,
+        "security_execution": 0.016309341554846087,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08359640123322692,
+            "interval_cost": 0.8727764192971506
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 15.199553766019767,
+      "event": "dispatch",
+      "job": "1:0",
+      "phase": "2",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 6.309932169585496,
+      "costs": {
+        "base": 0.6671212373292056,
+        "security_execution": 0.013342424746584113,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08315136371198763,
+            "interval_cost": 0.7214636620757897
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 15.921017428095556,
+      "event": "dispatch",
+      "job": "1:0",
+      "phase": "2",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 5.642810932256291,
+      "costs": {
+        "base": 0.6671212373292056,
+        "security_execution": 0.013342424746584113,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08315136371198763,
+            "interval_cost": 0.7214636620757897
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 16.642481090171344,
+      "event": "dispatch",
+      "job": "1:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 4.975689694927085,
+      "costs": {
+        "base": 0.7094303814005282,
+        "security_execution": 0.014188607628010564,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.0832782911442016,
+            "interval_cost": 0.7646189890285388
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 17.407100079199882,
+      "event": "dispatch",
+      "job": "1:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 4.2662593135265565,
+      "costs": {
+        "base": 0.7094303814005282,
+        "security_execution": 0.014188607628010564,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.0832782911442016,
+            "interval_cost": 0.7646189890285388
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 18.17171906822842,
+      "event": "dispatch",
+      "job": "1:0",
+      "phase": "4",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 3.5568289321260287,
+      "costs": {
+        "base": 0.9222762861744181,
+        "security_execution": 0.018445525723488364,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08391682885852327,
+            "interval_cost": 0.9817218118979065
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 19.153440880126325,
+      "event": "dispatch",
+      "job": "1:0",
+      "phase": "4",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 2.6345526459516106,
+      "costs": {
+        "base": 0.9222762861744181,
+        "security_execution": 0.018445525723488364,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08391682885852327,
+            "interval_cost": 0.9817218118979065
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 20.13516269202423,
+      "event": "dispatch",
+      "job": "1:0",
+      "phase": "5",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 1.7122763597771924,
+      "costs": {
+        "base": 0.8561381798885962,
+        "security_execution": 0.017122763597771925,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.0837184145396658,
+            "interval_cost": 0.9142609434863681
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 21.0494236355106,
+      "event": "dispatch",
+      "job": "1:0",
+      "phase": "5",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 0.8561381798885962,
+      "costs": {
+        "base": 0.8561381798885962,
+        "security_execution": 0.017122763597771925,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.0837184145396658,
+            "interval_cost": 0.9142609434863681
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 21.96368457899697,
+      "event": "completed",
+      "job": "1:0"
+    },
+    {
+      "time": 21.96368457899697,
+      "event": "dispatch",
+      "job": "0:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 8.654037517928415,
+      "costs": {
+        "base": 0.6258716943492703,
+        "security_execution": 0.012517433886985405,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08302761508304782,
+            "interval_cost": 0.6793891282362556
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 22.643073707233224,
+      "event": "dispatch",
+      "job": "0:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 8.028165823579146,
+      "costs": {
+        "base": 0.6258716943492703,
+        "security_execution": 0.012517433886985405,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08302761508304782,
+            "interval_cost": 0.6793891282362556
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 23.32246283546948,
+      "event": "dispatch",
+      "job": "0:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 7.402294129229875,
+      "costs": {
+        "base": 0.7885895493874653,
+        "security_execution": 0.015771790987749307,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.0835157686481624,
+            "interval_cost": 0.8453613403752146
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 24.167824175844693,
+      "event": "dispatch",
+      "job": "0:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 6.61370457984241,
+      "costs": {
+        "base": 0.7885895493874653,
+        "security_execution": 0.015771790987749307,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.0835157686481624,
+            "interval_cost": 0.8453613403752146
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 25.013185516219906,
+      "event": "dispatch",
+      "job": "0:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 5.825115030454945,
+      "costs": {
+        "base": 0.7885895493874653,
+        "security_execution": 0.015771790987749307,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.0835157686481624,
+            "interval_cost": 0.8453613403752146
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 25.85854685659512,
+      "event": "dispatch",
+      "job": "0:0",
+      "phase": "2",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 5.036525481067479,
+      "costs": {
+        "base": 0.8852019014532956,
+        "security_execution": 0.01770403802906591,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.0838056057043599,
+            "interval_cost": 0.9439059394823615
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 26.802452796077482,
+      "event": "dispatch",
+      "job": "0:0",
+      "phase": "2",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 4.151323579614184,
+      "costs": {
+        "base": 0.8852019014532956,
+        "security_execution": 0.01770403802906591,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.0838056057043599,
+            "interval_cost": 0.9439059394823615
+          }
+        ],
+        "selection_rule": "retain compliant feasible mechanism during dwell"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 27.746358735559845,
+      "event": "dispatch",
+      "job": "0:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 3.2661216781608884,
+      "costs": {
+        "base": 0.6737143065437654,
+        "security_execution": 0.013474286130875309,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08317114291963132,
+            "interval_cost": 0.7281885926746408
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 28.474547328234486,
+      "event": "dispatch",
+      "job": "0:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 2.592407371617123,
+      "costs": {
+        "base": 0.6737143065437654,
+        "security_execution": 0.013474286130875309,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08317114291963132,
+            "interval_cost": 0.7281885926746408
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 29.202735920909127,
+      "event": "dispatch",
+      "job": "0:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 1.9186930650733576,
+      "costs": {
+        "base": 0.6737143065437654,
+        "security_execution": 0.013474286130875309,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.08317114291963132,
+            "interval_cost": 0.7281885926746408
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 29.93092451358377,
+      "event": "dispatch",
+      "job": "0:0",
+      "phase": "4",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 1.2449787585295922,
+      "costs": {
+        "base": 0.6224893792647961,
+        "security_execution": 0.012449787585295921,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.0830174681377944,
+            "interval_cost": 0.675939166850092
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 30.60686368043386,
+      "event": "dispatch",
+      "job": "0:0",
+      "phase": "4",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 0.6224893792647961,
+      "costs": {
+        "base": 0.6224893792647961,
+        "security_execution": 0.012449787585295921,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 0.0830174681377944,
+            "interval_cost": 0.675939166850092
+          }
+        ],
+        "selection_rule": "minimum configured objective"
+      },
+      "reason": "Earliest eligible deadline subject to fixed-point/cap constraints; compliant mechanism selected by configured objective and dwell"
+    },
+    {
+      "time": 31.282802847283953,
+      "event": "completed",
+      "job": "0:0"
+    },
+    {
+      "time": 100,
+      "event": "risk_event",
+      "job": null,
+      "task": "0",
+      "exposure": 0.4,
+      "applied": true
+    },
+    {
+      "time": 100,
+      "event": "risk_event",
+      "job": null,
+      "task": "1",
+      "exposure": 0.4,
+      "applied": true
+    },
+    {
+      "time": 100,
+      "event": "risk_event",
+      "job": null,
+      "task": "2",
+      "exposure": 0.4,
+      "applied": true
+    },
+    {
+      "time": 100,
+      "event": "risk_event",
+      "job": null,
+      "task": "3",
+      "exposure": 0.4,
+      "applied": true
+    },
+    {
+      "time": 100,
+      "event": "release",
+      "job": "2:1",
+      "deadline": 200
+    },
+    {
+      "time": 100,
+      "event": "admitted",
+      "job": "2:1",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 100,
+      "event": "failed",
+      "job": "2:1",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 102.08008693676621,
+      "event": "release",
+      "job": "3:1",
+      "deadline": 195.37221751139037
+    },
+    {
+      "time": 102.08008693676621,
+      "event": "admitted",
+      "job": "3:1",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 102.08008693676621,
+      "event": "failed",
+      "job": "3:1",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 200,
+      "event": "risk_event",
+      "job": null,
+      "task": "0",
+      "exposure": 0.65,
+      "applied": true
+    },
+    {
+      "time": 200,
+      "event": "risk_event",
+      "job": null,
+      "task": "1",
+      "exposure": 0.65,
+      "applied": true
+    },
+    {
+      "time": 200,
+      "event": "risk_event",
+      "job": null,
+      "task": "2",
+      "exposure": 0.65,
+      "applied": true
+    },
+    {
+      "time": 200,
+      "event": "risk_event",
+      "job": null,
+      "task": "3",
+      "exposure": 0.65,
+      "applied": true
+    },
+    {
+      "time": 200,
+      "event": "release",
+      "job": "1:1",
+      "deadline": 371.15642257593595
+    },
+    {
+      "time": 200,
+      "event": "release",
+      "job": "2:2",
+      "deadline": 300
+    },
+    {
+      "time": 200,
+      "event": "admitted",
+      "job": "2:2",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 200,
+      "event": "admitted",
+      "job": "1:1",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 200,
+      "event": "failed",
+      "job": "2:2",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 200,
+      "event": "failed",
+      "job": "1:1",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 208.4299555091349,
+      "event": "release",
+      "job": "3:2",
+      "deadline": 301.72208608375905
+    },
+    {
+      "time": 208.4299555091349,
+      "event": "admitted",
+      "job": "3:2",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 208.4299555091349,
+      "event": "failed",
+      "job": "3:2",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 222.32965763784992,
+      "event": "release",
+      "job": "0:1",
+      "deadline": 422.3296576378499
+    },
+    {
+      "time": 222.32965763784992,
+      "event": "admitted",
+      "job": "0:1",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 222.32965763784992,
+      "event": "failed",
+      "job": "0:1",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 222.32965763784992,
+      "event": "safe_state",
+      "job": "0:1",
+      "reason": "Protected workload infeasible: No feasible compliant mechanism"
+    },
+    {
+      "time": 300,
+      "event": "risk_event",
+      "job": null,
+      "task": "0",
+      "exposure": 0.9,
+      "applied": true
+    },
+    {
+      "time": 300,
+      "event": "risk_event",
+      "job": null,
+      "task": "1",
+      "exposure": 0.9,
+      "applied": true
+    },
+    {
+      "time": 300,
+      "event": "risk_event",
+      "job": null,
+      "task": "2",
+      "exposure": 0.9,
+      "applied": true
+    },
+    {
+      "time": 300,
+      "event": "risk_event",
+      "job": null,
+      "task": "3",
+      "exposure": 0.9,
+      "applied": true
+    },
+    {
+      "time": 300,
+      "event": "release",
+      "job": "2:3",
+      "deadline": 400
+    },
+    {
+      "time": 300,
+      "event": "admitted",
+      "job": "2:3",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 300,
+      "event": "failed",
+      "job": "2:3",
+      "reason": "No feasible compliant mechanism"
+    },
+    {
+      "time": 327.3797067353041,
+      "event": "release",
+      "job": "3:3",
+      "deadline": 420.67183730992826
+    },
+    {
+      "time": 327.3797067353041,
+      "event": "admitted",
+      "job": "3:3",
+      "feasibility": {
+        "feasible": false,
+        "reason": "No compliant bounded mechanism",
+        "checks": []
+      }
+    },
+    {
+      "time": 327.3797067353041,
+      "event": "failed",
+      "job": "3:3",
+      "reason": "No feasible compliant mechanism"
+    }
+  ],
+  "timeline": [
+    {
+      "start": 0.0,
+      "end": 0.752261046323312,
+      "job": "3:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.001,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.02,
+        "mandatory_validation": 0.0,
+        "base": 0.6973147512973648,
+        "security_execution": 0.013946295025947242,
+        "teardown": 0.020000000000000018
+      },
+      "cleanup": false
+    },
+    {
+      "start": 0.752261046323312,
+      "end": 1.245187237269032,
+      "job": "3:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000000009,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.020000000000000018,
+        "mandatory_validation": 0.0,
+        "base": 0.44306489308403907,
+        "security_execution": 0.008861297861680884,
+        "teardown": 0.020000000000000018
+      },
+      "cleanup": false
+    },
+    {
+      "start": 1.245187237269032,
+      "end": 1.810117093838594,
+      "job": "3:0",
+      "phase": "2",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999998899,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.020000000000000018,
+        "mandatory_validation": 0.0,
+        "base": 0.5136567221270214,
+        "security_execution": 0.01027313444254041,
+        "teardown": 0.020000000000000018
+      },
+      "cleanup": false
+    },
+    {
+      "start": 1.810117093838594,
+      "end": 2.3682510090856606,
+      "job": "3:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999998899,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.020000000000000018,
+        "mandatory_validation": 0.0,
+        "base": 0.5069940345559478,
+        "security_execution": 0.010139880691118819,
+        "teardown": 0.020000000000000018
+      },
+      "cleanup": false
+    },
+    {
+      "start": 2.3682510090856606,
+      "end": 2.9263849243327273,
+      "job": "3:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999998899,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.020000000000000018,
+        "mandatory_validation": 0.0,
+        "base": 0.5069940345559476,
+        "security_execution": 0.010139880691118819,
+        "teardown": 0.020000000000000018
+      },
+      "cleanup": false
+    },
+    {
+      "start": 2.9263849243327273,
+      "end": 3.779517541998007,
+      "job": "3:0",
+      "phase": "4",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999998899,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.020000000000000018,
+        "mandatory_validation": 0.0,
+        "base": 0.7962084486914511,
+        "security_execution": 0.0159241689738292,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 3.779517541998007,
+      "end": 4.762057944669765,
+      "job": "3:0",
+      "phase": "5",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999998899,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.020000000000000018,
+        "mandatory_validation": 0.0,
+        "base": 0.923078826148783,
+        "security_execution": 0.01846157652297542,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 4.762057944669765,
+      "end": 5.7212354908752525,
+      "job": "2:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.001000000000000334,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.9001740649073406,
+        "security_execution": 0.01800348129814644,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 5.7212354908752525,
+      "end": 6.68041303708074,
+      "job": "2:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.001000000000000334,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.9001740649073406,
+        "security_execution": 0.01800348129814644,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 6.68041303708074,
+      "end": 7.639590583286227,
+      "job": "2:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.001000000000000334,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.9001740649073406,
+        "security_execution": 0.01800348129814644,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 7.639590583286227,
+      "end": 8.598768129491715,
+      "job": "2:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.001000000000000334,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.9001740649073398,
+        "security_execution": 0.01800348129814644,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 8.598768129491715,
+      "end": 9.615577803899827,
+      "job": "2:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999994458,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.9566761513805009,
+        "security_execution": 0.01913352302761062,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 9.615577803899827,
+      "end": 10.632387478307939,
+      "job": "2:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999994458,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.9566761513805009,
+        "security_execution": 0.01913352302761062,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 10.632387478307939,
+      "end": 11.64919715271605,
+      "job": "2:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999994458,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.9566761513805009,
+        "security_execution": 0.01913352302761062,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 11.64919715271605,
+      "end": 12.551599040070759,
+      "job": "1:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999994458,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.8445116542693221,
+        "security_execution": 0.01689023308538573,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 12.551599040070759,
+      "end": 13.454000927425467,
+      "job": "1:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999994458,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.8445116542693221,
+        "security_execution": 0.01689023308538573,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 13.454000927425467,
+      "end": 14.326777346722617,
+      "job": "1:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999994458,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.815467077742305,
+        "security_execution": 0.016309341554846313,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 14.326777346722617,
+      "end": 15.199553766019767,
+      "job": "1:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999994458,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.815467077742305,
+        "security_execution": 0.016309341554846313,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 15.199553766019767,
+      "end": 15.921017428095556,
+      "job": "1:0",
+      "phase": "2",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999994458,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.667121237329205,
+        "security_execution": 0.013342424746584314,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 15.921017428095556,
+      "end": 16.642481090171344,
+      "job": "1:0",
+      "phase": "2",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999994458,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.6671212373292068,
+        "security_execution": 0.013342424746582537,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 16.642481090171344,
+      "end": 17.407100079199882,
+      "job": "1:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.7094303814005265,
+        "security_execution": 0.014188607628010885,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 17.407100079199882,
+      "end": 18.17171906822842,
+      "job": "1:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.7094303814005265,
+        "security_execution": 0.014188607628010885,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 18.17171906822842,
+      "end": 19.153440880126325,
+      "job": "1:0",
+      "phase": "4",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.9222762861744194,
+        "security_execution": 0.018445525723489453,
+        "teardown": 0.01999999999999602
+      },
+      "cleanup": false
+    },
+    {
+      "start": 19.153440880126325,
+      "end": 20.13516269202423,
+      "job": "1:0",
+      "phase": "4",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.9222762861744194,
+        "security_execution": 0.018445525723489453,
+        "teardown": 0.01999999999999602
+      },
+      "cleanup": false
+    },
+    {
+      "start": 20.13516269202423,
+      "end": 21.0494236355106,
+      "job": "1:0",
+      "phase": "5",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.8561381798885961,
+        "security_execution": 0.017122763597772206,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 21.0494236355106,
+      "end": 21.96368457899697,
+      "job": "1:0",
+      "phase": "5",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.8561381798885961,
+        "security_execution": 0.017122763597772206,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 21.96368457899697,
+      "end": 22.643073707233224,
+      "job": "0:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.6258716943492715,
+        "security_execution": 0.012517433886984008,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 22.643073707233224,
+      "end": 23.32246283546948,
+      "job": "0:0",
+      "phase": "0",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.6258716943492715,
+        "security_execution": 0.012517433886984008,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 23.32246283546948,
+      "end": 24.167824175844693,
+      "job": "0:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.7885895493874671,
+        "security_execution": 0.015771790987749057,
+        "teardown": 0.01999999999999602
+      },
+      "cleanup": false
+    },
+    {
+      "start": 24.167824175844693,
+      "end": 25.013185516219906,
+      "job": "0:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.7885895493874671,
+        "security_execution": 0.015771790987749057,
+        "teardown": 0.01999999999999602
+      },
+      "cleanup": false
+    },
+    {
+      "start": 25.013185516219906,
+      "end": 25.85854685659512,
+      "job": "0:0",
+      "phase": "1",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.7885895493874671,
+        "security_execution": 0.015771790987749057,
+        "teardown": 0.01999999999999602
+      },
+      "cleanup": false
+    },
+    {
+      "start": 25.85854685659512,
+      "end": 26.802452796077482,
+      "job": "0:0",
+      "phase": "2",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.8852019014532964,
+        "security_execution": 0.017704038029066282,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 26.802452796077482,
+      "end": 27.746358735559845,
+      "job": "0:0",
+      "phase": "2",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.8852019014532964,
+        "security_execution": 0.017704038029066282,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 27.746358735559845,
+      "end": 28.474547328234486,
+      "job": "0:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.673714306543765,
+        "security_execution": 0.013474286130875868,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 28.474547328234486,
+      "end": 29.202735920909127,
+      "job": "0:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.673714306543765,
+        "security_execution": 0.013474286130875868,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 29.202735920909127,
+      "end": 29.93092451358377,
+      "job": "0:0",
+      "phase": "3",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.673714306543765,
+        "security_execution": 0.013474286130875868,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 29.93092451358377,
+      "end": 30.60686368043386,
+      "job": "0:0",
+      "phase": "4",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.6224893792647954,
+        "security_execution": 0.01244978758529669,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 30.60686368043386,
+      "end": 31.282802847283953,
+      "job": "0:0",
+      "phase": "4",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0010000000000012221,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.019999999999999574,
+        "mandatory_validation": 0.0,
+        "base": 0.6224893792647954,
+        "security_execution": 0.01244978758529669,
+        "teardown": 0.019999999999999574
+      },
+      "cleanup": false
+    },
+    {
+      "start": 31.282802847283953,
+      "end": 100,
+      "job": null,
+      "costs": {}
+    },
+    {
+      "start": 100,
+      "end": 102.08008693676621,
+      "job": null,
+      "costs": {}
+    },
+    {
+      "start": 102.08008693676621,
+      "end": 200,
+      "job": null,
+      "costs": {}
+    },
+    {
+      "start": 200,
+      "end": 208.4299555091349,
+      "job": null,
+      "costs": {}
+    },
+    {
+      "start": 208.4299555091349,
+      "end": 222.32965763784992,
+      "job": null,
+      "costs": {}
+    },
+    {
+      "start": 222.32965763784992,
+      "end": 300,
+      "job": null,
+      "costs": {}
+    },
+    {
+      "start": 300,
+      "end": 327.3797067353041,
+      "job": null,
+      "costs": {}
+    }
+  ],
+  "reservations": [],
+  "risk_history": {
+    "0": [
+      {
+        "time": 0.0,
+        "value": [
+          0.1,
+          1,
+          false
+        ]
+      },
+      {
+        "time": 222.32965763784992,
+        "value": [
+          0.65,
+          2,
+          false
+        ]
+      }
+    ],
+    "1": [
+      {
+        "time": 0.0,
+        "value": [
+          0.1,
+          1,
+          false
+        ]
+      },
+      {
+        "time": 200,
+        "value": [
+          0.65,
+          2,
+          false
+        ]
+      }
+    ],
+    "2": [
+      {
+        "time": 0.0,
+        "value": [
+          0.1,
+          1,
+          false
+        ]
+      },
+      {
+        "time": 100,
+        "value": [
+          0.4,
+          2,
+          false
+        ]
+      },
+      {
+        "time": 200,
+        "value": [
+          0.65,
+          2,
+          false
+        ]
+      },
+      {
+        "time": 300,
+        "value": [
+          0.9,
+          3,
+          false
+        ]
+      }
+    ],
+    "3": [
+      {
+        "time": 0.0,
+        "value": [
+          0.1,
+          1,
+          false
+        ]
+      },
+      {
+        "time": 102.08008693676621,
+        "value": [
+          0.4,
+          2,
+          false
+        ]
+      },
+      {
+        "time": 208.4299555091349,
+        "value": [
+          0.65,
+          2,
+          false
+        ]
+      },
+      {
+        "time": 327.3797067353041,
+        "value": [
+          0.9,
+          3,
+          false
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "released_jobs": 12,
+    "admitted_jobs": 12,
+    "completed_jobs": 4,
+    "critical_jobs": 2,
+    "deadline_misses": 0,
+    "critical_completed_jobs": 1,
+    "critical_rejected_jobs": 0,
+    "critical_failed_jobs": 1,
+    "deadline_miss_ratio": 0.0,
+    "critical_deadline_miss_ratio": 0.0,
+    "admitted_on_time_ratio": 0.3333333333333333,
+    "released_on_time_ratio": 0.3333333333333333,
+    "finite_trace_success": false,
+    "response_mean": 17.414435630916685,
+    "response_max": 31.282802847283953,
+    "response_p95": 31.282802847283953,
+    "observation_interval": 400,
+    "simulated_cpu_utilization": 0.07820700711820984,
+    "idle_time": 368.71719715271604,
+    "cost_categories": {
+      "scheduler": 0.0380000000000178,
+      "switch": 0.0,
+      "resume": 0.0,
+      "preemption": 0.0,
+      "startup": 0.7599999999999869,
+      "mandatory_validation": 0.0,
+      "base": 29.14196357576859,
+      "security_execution": 0.5828392715153732,
+      "teardown": 0.7599999999999683
+    },
+    "security_overhead": 2.1028392715153283,
+    "residual_risk_time_integral": 2.3462102135462968,
+    "mean_residual_risk_while_executing": 0.07500000000000001,
+    "security_compliance": 1.0,
+    "preemptions": 0,
+    "mechanism_switches": 0,
+    "rejection_ratio": 0.0,
+    "ever_deferred_ratio": 0.0,
+    "overload_events": 0,
+    "overload_recovery_durations": [],
+    "safe_state_events": 1,
+    "failed_jobs": 8,
+    "reservation_utilization": null,
+    "reservation_violations": 0,
+    "simulation_wall_ms": 10.6905,
+    "scheduler_wall_ms": 9.6028,
+    "formal_dynamic_schedulability": null
+  },
+  "snapshots": [],
+  "static_analysis": null
+}

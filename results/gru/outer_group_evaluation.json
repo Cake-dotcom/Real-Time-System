@@ -1,0 +1,398 @@
+[
+  {
+    "best_epoch": 12,
+    "fit_components": [
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      15,
+      16,
+      18,
+      20,
+      21,
+      22,
+      23,
+      28
+    ],
+    "fold": 0,
+    "gru": {
+      "accuracy": 0.9941078181338493,
+      "average_precision": 0.9586095082391357,
+      "classification_report": {
+        "accuracy": 0.9941078181338493,
+        "anomalous": {
+          "f1-score": 0.9501116902457185,
+          "precision": 0.9740458015267176,
+          "recall": 0.9273255813953488,
+          "support": 688.0
+        },
+        "macro avg": {
+          "f1-score": 0.9734903514081996,
+          "precision": 0.984689940703635,
+          "recall": 0.9628671340469208,
+          "support": 11371.0
+        },
+        "normal": {
+          "f1-score": 0.9968690125706808,
+          "precision": 0.9953340798805524,
+          "recall": 0.9984086866984929,
+          "support": 10683.0
+        },
+        "weighted avg": {
+          "f1-score": 0.9940399704671214,
+          "precision": 0.9940460370076796,
+          "recall": 0.9941078181338493,
+          "support": 11371.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          10666,
+          17
+        ],
+        [
+          50,
+          638
+        ]
+      ],
+      "false_negative_rate": 0.07267441860465117,
+      "false_positive_rate": 0.0015913133015070674,
+      "macro_f1": 0.9734903514081996,
+      "pr_auc_trapezoidal": 0.9586004416793295,
+      "roc_auc": 0.9833197821359301,
+      "threshold": 0.8099999999999999,
+      "weighted_f1": 0.9940399704671214
+    },
+    "held_out_components": [
+      0,
+      27
+    ],
+    "rf": {
+      "accuracy": 0.9965702224958227,
+      "average_precision": 0.9631565615865442,
+      "classification_report": {
+        "accuracy": 0.9965702224958227,
+        "anomalous": {
+          "f1-score": 0.9709605361131795,
+          "precision": 0.9954198473282443,
+          "recall": 0.9476744186046512,
+          "support": 688.0
+        },
+        "macro avg": {
+          "f1-score": 0.9845690105211908,
+          "precision": 0.996030192421121,
+          "recall": 0.9736967993051338,
+          "support": 11371.0
+        },
+        "normal": {
+          "f1-score": 0.9981774849292023,
+          "precision": 0.9966405375139977,
+          "recall": 0.9997191800056164,
+          "support": 10683.0
+        },
+        "weighted avg": {
+          "f1-score": 0.9965307290778768,
+          "precision": 0.9965666799071208,
+          "recall": 0.9965702224958227,
+          "support": 11371.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          10680,
+          3
+        ],
+        [
+          36,
+          652
+        ]
+      ],
+      "false_negative_rate": 0.05232558139534884,
+      "false_positive_rate": 0.0002808199943836001,
+      "macro_f1": 0.9845690105211908,
+      "pr_auc_trapezoidal": 0.9647934988032063,
+      "roc_auc": 0.9831325688063408,
+      "threshold": 0.6699999999999999,
+      "weighted_f1": 0.9965307290778768
+    },
+    "selection_groups": [
+      "data/other/1.csv",
+      "data/valve1/12.csv",
+      "data/valve1/15.csv",
+      "data/valve1/3.csv",
+      "data/valve2/3.csv"
+    ],
+    "selection_split": "original validation only; distinct from all outer train/holdout groups"
+  },
+  {
+    "best_epoch": 15,
+    "fit_components": [
+      0,
+      2,
+      3,
+      7,
+      8,
+      11,
+      13,
+      16,
+      21,
+      23,
+      27
+    ],
+    "fold": 1,
+    "gru": {
+      "accuracy": 0.775,
+      "average_precision": 0.7279167604271286,
+      "classification_report": {
+        "accuracy": 0.775,
+        "anomalous": {
+          "f1-score": 0.5949855351976856,
+          "precision": 0.840599455040872,
+          "recall": 0.46044776119402986,
+          "support": 4020.0
+        },
+        "macro avg": {
+          "f1-score": 0.7196092220431498,
+          "precision": 0.7997729437907183,
+          "recall": 0.7057809836610818,
+          "support": 11200.0
+        },
+        "normal": {
+          "f1-score": 0.8442329088886141,
+          "precision": 0.7589464325405646,
+          "recall": 0.9511142061281337,
+          "support": 7180.0
+        },
+        "weighted avg": {
+          "f1-score": 0.7547709051174059,
+          "precision": 0.7882540352594248,
+          "recall": 0.775,
+          "support": 11200.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          6829,
+          351
+        ],
+        [
+          2169,
+          1851
+        ]
+      ],
+      "false_negative_rate": 0.5395522388059701,
+      "false_positive_rate": 0.0488857938718663,
+      "macro_f1": 0.7196092220431498,
+      "pr_auc_trapezoidal": 0.7278945755702131,
+      "roc_auc": 0.7128880666306351,
+      "threshold": 0.5499999999999999,
+      "weighted_f1": 0.7547709051174059
+    },
+    "held_out_components": [
+      5,
+      6,
+      9,
+      10,
+      15,
+      18,
+      20,
+      22,
+      28
+    ],
+    "rf": {
+      "accuracy": 0.8041071428571429,
+      "average_precision": 0.7765319540440795,
+      "classification_report": {
+        "accuracy": 0.8041071428571429,
+        "anomalous": {
+          "f1-score": 0.6301416048550236,
+          "precision": 0.977510460251046,
+          "recall": 0.46492537313432836,
+          "support": 4020.0
+        },
+        "macro avg": {
+          "f1-score": 0.7484567630784712,
+          "precision": 0.8729606564821122,
+          "recall": 0.7294682575978049,
+          "support": 11200.0
+        },
+        "normal": {
+          "f1-score": 0.8667719213019188,
+          "precision": 0.7684108527131783,
+          "recall": 0.9940111420612814,
+          "support": 7180.0
+        },
+        "weighted avg": {
+          "f1-score": 0.7818385398629439,
+          "precision": 0.8434626761330201,
+          "recall": 0.8041071428571429,
+          "support": 11200.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          7137,
+          43
+        ],
+        [
+          2151,
+          1869
+        ]
+      ],
+      "false_negative_rate": 0.5350746268656716,
+      "false_positive_rate": 0.005988857938718663,
+      "macro_f1": 0.7484567630784712,
+      "pr_auc_trapezoidal": 0.7784995963798793,
+      "roc_auc": 0.8052310002910239,
+      "threshold": 0.5199999999999999,
+      "weighted_f1": 0.7818385398629439
+    },
+    "selection_groups": [
+      "data/other/1.csv",
+      "data/valve1/12.csv",
+      "data/valve1/15.csv",
+      "data/valve1/3.csv",
+      "data/valve2/3.csv"
+    ],
+    "selection_split": "original validation only; distinct from all outer train/holdout groups"
+  },
+  {
+    "best_epoch": 13,
+    "fit_components": [
+      0,
+      5,
+      6,
+      9,
+      10,
+      15,
+      18,
+      20,
+      22,
+      27,
+      28
+    ],
+    "fold": 2,
+    "gru": {
+      "accuracy": 0.7833876221498371,
+      "average_precision": 0.7382304373819113,
+      "classification_report": {
+        "accuracy": 0.7833876221498371,
+        "anomalous": {
+          "f1-score": 0.6248824819805704,
+          "precision": 0.8576344086021506,
+          "recall": 0.4914961794429381,
+          "support": 4057.0
+        },
+        "macro avg": {
+          "f1-score": 0.736305889253865,
+          "precision": 0.8106208023301804,
+          "recall": 0.7220883327522053,
+          "support": 11052.0
+        },
+        "normal": {
+          "f1-score": 0.8477292965271594,
+          "precision": 0.7636071960582101,
+          "recall": 0.9526804860614725,
+          "support": 6995.0
+        },
+        "weighted avg": {
+          "f1-score": 0.7659260458380974,
+          "precision": 0.7981229761243309,
+          "recall": 0.7833876221498371,
+          "support": 11052.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          6664,
+          331
+        ],
+        [
+          2063,
+          1994
+        ]
+      ],
+      "false_negative_rate": 0.5085038205570619,
+      "false_positive_rate": 0.04731951393852752,
+      "macro_f1": 0.736305889253865,
+      "pr_auc_trapezoidal": 0.738209890100034,
+      "roc_auc": 0.720043137964492,
+      "threshold": 0.84,
+      "weighted_f1": 0.7659260458380974
+    },
+    "held_out_components": [
+      2,
+      3,
+      7,
+      8,
+      11,
+      13,
+      16,
+      21,
+      23
+    ],
+    "rf": {
+      "accuracy": 0.7123597538906985,
+      "average_precision": 0.7035281772470723,
+      "classification_report": {
+        "accuracy": 0.7123597538906985,
+        "anomalous": {
+          "f1-score": 0.549269814263434,
+          "precision": 0.6465287049399199,
+          "recall": 0.47744638895735764,
+          "support": 4057.0
+        },
+        "macro avg": {
+          "f1-score": 0.6690273063078516,
+          "precision": 0.6916854051015389,
+          "recall": 0.6630262681026959,
+          "support": 11052.0
+        },
+        "normal": {
+          "f1-score": 0.788784798352269,
+          "precision": 0.7368421052631579,
+          "recall": 0.8486061472480343,
+          "support": 6995.0
+        },
+        "weighted avg": {
+          "f1-score": 0.7008629479678676,
+          "precision": 0.7036896020862328,
+          "recall": 0.7123597538906985,
+          "support": 11052.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          5936,
+          1059
+        ],
+        [
+          2120,
+          1937
+        ]
+      ],
+      "false_negative_rate": 0.5225536110426423,
+      "false_positive_rate": 0.15139385275196568,
+      "macro_f1": 0.6690273063078516,
+      "pr_auc_trapezoidal": 0.7048815486375326,
+      "roc_auc": 0.7423778701748829,
+      "threshold": 0.5499999999999999,
+      "weighted_f1": 0.7008629479678676
+    },
+    "selection_groups": [
+      "data/other/1.csv",
+      "data/valve1/12.csv",
+      "data/valve1/15.csv",
+      "data/valve1/3.csv",
+      "data/valve2/3.csv"
+    ],
+    "selection_split": "original validation only; distinct from all outer train/holdout groups"
+  }
+]

@@ -1,0 +1,177 @@
+[
+  {
+    "file": "anomaly-free__anomaly-free.npz",
+    "group": "data/anomaly-free/anomaly-free.csv",
+    "rows": 9405,
+    "sha256": "1fe8a41b01f57b42490a5193f91565a3ded9272e3a2b92d1b5e44661fc5b91d2",
+    "windows": 9342
+  },
+  {
+    "file": "other__10.npz",
+    "group": "data/other/10.csv",
+    "rows": 1327,
+    "sha256": "b7184c304f982334fdbf859b4966679a77fc05610f15892e83882804f5a4a1f9",
+    "windows": 1264
+  },
+  {
+    "file": "other__11.npz",
+    "group": "data/other/11.csv",
+    "rows": 1190,
+    "sha256": "70955f1ac4a519567822e572f8ab516703ce9b4059c5636daaeea86f9c4b4c8b",
+    "windows": 1127
+  },
+  {
+    "file": "other__12.npz",
+    "group": "data/other/12.csv",
+    "rows": 1048,
+    "sha256": "a07373b3a355ab366126b96a1164a215348fb4e98ac41d0be3ebd786cbaedee3",
+    "windows": 710
+  },
+  {
+    "file": "other__13.npz",
+    "group": "data/other/13.csv",
+    "rows": 923,
+    "sha256": "d403bb7e469f5cadaa4b80b5635efbc38e7507c2c047fcc0971c273924dcf8b4",
+    "windows": 545
+  },
+  {
+    "file": "other__2.npz",
+    "group": "data/other/2.csv",
+    "rows": 780,
+    "sha256": "6a03489cab6907c314c2c07d4f5481a22431b927d67f3a4e1db7fa3b7be69494",
+    "windows": 654
+  },
+  {
+    "file": "other__3.npz",
+    "group": "data/other/3.csv",
+    "rows": 1137,
+    "sha256": "5e811028e301563b2a3260ef77112bcc08a106f5d7b70eb37138d07714d12c24",
+    "windows": 1017
+  },
+  {
+    "file": "other__4.npz",
+    "group": "data/other/4.csv",
+    "rows": 1191,
+    "sha256": "0fe0e07b67eb8ae008f75e905f2bcd967662d0a289deac97e0b74add2385f72a",
+    "windows": 1128
+  },
+  {
+    "file": "other__5.npz",
+    "group": "data/other/5.csv",
+    "rows": 1155,
+    "sha256": "f52c7dcf8d69e7c3f25b6d0792910e186d2d9153b4cb3f30cf93a3bad85f2f60",
+    "windows": 1092
+  },
+  {
+    "file": "other__6.npz",
+    "group": "data/other/6.csv",
+    "rows": 1147,
+    "sha256": "164faaf700b763d2aed96419befe31e884f406bb8176761250cec8ddc0887dec",
+    "windows": 1084
+  },
+  {
+    "file": "other__7.npz",
+    "group": "data/other/7.csv",
+    "rows": 1090,
+    "sha256": "64dca207e6fd29a5c5daceb8ed55e1194dc1893bfd84edad84069cde59f120b9",
+    "windows": 1027
+  },
+  {
+    "file": "other__8.npz",
+    "group": "data/other/8.csv",
+    "rows": 1147,
+    "sha256": "f0dc5082c4f3740027e6f97d3bbd773f387553021353d320bf475b315b02570c",
+    "windows": 1084
+  },
+  {
+    "file": "other__9.npz",
+    "group": "data/other/9.csv",
+    "rows": 1144,
+    "sha256": "43a10c0b9ef64ffaeaafd4f5832b0251462e24a89f701b43d06526c45c640316",
+    "windows": 1081
+  },
+  {
+    "file": "valve1__0.npz",
+    "group": "data/valve1/0.csv",
+    "rows": 1147,
+    "sha256": "b68db62450c91b09f869204ff747f6f51eade5a474326a667bf1524ae155da42",
+    "windows": 1084
+  },
+  {
+    "file": "valve1__1.npz",
+    "group": "data/valve1/1.csv",
+    "rows": 1145,
+    "sha256": "2734014455cccc79d33266fc3a6dca861f030da8314128dcbc701089a8550bb6",
+    "windows": 1082
+  },
+  {
+    "file": "valve1__11.npz",
+    "group": "data/valve1/11.csv",
+    "rows": 1141,
+    "sha256": "225fbd281336fae1133076ecd2fd0cccdf857e3799143b78d3c86f4f43c129f7",
+    "windows": 1078
+  },
+  {
+    "file": "valve1__13.npz",
+    "group": "data/valve1/13.csv",
+    "rows": 1140,
+    "sha256": "a3c940b9cc1f150e27f9652524b99a8d1b5874cefdd5047e0a58166fff1f2f77",
+    "windows": 1077
+  },
+  {
+    "file": "valve1__14.npz",
+    "group": "data/valve1/14.csv",
+    "rows": 1139,
+    "sha256": "01673932a904bd8d2a9deb205d9eae6b36e65c6f987c5900fc9536c7163c64b8",
+    "windows": 1076
+  },
+  {
+    "file": "valve1__2.npz",
+    "group": "data/valve1/2.csv",
+    "rows": 1075,
+    "sha256": "b5ff1b955137e1c4f0eb05d093f10cd5ed9331f98e2a5f5c7a04c900fcdbd230",
+    "windows": 949
+  },
+  {
+    "file": "valve1__4.npz",
+    "group": "data/valve1/4.csv",
+    "rows": 1095,
+    "sha256": "d86242f5de9b3048fdff44a7a5d2f968a635dcadbdade78721d3deb4799d75b8",
+    "windows": 969
+  },
+  {
+    "file": "valve1__5.npz",
+    "group": "data/valve1/5.csv",
+    "rows": 1154,
+    "sha256": "cf30cbe461539a6293d32e1d423cf84156be84e594d350bbdcd98ba09d995d7d",
+    "windows": 1091
+  },
+  {
+    "file": "valve1__6.npz",
+    "group": "data/valve1/6.csv",
+    "rows": 1154,
+    "sha256": "8c3b5909d12809d81329bbcc785b1a88291e702cf2de83399dab434d292ce776",
+    "windows": 1091
+  },
+  {
+    "file": "valve1__7.npz",
+    "group": "data/valve1/7.csv",
+    "rows": 1094,
+    "sha256": "f322e68f01020d4ebc4f53ab0076c26cf098595f3f2b670933f03641cb9b111a",
+    "windows": 968
+  },
+  {
+    "file": "valve2__1.npz",
+    "group": "data/valve2/1.csv",
+    "rows": 1063,
+    "sha256": "514131009b7f641a6e6f1de92a3fb14da89cfae4d5bd58ebdf95cbdcbc25bf84",
+    "windows": 937
+  },
+  {
+    "file": "valve2__2.npz",
+    "group": "data/valve2/2.csv",
+    "rows": 1129,
+    "sha256": "f7094432a642be12716f30c370d66d2104c4d0633a70c743191e4219dfb7be00",
+    "windows": 1066
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "syntax_files": 71,
+  "readme_local_links": "all resolve",
+  "rf_prediction": "normal",
+  "gru_prediction": "normal",
+  "gru_weight_checksum": "validated by GRUPredictor",
+  "scheduler_comparisons": [
+    {
+      "algorithm": "Standard-EDF",
+      "completed": 7
+    },
+    {
+      "algorithm": "Static-Sec-EDF",
+      "completed": 8
+    },
+    {
+      "algorithm": "MPS-LP-EDF-structural",
+      "completed": 8
+    },
+    {
+      "algorithm": "SAEDF-style",
+      "completed": 8
+    },
+    {
+      "algorithm": "RA-LP-EDF",
+      "completed": 8
+    },
+    {
+      "algorithm": "RA-LP-EDF-Admission",
+      "completed": 8
+    },
+    {
+      "algorithm": "RA-LP-EDF-Preemption",
+      "completed": 8
+    },
+    {
+      "algorithm": "RA-LP-EDF-Optimized",
+      "completed": 8
+    }
+  ],
+  "authenticated_comparison": "same workload, both modes complete all four verified messages",
+  "dashboard_startup": "localhost health HTTP 200; app execution separately covered by pytest AppTest"
+}

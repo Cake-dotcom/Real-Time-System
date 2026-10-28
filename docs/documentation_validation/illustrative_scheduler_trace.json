@@ -1,0 +1,442 @@
+{
+  "algorithm": "RA-LP-EDF-Optimized",
+  "jobs": [
+    {
+      "job_id": "A:0",
+      "task_id": "A",
+      "release": 0,
+      "deadline": 3,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 2,
+      "state": "completed",
+      "admitted": true,
+      "critical": false,
+      "start": 0.0,
+      "finish": 2.081,
+      "remaining_base": 0,
+      "costs": {
+        "scheduler": 0.001,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.02,
+        "mandatory_validation": 0.0,
+        "base": 2.0,
+        "security_execution": 0.040000000000000036,
+        "teardown": 0.020000000000000018
+      },
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 0.0,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 0.0,
+          "from": "pending",
+          "to": "ready",
+          "reason": "Critical-first feasible subset selected"
+        },
+        {
+          "time": 0.0,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 2.081,
+          "from": "running",
+          "to": "completed",
+          "reason": "All phases complete"
+        }
+      ],
+      "reservation_peak": 0
+    },
+    {
+      "job_id": "B:0",
+      "task_id": "B",
+      "release": 0,
+      "deadline": 5,
+      "criticality": "normal",
+      "minimum_level": 1,
+      "configured_base": 1,
+      "state": "completed",
+      "admitted": true,
+      "critical": false,
+      "start": 2.081,
+      "finish": 3.142,
+      "remaining_base": 0,
+      "costs": {
+        "scheduler": 0.0009999999999998899,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.020000000000000018,
+        "mandatory_validation": 0.0,
+        "base": 1.0,
+        "security_execution": 0.020000000000000018,
+        "teardown": 0.020000000000000018
+      },
+      "preemptions": 0,
+      "switches": 0,
+      "transitions": [
+        {
+          "time": 0.0,
+          "from": "created",
+          "to": "pending",
+          "reason": "Job released"
+        },
+        {
+          "time": 0.0,
+          "from": "pending",
+          "to": "ready",
+          "reason": "Critical-first feasible subset selected"
+        },
+        {
+          "time": 2.081,
+          "from": "ready",
+          "to": "running",
+          "reason": "EDF dispatch at fixed preemption point"
+        },
+        {
+          "time": 3.142,
+          "from": "running",
+          "to": "completed",
+          "reason": "All phases complete"
+        }
+      ],
+      "reservation_peak": 0
+    }
+  ],
+  "events": [
+    {
+      "time": 0.0,
+      "event": "release",
+      "job": "A:0",
+      "deadline": 3
+    },
+    {
+      "time": 0.0,
+      "event": "release",
+      "job": "B:0",
+      "deadline": 5
+    },
+    {
+      "time": 0.0,
+      "event": "admitted",
+      "job": "B:0",
+      "feasibility": {
+        "feasible": true,
+        "reason": "Released-job conservative EDF envelope holds",
+        "checks": [
+          {
+            "job": "A:0",
+            "finish_bound": 2.141,
+            "deadline": 3,
+            "slack": 0.859
+          },
+          {
+            "job": "B:0",
+            "finish_bound": 3.262,
+            "deadline": 5,
+            "slack": 1.738
+          }
+        ]
+      },
+      "reason": "Protected cardinality first, then total cardinality; released-job bound"
+    },
+    {
+      "time": 0.0,
+      "event": "admitted",
+      "job": "A:0",
+      "feasibility": {
+        "feasible": true,
+        "reason": "Released-job conservative EDF envelope holds",
+        "checks": [
+          {
+            "job": "A:0",
+            "finish_bound": 2.141,
+            "deadline": 3,
+            "slack": 0.859
+          },
+          {
+            "job": "B:0",
+            "finish_bound": 3.262,
+            "deadline": 5,
+            "slack": 1.738
+          }
+        ]
+      },
+      "reason": "Protected cardinality first, then total cardinality; released-job bound"
+    },
+    {
+      "time": 0.0,
+      "event": "dispatch",
+      "job": "A:0",
+      "phase": "p",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 2.0,
+      "costs": {
+        "base": 2.0,
+        "security_execution": 0.04,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 2.081,
+            "interval_cost": 2.081
+          },
+          {
+            "mechanism": "medium",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 2.261,
+            "interval_cost": 2.261
+          },
+          {
+            "mechanism": "strong",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 2.521,
+            "interval_cost": 2.521
+          }
+        ],
+        "selection_rule": "least full interval cost subject to mandatory protection and feasible continuation"
+      },
+      "reason": "EDF at a fixed preemption point; least full interval cost subject to mandatory protection and feasible continuation"
+    },
+    {
+      "time": 2.081,
+      "event": "completed",
+      "job": "A:0"
+    },
+    {
+      "time": 2.081,
+      "event": "dispatch",
+      "job": "B:0",
+      "phase": "p",
+      "mechanism": "light",
+      "required": 1,
+      "remaining_base": 1.0,
+      "costs": {
+        "base": 1.0,
+        "security_execution": 0.02,
+        "startup": 0.02,
+        "teardown": 0.02,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "scheduler": 0.001
+      },
+      "selection": {
+        "risk": 0.1,
+        "required_level": 1,
+        "evaluated": [
+          {
+            "mechanism": "light",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 1.061,
+            "interval_cost": 1.061
+          },
+          {
+            "mechanism": "medium",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 1.181,
+            "interval_cost": 1.181
+          },
+          {
+            "mechanism": "strong",
+            "timing_feasible": true,
+            "timing_reason": "Released-job conservative EDF envelope holds",
+            "objective": 1.361,
+            "interval_cost": 1.361
+          }
+        ],
+        "selection_rule": "least full interval cost subject to mandatory protection and feasible continuation"
+      },
+      "reason": "EDF at a fixed preemption point; least full interval cost subject to mandatory protection and feasible continuation"
+    },
+    {
+      "time": 3.142,
+      "event": "completed",
+      "job": "B:0"
+    }
+  ],
+  "timeline": [
+    {
+      "start": 0.0,
+      "end": 2.081,
+      "job": "A:0",
+      "phase": "p",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.001,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.02,
+        "mandatory_validation": 0.0,
+        "base": 2.0,
+        "security_execution": 0.040000000000000036,
+        "teardown": 0.020000000000000018
+      },
+      "cleanup": false
+    },
+    {
+      "start": 2.081,
+      "end": 3.142,
+      "job": "B:0",
+      "phase": "p",
+      "mechanism": "light",
+      "required": 1,
+      "risk": 0.1,
+      "costs": {
+        "scheduler": 0.0009999999999998899,
+        "switch": 0.0,
+        "resume": 0.0,
+        "preemption": 0.0,
+        "startup": 0.020000000000000018,
+        "mandatory_validation": 0.0,
+        "base": 1.0,
+        "security_execution": 0.020000000000000018,
+        "teardown": 0.020000000000000018
+      },
+      "cleanup": false
+    }
+  ],
+  "reservations": [],
+  "risk_history": {
+    "A": [
+      {
+        "time": 0.0,
+        "value": [
+          0.1,
+          1,
+          false
+        ]
+      }
+    ],
+    "B": [
+      {
+        "time": 0.0,
+        "value": [
+          0.1,
+          1,
+          false
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "released_jobs": 2,
+    "admitted_jobs": 2,
+    "completed_jobs": 2,
+    "on_time_jobs": 2,
+    "critical_on_time_ratio": null,
+    "critical_noncompletion_ratio": null,
+    "noncompletion_ratio": 0.0,
+    "admitted_noncompletion_jobs": 0,
+    "never_admitted_jobs": 0,
+    "rejected_jobs": 0,
+    "ever_deferred_jobs": 0,
+    "security_rejected_jobs": 0,
+    "infeasible_admissions": 0,
+    "by_criticality": {
+      "critical": {
+        "released": 0,
+        "admitted": 0,
+        "on_time": 0,
+        "noncompletion": 0
+      },
+      "high": {
+        "released": 0,
+        "admitted": 0,
+        "on_time": 0,
+        "noncompletion": 0
+      },
+      "normal": {
+        "released": 2,
+        "admitted": 2,
+        "on_time": 2,
+        "noncompletion": 0
+      },
+      "low": {
+        "released": 0,
+        "admitted": 0,
+        "on_time": 0,
+        "noncompletion": 0
+      }
+    },
+    "decision_counters": {
+      "budget_evaluations": 9,
+      "budget_cache_hits": 13,
+      "feasibility_checks": 17
+    },
+    "critical_jobs": 0,
+    "deadline_misses": 0,
+    "critical_completed_jobs": 0,
+    "critical_rejected_jobs": 0,
+    "critical_failed_jobs": 0,
+    "deadline_miss_ratio": 0.0,
+    "critical_deadline_miss_ratio": null,
+    "admitted_on_time_ratio": 1.0,
+    "released_on_time_ratio": 1.0,
+    "finite_trace_success": true,
+    "response_mean": 2.6115,
+    "response_max": 3.142,
+    "response_p95": 3.142,
+    "observation_interval": 10,
+    "simulated_cpu_utilization": 0.3142,
+    "idle_time": 6.8580000000000005,
+    "cost_categories": {
+      "scheduler": 0.00199999999999989,
+      "switch": 0.0,
+      "resume": 0.0,
+      "preemption": 0.0,
+      "startup": 0.04000000000000002,
+      "mandatory_validation": 0.0,
+      "base": 3.0,
+      "security_execution": 0.06000000000000005,
+      "teardown": 0.040000000000000036
+    },
+    "security_overhead": 0.14000000000000012,
+    "residual_risk_time_integral": 0.23565000000000003,
+    "mean_residual_risk_while_executing": 0.07500000000000001,
+    "security_compliance": 1.0,
+    "preemptions": 0,
+    "mechanism_switches": 0,
+    "rejection_ratio": 0.0,
+    "ever_deferred_ratio": 0.0,
+    "overload_events": 0,
+    "overload_recovery_durations": [],
+    "safe_state_events": 0,
+    "failed_jobs": 0,
+    "reservation_utilization": null,
+    "reservation_violations": 0,
+    "simulation_wall_ms": 0.6788,
+    "scheduler_wall_ms": 0.5449,
+    "formal_dynamic_schedulability": null
+  },
+  "snapshots": [],
+  "static_analysis": null
+}

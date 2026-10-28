@@ -1,0 +1,32 @@
+{
+  "python": "3.12.6 (tags/v3.12.6:a4a2d2b, Sep  6 2024, 20:11:23) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "full": true,
+  "workers": 4,
+  "wall_time_conditions": "Main grid measured with configured worker concurrency; sensitivity runs sequential. Wall latency is not a WCET.",
+  "main_runs": 3500,
+  "sensitivity_runs": 110,
+  "horizon": 400,
+  "source_sha256": {
+    "src\\scheduler\\dynamic_risk.py": "724937886f67f34eabf668a43e75ce1193c46a66a5931e952e5784c96bb84cf5",
+    "src\\scheduler\\experiments.py": "cbc4849b77741d4a11dcf6d57ac2590c5a8949ed6a2c4d802b47548cbfc149b4",
+    "src\\scheduler\\feasibility.py": "c65037d0b440c984102a3ea60cabad1b91c4eb88f7d2388fec0863b02c147569",
+    "src\\scheduler\\model.py": "4c9764b54ebc3eeababb925f53fcbc835183a4f2cf1d133b75adbdece4593058",
+    "src\\scheduler\\ra_lp_edf.py": "ec83bdc1c74fcaf6aa87ecfef4e1927787c8d88678695e72f7b0e65940999fda",
+    "src\\scheduler\\reservations.py": "7ab00f63a38633859811b04840b82a8c163c43544b9df00fe8593c4b9ea2170c",
+    "src\\scheduler\\scheduler.py": "a79c71e42f367ed36b18cb8fb8a2e4bb07ef17f158eb15346adb9f51402c059d",
+    "src\\scheduler\\scheduling_metrics.py": "13e0462be964ed23ffb461843eedee9b58ba2621cb69c9075fe69ed7b9c9d1e5",
+    "src\\scheduler\\security_costs.py": "4160b0282be0c2afc0714f7bdc7f65641ba95197be97494f8c043e090f1f0279",
+    "src\\scheduler\\sensor_adapter.py": "07c800442db3d56406b3171c0000e79ca6fa8e978b4b7809c5f09cd3ab608b00"
+  },
+  "cost_provenance": "configured synthetic simulation estimates; no measured crypto WCET",
+  "utilization_definition": "base execution / period, excluding security and transition costs; S7 multiplies base by 1.5",
+  "confidence_interval": "normal approximation across paired seeds per configuration; five repeats are exploratory"
+}

@@ -43,6 +43,30 @@ def histories():
                           system.health_monitor.last_distance))
 
 
+@pytest.mark.parametrize("attack", ["none", "mac", "replay", "infeasible"])
+def test_ra_scheduler_is_after_real_rf_security_gates(monkeypatch, attack):
+    from src.scheduler import sensor_adapter
+    candidate=item("CAMERA_01",deadline=40)
+    schedule=Mock(wraps=sensor_adapter.schedule_sensor_tasks)
+    monkeypatch.setattr(sensor_adapter,"schedule_sensor_tasks",schedule)
+    if attack=="replay":
+        assert system.process_messages([candidate],scheduling_algorithm="RA-LP-EDF")["messages"][0]["accepted"]
+        schedule.reset_mock()
+    if attack=="mac": candidate["message"]["distance_m"]=999
+    if attack=="infeasible": candidate["deadline"]=1
+    before=histories()
+    result=system.process_messages([candidate],scheduling_algorithm="RA-LP-EDF")
+    if attack=="none":
+        assert result["messages"][0]["accepted"]
+        schedule.assert_called_once()
+        assert result["schedule"]["research"]["jobs"][0]["state"]=="completed"
+        assert result["schedule"]["research"]["jobs"][0]["costs"]["mandatory_validation"]==pytest.approx(result["messages"][0]["total_security_overhead"])
+    else:
+        assert not result["messages"][0]["accepted"]
+        assert histories()==before
+        if attack in {"mac","replay"}: schedule.assert_not_called()
+
+
 @pytest.mark.parametrize("sensor,level,checks,cost", [
     ("CAMERA_01", "low", {"reading_plausibility"}, 0),
     ("LIDAR_01", "medium", {"reading_plausibility", "temporal_consistency"}, 1),

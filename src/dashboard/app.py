@@ -13,6 +13,7 @@ import streamlit as st
 from src.security import sensor_system
 from src.security.source_sessions import authenticate_sender, AuthenticationError
 from src.security.sensor_health import SensorHealthMonitor
+from src.security.gru_health import GRUHealthMonitor
 
 st.set_page_config(
     page_title="Real-Time Sensor Security Dashboard",
@@ -33,6 +34,11 @@ st.caption(
     "Dataset-driven analysis of message authentication, sensor health, "
     "deadline performance, and fallback behavior."
 )
+
+from src.dashboard.laboratory import show_laboratory
+show_laboratory()
+st.divider()
+st.header("Existing sensor dashboard and benchmark tools")
 
 
 # ============================================================
@@ -73,6 +79,7 @@ if missing_columns:
 # ============================================================
 
 st.sidebar.header("Filters")
+live_scheduler = st.sidebar.selectbox("Live scheduling algorithm", ["legacy", "RA-LP-EDF"])
 
 scenarios = sorted(
     df["scenario_label"].dropna().unique().tolist()
@@ -296,6 +303,28 @@ st.caption(
 
 st.divider()
 st.header("Live Sensor Security Simulator")
+model_options = ["GRU / SKAB", "Random Forest / vehicle baseline"]
+active_model = getattr(sensor_system.health_monitor, "model_name", "Custom health monitor")
+model_choice = st.selectbox("Sensor-health model", model_options,
+                           index=1 if active_model == model_options[1] else 0)
+if model_choice != active_model and active_model in model_options:
+    sensor_system.health_monitor = GRUHealthMonitor() if model_choice == model_options[0] else SensorHealthMonitor()
+    sensor_system.feature_tracker.reset()
+st.write(f"Active sensor-health model: {getattr(sensor_system.health_monitor, 'model_name', 'Custom')}")
+if model_choice == model_options[0]:
+    st.caption("GRU requires eight SKAB water-testbed measurements and commissioned temporal context. "
+               "Vehicle distance-only submissions fail closed. The RF option retains the vehicle baseline.")
+    with st.expander("Authenticated SKAB recording demonstration"):
+        st.write("This administrative demonstration commissions context from the checksum-verified local "
+                 "nominal SKAB recording, binds it to a new session, then processes one signed candidate "
+                 "through all security, policy and scheduling gates. It does not claim vehicle accuracy.")
+        if st.button("Commission and process one recorded SKAB sample"):
+            try:
+                from src.ml.replay_skab_gru import commission_and_process
+                demonstration = commission_and_process(sensor_system)
+                st.json(demonstration)
+            except Exception:
+                st.error("SKAB demonstration unavailable; no acceptance reported. Check artifact and local dataset.")
 
 st.write(
     "Submit a sensor message to the existing authentication, "
@@ -474,9 +503,11 @@ if submitted:
 
     # Send messages through the existing pipeline.
     try:
-        result = sensor_system.process_messages(messages)
+        result = (sensor_system.process_messages(messages) if live_scheduler == "legacy" else
+                  sensor_system.process_messages(messages, scheduling_algorithm=live_scheduler))
 
         st.subheader("Message Decisions")
+        st.write(f"Measured application processing: {result['application_processing_ms']:.3f} ms")
 
         st.dataframe(
             result["messages"],
@@ -490,6 +521,9 @@ if submitted:
                 st.json(decision)
 
         st.subheader("Scheduling Result")
+        if "research" in result["schedule"]:
+            from src.dashboard.scheduling_panel import show_trace
+            show_trace(result["schedule"]["research"])
 
         st.write(f"**Mode:** {result['schedule']['mode']}")
         st.write(
@@ -523,3 +557,6 @@ st.dataframe([dict(manager.metrics)], hide_index=True)
 st.caption("Counters come from the receiver. *_ns values are measured elapsed processing "
            "nanoseconds, not scheduler costs. A new session adds 2 simulated units on "
            "its first verified message; reuse adds no handshake cost.")
+
+from src.dashboard.scheduling_panel import show_experiments
+show_experiments()

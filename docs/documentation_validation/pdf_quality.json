@@ -1,0 +1,24 @@
+{
+  "Complete_Technical_Documentation": {
+    "pages": 25,
+    "selectable_characters": 51361,
+    "external_link_annotations": 10,
+    "out_of_page_chars": [],
+    "visual_review": "All pages rendered with Poppler; review contact sheets and representative full-size pages."
+  },
+  "Presentation_Quick_Reference": {
+    "pages": 5,
+    "selectable_characters": 8789,
+    "external_link_annotations": 3,
+    "out_of_page_chars": [],
+    "visual_review": "All pages rendered with Poppler; review contact sheets and representative full-size pages."
+  },
+  "flowchart": {
+    "size": [
+      3840,
+      2160
+    ],
+    "editable_logic": "docs/Project_Workflow_Flowchart.mmd",
+    "editable_exact_layout": "docs/documentation_sources/build_documents.py"
+  }
+}

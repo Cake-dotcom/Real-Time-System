@@ -1,0 +1,29 @@
+flowchart LR
+    A([Configure workload / release signed message]) --> B{Session + MAC + replay valid?}
+    B -- No --> R[Reject / record gate failure; no trusted history]
+    B -- Yes --> C[Validate reading/timing; health; sensor risk]
+    C --> D{Healthy + required checks pass?}
+    D -- No --> R
+    D -- Yes --> E[Risk-required mechanism + full cost budget]
+    E --> F{Released demand feasible?}
+    F -- No --> O[Critical-first subset / defer / reject; safe-state if protected failure]
+    O -. Recheck at events .-> F
+    F -- Yes --> G[EDF / fixed-point execution; account costs]
+    G --> H{On time + protection valid?}
+    H -- No --> S[Fail-stop / cleanup; record outcome]
+    H -- Yes --> I[Commit newer trusted history; report results]
+    R --> T[Trace / metrics / dashboard]
+    O --> T
+    S --> T
+    I --> T
+    classDef process fill:#eaf2fb,stroke:#235789,color:#17324d;
+    classDef decision fill:#fff3d6,stroke:#a26a16,color:#573a10;
+    classDef reject fill:#fbe9e7,stroke:#ae4943,color:#6e2724;
+    classDef output fill:#e5f4ee,stroke:#247a63,color:#174c3e;
+    class A,C,E,G process;
+    class B,D,F,H decision;
+    class R,O,S reject;
+    class I,T output;
+    %% Authenticated laboratory path. Config validation precedes releases;
+    %% physical/timing message checks follow MAC/replay. Synthetic scheduling
+    %% experiments and legacy login are separate paths, not shown as authenticated.

@@ -1,0 +1,138 @@
+[
+  {
+    "epoch": 1,
+    "threshold": 0.6499999999999999,
+    "train_weighted_loss": 0.5796694782647219,
+    "validation_anomaly_recall": 0.4072625698324022,
+    "validation_macro_f1": 0.626303543644902,
+    "validation_unweighted_loss": 0.7762536554640025
+  },
+  {
+    "epoch": 2,
+    "threshold": 0.62,
+    "train_weighted_loss": 0.47143258131814725,
+    "validation_anomaly_recall": 0.5603351955307263,
+    "validation_macro_f1": 0.74910792857779,
+    "validation_unweighted_loss": 0.753243810174048
+  },
+  {
+    "epoch": 3,
+    "threshold": 0.8699999999999999,
+    "train_weighted_loss": 0.4321295546762871,
+    "validation_anomaly_recall": 0.5826815642458101,
+    "validation_macro_f1": 0.7585671409606689,
+    "validation_unweighted_loss": 1.0017194129031939
+  },
+  {
+    "epoch": 4,
+    "threshold": 0.5499999999999999,
+    "train_weighted_loss": 0.4002449695359577,
+    "validation_anomaly_recall": 0.7759776536312849,
+    "validation_macro_f1": 0.7998895198443585,
+    "validation_unweighted_loss": 0.5544216902150941
+  },
+  {
+    "epoch": 5,
+    "threshold": 0.8799999999999999,
+    "train_weighted_loss": 0.3687645018552289,
+    "validation_anomaly_recall": 0.8033519553072626,
+    "validation_macro_f1": 0.8087562440520099,
+    "validation_unweighted_loss": 0.9710157048575766
+  },
+  {
+    "epoch": 6,
+    "threshold": 0.7999999999999999,
+    "train_weighted_loss": 0.353322992835081,
+    "validation_anomaly_recall": 0.7821229050279329,
+    "validation_macro_f1": 0.8915203223596515,
+    "validation_unweighted_loss": 0.4832111708178301
+  },
+  {
+    "epoch": 7,
+    "threshold": 0.8899999999999999,
+    "train_weighted_loss": 0.3255396131990534,
+    "validation_anomaly_recall": 0.776536312849162,
+    "validation_macro_f1": 0.8969980986953432,
+    "validation_unweighted_loss": 0.6891125122089236
+  },
+  {
+    "epoch": 8,
+    "threshold": 0.9099999999999999,
+    "train_weighted_loss": 0.33237009190700273,
+    "validation_anomaly_recall": 0.7385474860335196,
+    "validation_macro_f1": 0.8820702508323398,
+    "validation_unweighted_loss": 0.5042368024322387
+  },
+  {
+    "epoch": 9,
+    "threshold": 0.74,
+    "train_weighted_loss": 0.3476381064815955,
+    "validation_anomaly_recall": 0.7497206703910615,
+    "validation_macro_f1": 0.841589218640056,
+    "validation_unweighted_loss": 0.4064142494189526
+  },
+  {
+    "epoch": 10,
+    "threshold": 0.95,
+    "train_weighted_loss": 0.3248061500489712,
+    "validation_anomaly_recall": 0.7832402234636872,
+    "validation_macro_f1": 0.8803237414937359,
+    "validation_unweighted_loss": 0.9667986560489966
+  },
+  {
+    "epoch": 11,
+    "threshold": 0.8899999999999999,
+    "train_weighted_loss": 0.33054036556771305,
+    "validation_anomaly_recall": 0.7128491620111732,
+    "validation_macro_f1": 0.8346068801655242,
+    "validation_unweighted_loss": 0.43842199226657863
+  },
+  {
+    "epoch": 12,
+    "threshold": 0.84,
+    "train_weighted_loss": 0.32689763831369806,
+    "validation_anomaly_recall": 0.7955307262569833,
+    "validation_macro_f1": 0.8989179211932798,
+    "validation_unweighted_loss": 0.570061625216496
+  },
+  {
+    "epoch": 13,
+    "threshold": 0.8799999999999999,
+    "train_weighted_loss": 0.3193868938269037,
+    "validation_anomaly_recall": 0.7005586592178771,
+    "validation_macro_f1": 0.8497011523916115,
+    "validation_unweighted_loss": 0.4062468272616806
+  },
+  {
+    "epoch": 14,
+    "threshold": 0.8499999999999999,
+    "train_weighted_loss": 0.3193106444721872,
+    "validation_anomaly_recall": 0.7910614525139665,
+    "validation_macro_f1": 0.8963135996729256,
+    "validation_unweighted_loss": 0.5200350412665827
+  },
+  {
+    "epoch": 15,
+    "threshold": 0.7799999999999999,
+    "train_weighted_loss": 0.3130968567548376,
+    "validation_anomaly_recall": 0.7396648044692737,
+    "validation_macro_f1": 0.8832254727621961,
+    "validation_unweighted_loss": 0.3335037359686497
+  },
+  {
+    "epoch": 16,
+    "threshold": 0.7799999999999999,
+    "train_weighted_loss": 0.3161960161770835,
+    "validation_anomaly_recall": 0.7245810055865922,
+    "validation_macro_f1": 0.8465599633857601,
+    "validation_unweighted_loss": 0.390487209724275
+  },
+  {
+    "epoch": 17,
+    "threshold": 0.8599999999999999,
+    "train_weighted_loss": 0.3387274517480171,
+    "validation_anomaly_recall": 0.7402234636871509,
+    "validation_macro_f1": 0.8586442385518093,
+    "validation_unweighted_loss": 0.4296386013044101
+  }
+]
